@@ -1,0 +1,25 @@
+{
+  "train": {
+    "num_samples": 3,
+    "synthetic_samples": 3,
+    "bucket_counts": {
+      "simple": 1,
+      "medium": 1,
+      "complex": 1
+    }
+  },
+  "val": {
+    "num_samples": 0,
+    "synthetic_samples": 0,
+    "bucket_counts": {}
+  },
+  "test": {
+    "num_samples": 3,
+    "synthetic_samples": 3,
+    "bucket_counts": {
+      "simple": 1,
+      "medium": 1,
+      "complex": 1
+    }
+  }
+}

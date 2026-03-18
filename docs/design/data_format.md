@@ -56,6 +56,7 @@ Reason:
 - `data/samples/phase1_train.jsonl`
 - `data/samples/phase1_val.jsonl`
 - `data/samples/phase1_test.jsonl`
+- `data/samples/phase1_seed.jsonl`
 - `results/predictions/<experiment_id>.jsonl`
 
 ## Notes
@@ -63,3 +64,4 @@ Reason:
 - `sample_id` must be globally unique inside phase 1
 - `schema_name` should stay explicit to support later schema variants
 - `complexity_bucket` is mandatory for grouped analysis
+- for tiny seed datasets, `metadata.split` can be pre-assigned manually to avoid empty validation splits
