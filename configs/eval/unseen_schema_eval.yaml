@@ -1,0 +1,12 @@
+task_name: ticket_structured_output
+schema_name: ticket_schema_v1_1
+
+metrics:
+  - valid_json_rate
+  - schema_compliance_rate
+  - field_exact_match
+  - end_to_end_exact_match
+
+grouped_reporting:
+  - complexity_bucket
+  - schema_name

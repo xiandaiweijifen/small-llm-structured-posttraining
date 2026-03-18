@@ -77,6 +77,7 @@ structured-output-small-llm/
 - [project_brief.md](d:/project/small-llm-structured-posttraining/docs/project_brief.md)
 - [phase1_task.md](d:/project/small-llm-structured-posttraining/docs/design/phase1_task.md)
 - [experiment_matrix.md](d:/project/small-llm-structured-posttraining/docs/design/experiment_matrix.md)
+- [schema_variants.md](d:/project/small-llm-structured-posttraining/docs/design/schema_variants.md)
 
 ## Development Principle
 

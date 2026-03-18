@@ -1,6 +1,10 @@
-"""Phase-1 schema definition."""
+"""Phase-1 schema definitions."""
 
-TICKET_SCHEMA = {
+from __future__ import annotations
+
+from copy import deepcopy
+
+TICKET_SCHEMA_V1 = {
     "type": "object",
     "properties": {
         "ticket_id": {"type": ["string", "null"]},
@@ -74,3 +78,8 @@ TICKET_SCHEMA = {
     ],
     "additionalProperties": False,
 }
+
+TICKET_SCHEMA_V1_1 = deepcopy(TICKET_SCHEMA_V1)
+TICKET_SCHEMA_V1_1["properties"]["customer_impact"] = {"type": ["string", "null"]}
+
+TICKET_SCHEMA = TICKET_SCHEMA_V1
