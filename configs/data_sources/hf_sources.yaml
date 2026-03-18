@@ -1,0 +1,12 @@
+sources:
+  - source_id: kameronb_it_callcenter_tickets
+    hf_dataset_name: KameronB/synthetic-it-callcenter-tickets
+    local_dir: data/raw/external/kameronb_it_callcenter_tickets
+    export_dir: data/raw/exports/kameronb_it_callcenter_tickets
+    notes: medium-scale synthetic IT call center ticket source
+
+  - source_id: console_ai_it_helpdesk_tickets
+    hf_dataset_name: Console-AI/IT-helpdesk-synthetic-tickets
+    local_dir: data/raw/external/console_ai_it_helpdesk_tickets
+    export_dir: data/raw/exports/console_ai_it_helpdesk_tickets
+    notes: smaller cleaner helpdesk ticket source for early inspection

@@ -53,6 +53,8 @@ Reason:
 
 ## Phase 1 Minimal Files
 
+- `data/raw/external/<source_name>/`
+- `data/raw/exports/<source_name>/`
 - `data/samples/phase1_train.jsonl`
 - `data/samples/phase1_val.jsonl`
 - `data/samples/phase1_test.jsonl`
