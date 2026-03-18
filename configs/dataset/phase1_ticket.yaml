@@ -1,0 +1,18 @@
+task_name: ticket_structured_output
+schema_name: ticket_schema_v1
+input_format: text_to_json
+
+splits:
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+complexity_buckets:
+  - simple
+  - medium
+  - complex
+
+data_strategy:
+  seed_examples_target: 300
+  synthetic_examples_target: 2000
+  include_schema_variants: true

@@ -1,0 +1,18 @@
+task_name: ticket_structured_output
+schema_name: ticket_schema_v1
+
+metrics:
+  - valid_json_rate
+  - schema_compliance_rate
+  - field_exact_match
+  - end_to_end_exact_match
+
+error_taxonomy:
+  - invalid_json
+  - schema_violation
+  - missing_required_field
+  - enum_error
+  - type_error
+  - value_hallucination
+  - extraction_omission
+  - cross_field_inconsistency
