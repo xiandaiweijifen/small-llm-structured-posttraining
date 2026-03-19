@@ -96,9 +96,13 @@ Use `notebooks/` only for:
 
 The repository currently contains:
 
-- refined project scope
-- phase-1 task and schema definition
-- initial experiment matrix
-- starter Python package skeleton
+- full phase-1 data pipeline
+- prompt-only, repair, and QLoRA baselines
+- reduced-schema ablation and H200-fast rerun
+- seen/unseen schema generalization results
 
-Implementation of dataset builders, training entrypoints, inference, and evaluation will follow this structure.
+Recommended entry points for the current project state:
+
+- [project_status.md](d:/project/small-llm-structured-posttraining/docs/project_status.md)
+- [phase1_baseline_findings.md](d:/project/small-llm-structured-posttraining/docs/results/phase1_baseline_findings.md)
+- [final_results_summary.md](d:/project/small-llm-structured-posttraining/docs/results/final_results_summary.md)
