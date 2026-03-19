@@ -1,4 +1,4 @@
-# Project Status
+﻿# Project Status
 
 ## Current Stage
 
@@ -10,12 +10,12 @@ Current status:
 - core baselines have been run
 - repair baseline has been implemented and evaluated
 - reduced-schema ablation has been validated
-- schema-generalization infrastructure has been added
+- schema-generalization experiment has been run and evaluated
 
 The project is currently in:
 
 - **phase-1 result consolidation**
-- **schema generalization expansion**
+- **research-story consolidation**
 
 ## Development History
 
@@ -87,7 +87,7 @@ Main conclusion:
 - repair strongly improves structural compliance for prompt-only outputs
 - repair adds little once post-training already solves structure
 
-### 6. Generalization Infrastructure
+### 6. Schema Generalization
 
 Completed:
 
@@ -96,6 +96,7 @@ Completed:
 - built seen/unseen schema evaluation datasets
 - added grouped evaluation by `schema_seen_status`
 - created dedicated schema-generalization notebook
+- ran schema-conditioned reduced-schema QLoRA evaluation on combined seen/unseen schema test data
 
 Key outputs:
 
@@ -105,6 +106,8 @@ Key outputs:
 - `data/processed/phase1_sft_train_reduced_schema_conditioned.jsonl`
 - `data/processed/phase1_sft_val_reduced_schema_conditioned.jsonl`
 - `notebooks/06_schema_generalization_qlora.ipynb`
+- `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
+- `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`
 
 ## Current Experimental Findings
 
@@ -133,26 +136,39 @@ Key outputs:
 - small improvement over the first reduced baseline
 - useful as a stronger reproduction run, not a new qualitative breakthrough
 
+### Schema-Conditioned Reduced QLoRA Generalization
+
+- overall field exact match: `0.8764`
+- overall end-to-end exact match: `0.4646`
+- seen-schema field exact match: `0.8837`
+- unseen-schema field exact match: `0.8691`
+- seen-schema end-to-end exact match: `0.4764`
+- unseen-schema end-to-end exact match: `0.4528`
+
+Main conclusion:
+
+- mild schema shift hurts semantics more than structure
+- schema-conditioned post-training generalizes reasonably well to unseen schema variants
+- remaining failures are concentrated in semantic fields such as `action`, `component`, `category`, and `priority`
+
 ## What Is Still Missing
 
-To reach the originally desired “more complete research project” level, the project still needs:
+To reach the originally desired "more complete research project" level, the project still needs:
 
-- a real seen vs unseen schema experiment result
-- a stronger schema generalization conclusion
 - optionally, a decoding-side constrained generation baseline beyond repair
 - final result tables and a concise project summary for resume/interview use
+- one final pass to unify the project narrative around training, repair, target design, and schema generalization
 
 ## Current Next Step
 
 Immediate next step:
 
-- run `notebooks/06_schema_generalization_qlora.ipynb`
+- consolidate final result tables and write one concise project-level findings summary
 
 Expected outcome:
 
-- one schema-conditioned reduced-schema QLoRA model
-- one combined seen/unseen prediction file
-- one evaluation report split by `schema_seen_status`
+- one stable summary of prompt-only, repair, full-schema QLoRA, reduced-schema QLoRA, and seen/unseen schema generalization
+- one clear statement of what post-training solves, what repair solves, and what schema shift still breaks
 
 ## Practical Rule
 

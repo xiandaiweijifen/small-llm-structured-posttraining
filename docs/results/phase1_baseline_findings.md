@@ -82,6 +82,26 @@ Interpretation:
 - reduced-schema QLoRA already solves the structure problem
 - repair again adds almost no value
 
+## Schema-Conditioned Reduced QLoRA Generalization
+
+- overall valid JSON rate: `0.9980`
+- overall schema compliance rate: `0.9980`
+- overall field exact match: `0.8764`
+- overall end-to-end exact match: `0.4646`
+
+Seen vs unseen schema:
+
+- seen field exact match: `0.8837`
+- unseen field exact match: `0.8691`
+- seen end-to-end exact match: `0.4764`
+- unseen end-to-end exact match: `0.4528`
+
+Interpretation:
+
+- schema-conditioned post-training preserves structure under mild schema shift
+- unseen schema causes a small but real semantic drop
+- the main generalization bottleneck is still field semantics rather than JSON validity
+
 ## Current Project-Level Conclusion
 
 The phase-1 experiments support a clear division of labor:
@@ -91,3 +111,4 @@ The phase-1 experiments support a clear division of labor:
 - post-training is the main lever for stable structured generation
 - noisy target fields can dominate failure modes and hide real extraction ability
 - after structure is solved, the remaining problem is semantic accuracy rather than formatting
+- mild schema shift mostly hurts semantic fields, not structural compliance
