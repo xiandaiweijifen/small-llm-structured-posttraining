@@ -1,0 +1,26 @@
+experiment_name: smollm2_1p7b_phase1_qlora_v1
+task_name: ticket_structured_output
+
+model:
+  base_model: HuggingFaceTB/SmolLM2-1.7B-Instruct
+  max_seq_length: 2048
+
+training:
+  method: qlora
+  learning_rate: 2e-4
+  num_train_epochs: 3
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8
+  warmup_ratio: 0.03
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+
+data:
+  train_file: data/processed/phase1_sft_train.jsonl
+  val_file: data/processed/phase1_sft_val.jsonl
+
+output:
+  save_dir: results/checkpoints/smollm2_1p7b_phase1_qlora_v1
