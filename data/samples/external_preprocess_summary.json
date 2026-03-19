@@ -1,0 +1,27 @@
+{
+  "console_ai_it_helpdesk_tickets": {
+    "input_path": "data/raw/exports/console_ai_it_helpdesk_tickets/train.jsonl",
+    "output_path": "data/samples/console_ai_mapped.jsonl",
+    "num_records": 500,
+    "complexity_counts": {
+      "medium": 499,
+      "complex": 1
+    },
+    "source_type_counts": {
+      "email": 500
+    }
+  },
+  "kameronb_it_callcenter_tickets": {
+    "input_path": "data/raw/exports/kameronb_it_callcenter_tickets/train.jsonl",
+    "output_path": "data/samples/kameronb_mapped.jsonl",
+    "num_records": 27602,
+    "complexity_counts": {
+      "medium": 24907,
+      "complex": 2695
+    },
+    "source_type_counts": {
+      "task": 18359,
+      "email": 9243
+    }
+  }
+}
