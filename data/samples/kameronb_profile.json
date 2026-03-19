@@ -1,0 +1,49 @@
+{
+  "num_records": 27602,
+  "complexity_counts": {
+    "medium": 24907,
+    "complex": 2695
+  },
+  "source_type_counts": {
+    "task": 18359,
+    "email": 9243
+  },
+  "raw_source_counts": {
+    "kameronb_it_callcenter_tickets": 27602
+  },
+  "category_counts": {
+    "feature": 3689,
+    "incident": 17678,
+    "task": 5466,
+    "bug": 769
+  },
+  "priority_counts": {
+    "medium": 9359,
+    "high": 15312,
+    "urgent": 2931
+  },
+  "environment_counts": {
+    "None": 26163,
+    "prod": 739,
+    "dev": 698,
+    "staging": 2
+  },
+  "blocking_counts": {
+    "None": 25290,
+    "True": 2312
+  },
+  "missing_reporter_name_rate": 0.0,
+  "missing_reporter_team_rate": 0.23875081515832186,
+  "empty_affected_systems_rate": 0.0,
+  "empty_actions_requested_rate": 0.0,
+  "summary_length": {
+    "min": 10.0,
+    "max": 160.0,
+    "mean": 51.020868053039635
+  },
+  "input_length": {
+    "min": 112.0,
+    "max": 1040.0,
+    "mean": 362.1253532352728
+  }
+}
