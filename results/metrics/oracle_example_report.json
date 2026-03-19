@@ -1,0 +1,39 @@
+{
+  "gold_path": "data\\samples\\phase1_train.example.jsonl",
+  "pred_path": "results\\predictions\\oracle_example.jsonl",
+  "summary": {
+    "num_samples": 2,
+    "valid_json_rate": 1.0,
+    "schema_compliance_rate": 1.0,
+    "field_exact_match": 1.0,
+    "end_to_end_exact_match": 1.0,
+    "error_counts": {
+      "invalid_json": 0,
+      "schema_violation": 0,
+      "missing_required_field": 0,
+      "enum_error": 0,
+      "type_error": 0,
+      "value_hallucination": 0,
+      "extraction_omission": 0,
+      "cross_field_inconsistency": 0
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "train-0001",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null
+    },
+    {
+      "sample_id": "train-0002",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null
+    }
+  ]
+}

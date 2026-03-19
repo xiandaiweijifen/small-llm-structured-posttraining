@@ -2,7 +2,6 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 .env
-results/
 data/raw/
 *.pyo
 *.pyd
@@ -10,3 +9,7 @@ data/raw/
 *.egg-info/
 venv/
 .venv/
+
+# Keep lightweight experiment artifacts visible, but avoid syncing large model files.
+results/checkpoints/
+results/tmp/
