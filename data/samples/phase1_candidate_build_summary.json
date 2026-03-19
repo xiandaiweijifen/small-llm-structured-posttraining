@@ -1,0 +1,24 @@
+{
+  "input_counts": {
+    "console_ai_it_helpdesk_tickets": 500,
+    "kameronb_it_callcenter_tickets": 27602
+  },
+  "num_filtered_records": 28096,
+  "num_sampled_records": 2494,
+  "sampled_source_counts": {
+    "console_ai_it_helpdesk_tickets": 494,
+    "kameronb_it_callcenter_tickets": 2000
+  },
+  "sampled_complexity_counts": {
+    "simple": 588,
+    "medium": 1741,
+    "complex": 165
+  },
+  "sampled_category_counts": {
+    "bug": 634,
+    "task": 757,
+    "feature": 519,
+    "incident": 503,
+    "question": 81
+  }
+}
