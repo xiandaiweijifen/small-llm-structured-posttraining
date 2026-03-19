@@ -5,6 +5,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from src.data.complexity import infer_complexity_bucket
+
 
 def map_console_ai_record(record: dict[str, Any]) -> dict[str, Any]:
     subject = normalize_text(record.get("subject"))
@@ -321,22 +323,3 @@ def map_contact_type(value: Any) -> str:
         return "task"
     return "task"
 
-
-def infer_complexity_bucket(target_json: dict[str, Any]) -> str:
-    score = 0
-    if target_json["constraints"]["environment"] is not None:
-        score += 1
-    if target_json["constraints"]["blocking"] is not None:
-        score += 1
-    if target_json["reporter"]["name"] is not None:
-        score += 1
-    if target_json["reporter"]["team"] is not None:
-        score += 1
-    score += min(len(target_json["affected_systems"]), 2)
-    score += min(len(target_json["actions_requested"]), 2)
-
-    if score >= 5:
-        return "complex"
-    if score >= 3:
-        return "medium"
-    return "simple"

@@ -94,9 +94,11 @@ Assign complexity from mapped content:
 
 ### `simple`
 
+- no explicit team
+- no environment or blocking signal
 - one affected system at most
-- one action
-- few nullable nested values used
+- one action at most
+- shorter summary
 
 ### `medium`
 

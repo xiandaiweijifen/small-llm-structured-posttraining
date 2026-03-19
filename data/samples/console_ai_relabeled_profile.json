@@ -1,0 +1,49 @@
+{
+  "num_records": 500,
+  "complexity_counts": {
+    "simple": 448,
+    "medium": 51,
+    "complex": 1
+  },
+  "source_type_counts": {
+    "email": 500
+  },
+  "raw_source_counts": {
+    "console_ai_it_helpdesk_tickets": 500
+  },
+  "category_counts": {
+    "bug": 134,
+    "task": 259,
+    "question": 84,
+    "feature": 19,
+    "incident": 4
+  },
+  "priority_counts": {
+    "medium": 293,
+    "high": 199,
+    "low": 4,
+    "urgent": 4
+  },
+  "environment_counts": {
+    "None": 479,
+    "prod": 21
+  },
+  "blocking_counts": {
+    "None": 492,
+    "True": 8
+  },
+  "missing_reporter_name_rate": 0.0,
+  "missing_reporter_team_rate": 1.0,
+  "empty_affected_systems_rate": 0.0,
+  "empty_actions_requested_rate": 0.0,
+  "summary_length": {
+    "min": 13.0,
+    "max": 155.0,
+    "mean": 48.07
+  },
+  "input_length": {
+    "min": 86.0,
+    "max": 3567.0,
+    "mean": 475.418
+  }
+}
