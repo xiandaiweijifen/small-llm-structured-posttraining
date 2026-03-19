@@ -19,6 +19,7 @@ Use:
 - model: `Qwen/Qwen2.5-3B-Instruct`
 - method: `QLoRA`
 - data: phase-1 SFT train and val
+- H200 recommendation: start with `per_device_train_batch_size=8` and `gradient_accumulation_steps=4`
 
 ## Jupyter Checklist
 
@@ -26,7 +27,8 @@ Use:
 2. install required training libraries
 3. verify GPU type and memory
 4. set `base_model` in the train config
-5. run the first QLoRA baseline
+5. on H200-class GPUs, use the larger configured batch size first
+6. run the first QLoRA baseline
 6. save predictions on the phase-1 test set
 7. bring predictions back into the local eval pipeline if needed
 

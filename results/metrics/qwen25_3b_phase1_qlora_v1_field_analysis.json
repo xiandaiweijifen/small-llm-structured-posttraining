@@ -1,0 +1,450 @@
+{
+  "num_samples": 254,
+  "num_fields": 14,
+  "per_field": {
+    "actions_requested[0].action": {
+      "total": 254,
+      "match_count": 169,
+      "mismatch_count": 85,
+      "match_rate": 0.6653543307086615,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "Investigate issue: Password Reset Assistance Needed",
+          "pred": "Handle request: Video Conferencing System Password Reset Request"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "Investigate issue: Cloud Identity Verification Issue",
+          "pred": "Investigate and mitigate incident: Identity Verification System Error"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000343-0f4son7ut",
+          "gold": "Handle request: Remote Desktop Access Setup",
+          "pred": "Handle request: RemoteDesktop Access Setup"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000436-tywvbsemu",
+          "gold": "Handle request: Antivirus Software Configuration",
+          "pred": "Answer and clarify: Antivirus Software Configuration"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000403-iqx5g8jyb",
+          "gold": "Handle request: Instructions for Creating a New Google Calendar for Cross-Departmental Meetings",
+          "pred": "Handle request: Google Calendar Setup Request"
+        }
+      ]
+    },
+    "actions_requested[0].deadline": {
+      "total": 254,
+      "match_count": 254,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "actions_requested[0].owner": {
+      "total": 254,
+      "match_count": 254,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "affected_systems[0].component": {
+      "total": 254,
+      "match_count": 205,
+      "mismatch_count": 49,
+      "match_rate": 0.8070866141732284,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "software",
+          "pred": "configuration"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "software",
+          "pred": "error"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "network",
+          "pred": "software"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000105-bbdl37pcd",
+          "gold": "account",
+          "pred": "software"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000308-r8xk85wma",
+          "gold": "training",
+          "pred": "account"
+        }
+      ]
+    },
+    "affected_systems[0].name": {
+      "total": 254,
+      "match_count": 221,
+      "mismatch_count": 33,
+      "match_rate": 0.8700787401574803,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "Software",
+          "pred": "Video Conferencing System"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "Software",
+          "pred": "Identity Verification System"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "Network",
+          "pred": "Software"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000105-bbdl37pcd",
+          "gold": "Account",
+          "pred": "Software"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000308-r8xk85wma",
+          "gold": "Training",
+          "pred": "Account"
+        }
+      ]
+    },
+    "category": {
+      "total": 254,
+      "match_count": 212,
+      "mismatch_count": 42,
+      "match_rate": 0.8346456692913385,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "bug",
+          "pred": "task"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "bug",
+          "pred": "incident"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000436-tywvbsemu",
+          "gold": "task",
+          "pred": "question"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000057-6qxzkta3q",
+          "gold": "task",
+          "pred": "question"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000398-7ooucrvfi",
+          "gold": "question",
+          "pred": "task"
+        }
+      ]
+    },
+    "constraints.blocking": {
+      "total": 254,
+      "match_count": 243,
+      "mismatch_count": 11,
+      "match_rate": 0.9566929133858267,
+      "examples": [
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-010513-INC0027136",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-012684-INC001234",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-016094-INC006119",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-025435-INC0040975",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-011722-INC0047522",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "constraints.environment": {
+      "total": 254,
+      "match_count": 244,
+      "mismatch_count": 10,
+      "match_rate": 0.9606299212598425,
+      "examples": [
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-000597-TASK0045912",
+          "gold": null,
+          "pred": "dev"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-014732-TASK0048476",
+          "gold": null,
+          "pred": "dev"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-015846-TASK0041423",
+          "gold": null,
+          "pred": "dev"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-003686-TASK0037754",
+          "gold": null,
+          "pred": "dev"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-008910-TASK0045824",
+          "gold": "prod",
+          "pred": "dev"
+        }
+      ]
+    },
+    "priority": {
+      "total": 254,
+      "match_count": 217,
+      "mismatch_count": 37,
+      "match_rate": 0.8543307086614174,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000495-9f0mw3p93",
+          "gold": "medium",
+          "pred": "high"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000424-2evw3m55s",
+          "gold": "high",
+          "pred": "medium"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000057-6qxzkta3q",
+          "gold": "urgent",
+          "pred": "high"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000089-m3x9hdi2v",
+          "gold": "high",
+          "pred": "medium"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-024788-INC004330",
+          "gold": "urgent",
+          "pred": "high"
+        }
+      ]
+    },
+    "reporter.name": {
+      "total": 254,
+      "match_count": 38,
+      "mismatch_count": 216,
+      "match_rate": 0.14960629921259844,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "Jane Doe",
+          "pred": "Emily Johnson"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "Sean Kovacs",
+          "pred": "Megan Moore"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "Alex Jones",
+          "pred": "Alex"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000343-0f4son7ut",
+          "gold": "User",
+          "pred": "Jane Doe"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000052-kqzbzny9x",
+          "gold": "User",
+          "pred": "Jane Doe"
+        }
+      ]
+    },
+    "reporter.team": {
+      "total": 254,
+      "match_count": 174,
+      "mismatch_count": 80,
+      "match_rate": 0.6850393700787402,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": null,
+          "pred": "USER ACCESS MANAGEMENT"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000403-iqx5g8jyb",
+          "gold": null,
+          "pred": "CALENDAR SUPPORT"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000388-koode322a",
+          "gold": null,
+          "pred": "ASSET MANAGEMENT"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000036-0k8ro1kdx",
+          "gold": null,
+          "pred": "DESKTOP SUPPORT"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000089-m3x9hdi2v",
+          "gold": null,
+          "pred": "APPLICATION SUPPORT"
+        }
+      ]
+    },
+    "requires_followup": {
+      "total": 254,
+      "match_count": 254,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "summary": {
+      "total": 254,
+      "match_count": 254,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "ticket_id": {
+      "total": 254,
+      "match_count": 2,
+      "mismatch_count": 252,
+      "match_rate": 0.007874015748031496,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "sai67ttf1",
+          "pred": "TASK0045678"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": "xka1oq83l",
+          "pred": "40652x73"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "hnpv99ci1",
+          "pred": "INC0046283"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "0z2ch52ua",
+          "pred": "g602457"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000343-0f4son7ut",
+          "gold": "0f4son7ut",
+          "pred": "g620457"
+        }
+      ]
+    }
+  },
+  "worst_fields": [
+    {
+      "field_name": "ticket_id",
+      "match_rate": 0.007874015748031496,
+      "mismatch_count": 252,
+      "total": 254
+    },
+    {
+      "field_name": "reporter.name",
+      "match_rate": 0.14960629921259844,
+      "mismatch_count": 216,
+      "total": 254
+    },
+    {
+      "field_name": "actions_requested[0].action",
+      "match_rate": 0.6653543307086615,
+      "mismatch_count": 85,
+      "total": 254
+    },
+    {
+      "field_name": "reporter.team",
+      "match_rate": 0.6850393700787402,
+      "mismatch_count": 80,
+      "total": 254
+    },
+    {
+      "field_name": "affected_systems[0].component",
+      "match_rate": 0.8070866141732284,
+      "mismatch_count": 49,
+      "total": 254
+    },
+    {
+      "field_name": "category",
+      "match_rate": 0.8346456692913385,
+      "mismatch_count": 42,
+      "total": 254
+    },
+    {
+      "field_name": "priority",
+      "match_rate": 0.8543307086614174,
+      "mismatch_count": 37,
+      "total": 254
+    },
+    {
+      "field_name": "affected_systems[0].name",
+      "match_rate": 0.8700787401574803,
+      "mismatch_count": 33,
+      "total": 254
+    },
+    {
+      "field_name": "constraints.blocking",
+      "match_rate": 0.9566929133858267,
+      "mismatch_count": 11,
+      "total": 254
+    },
+    {
+      "field_name": "constraints.environment",
+      "match_rate": 0.9606299212598425,
+      "mismatch_count": 10,
+      "total": 254
+    },
+    {
+      "field_name": "actions_requested[0].deadline",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 254
+    },
+    {
+      "field_name": "actions_requested[0].owner",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 254
+    },
+    {
+      "field_name": "requires_followup",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 254
+    },
+    {
+      "field_name": "summary",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 254
+    }
+  ]
+}
