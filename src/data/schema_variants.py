@@ -8,6 +8,7 @@ from typing import Any
 
 def convert_reduced_record_to_variant(record: dict[str, Any]) -> dict[str, Any]:
     updated = deepcopy(record)
+    updated["sample_id"] = f"{record['sample_id']}::unseen"
     updated["schema_name"] = "ticket_schema_v1_reduced_1_1"
     updated["target_json"]["customer_impact"] = None
     metadata = dict(updated.get("metadata", {}))
@@ -20,6 +21,7 @@ def convert_reduced_record_to_variant(record: dict[str, Any]) -> dict[str, Any]:
 
 def mark_record_as_seen(record: dict[str, Any]) -> dict[str, Any]:
     updated = deepcopy(record)
+    updated["sample_id"] = f"{record['sample_id']}::seen"
     metadata = dict(updated.get("metadata", {}))
     metadata["schema_seen_status"] = "seen"
     updated["metadata"] = metadata
