@@ -1,0 +1,502 @@
+{
+  "num_samples": 247,
+  "num_fields": 14,
+  "per_field": {
+    "actions_requested[0].action": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "Investigate issue: Intermittent API Authentication Failures",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "Review and plan request: Fwd: Assistance Required for Configuring Multi-Factor Authentication",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "Investigate issue: Remote Desktop File Transfer Issue",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "Handle request: Request: Password Reset Instructions Needed - cloud.user@acme.co",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "Investigate issue: Network Monitoring Alert Failures: Investigation Required",
+          "pred": null
+        }
+      ]
+    },
+    "actions_requested[0].deadline": {
+      "total": 247,
+      "match_count": 247,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "actions_requested[0].owner": {
+      "total": 247,
+      "match_count": 247,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "affected_systems[0].component": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "software",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "security",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "remotework",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "account",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "network",
+          "pred": null
+        }
+      ]
+    },
+    "affected_systems[0].name": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "Software",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "Security",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "RemoteWork",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "Account",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "Network",
+          "pred": null
+        }
+      ]
+    },
+    "category": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "bug",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "feature",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "bug",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "task",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "bug",
+          "pred": null
+        }
+      ]
+    },
+    "constraints.blocking": {
+      "total": 247,
+      "match_count": 240,
+      "mismatch_count": 7,
+      "match_rate": 0.97165991902834,
+      "examples": [
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-017765-INC0093682",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-021406-INC007929",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-006309-INC003355",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-009436-INC0092725",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-014922-INC0045975",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "constraints.environment": {
+      "total": 247,
+      "match_count": 234,
+      "mismatch_count": 13,
+      "match_rate": 0.9473684210526315,
+      "examples": [
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-020994-INC0065717",
+          "gold": "prod",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-007402-TASK0038072",
+          "gold": "dev",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-011912-TASK0038020",
+          "gold": "dev",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-004942-TASK0046679",
+          "gold": "prod",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-009436-INC0092725",
+          "gold": "prod",
+          "pred": null
+        }
+      ]
+    },
+    "priority": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "high",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "high",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "medium",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "medium",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "high",
+          "pred": null
+        }
+      ]
+    },
+    "reporter.name": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "Alex Johnson",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "Alex Jordan",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "User",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "Cloud User",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "John Doe",
+          "pred": null
+        }
+      ]
+    },
+    "reporter.team": {
+      "total": 247,
+      "match_count": 65,
+      "mismatch_count": 182,
+      "match_rate": 0.2631578947368421,
+      "examples": [
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-021421-TASK0041155",
+          "gold": "SALESFORCE TEAM",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-017957-INC0042081",
+          "gold": "PERFORMANCE MONITORING",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-007831-INC0042663",
+          "gold": "PERFORMANCE MONITORING",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-001758-INC0041307",
+          "gold": "APPLICATION SUPPORT",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-007564-TASK0044934",
+          "gold": "ASSET MANAGEMENT",
+          "pred": null
+        }
+      ]
+    },
+    "requires_followup": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "summary": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "Intermittent API Authentication Failures",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "Fwd: Assistance Required for Configuring Multi-Factor Authentication",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "Remote Desktop File Transfer Issue",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "Request: Password Reset Instructions Needed - cloud.user@acme.co",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "Network Monitoring Alert Failures: Investigation Required",
+          "pred": null
+        }
+      ]
+    },
+    "ticket_id": {
+      "total": 247,
+      "match_count": 0,
+      "mismatch_count": 247,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000356-0tg2use94",
+          "gold": "0tg2use94",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000368-t0p8vf1b4",
+          "gold": "t0p8vf1b4",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000351-2r030ppqb",
+          "gold": "2r030ppqb",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000257-xe20e6koh",
+          "gold": "xe20e6koh",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000167-6bfa2gt6w",
+          "gold": "6bfa2gt6w",
+          "pred": null
+        }
+      ]
+    }
+  },
+  "worst_fields": [
+    {
+      "field_name": "actions_requested[0].action",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "affected_systems[0].component",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "affected_systems[0].name",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "category",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "priority",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "reporter.name",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "requires_followup",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "summary",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "ticket_id",
+      "match_rate": 0.0,
+      "mismatch_count": 247,
+      "total": 247
+    },
+    {
+      "field_name": "reporter.team",
+      "match_rate": 0.2631578947368421,
+      "mismatch_count": 182,
+      "total": 247
+    },
+    {
+      "field_name": "constraints.environment",
+      "match_rate": 0.9473684210526315,
+      "mismatch_count": 13,
+      "total": 247
+    },
+    {
+      "field_name": "constraints.blocking",
+      "match_rate": 0.97165991902834,
+      "mismatch_count": 7,
+      "total": 247
+    },
+    {
+      "field_name": "actions_requested[0].deadline",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 247
+    },
+    {
+      "field_name": "actions_requested[0].owner",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 247
+    }
+  ]
+}

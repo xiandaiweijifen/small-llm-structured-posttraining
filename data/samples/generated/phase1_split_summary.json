@@ -1,25 +1,29 @@
 {
   "train": {
-    "num_samples": 3,
-    "synthetic_samples": 3,
+    "num_samples": 1994,
+    "synthetic_samples": 0,
     "bucket_counts": {
-      "simple": 1,
-      "medium": 1,
-      "complex": 1
+      "simple": 470,
+      "medium": 1392,
+      "complex": 132
     }
   },
   "val": {
-    "num_samples": 0,
+    "num_samples": 248,
     "synthetic_samples": 0,
-    "bucket_counts": {}
+    "bucket_counts": {
+      "simple": 58,
+      "medium": 174,
+      "complex": 16
+    }
   },
   "test": {
-    "num_samples": 3,
-    "synthetic_samples": 3,
+    "num_samples": 252,
+    "synthetic_samples": 0,
     "bucket_counts": {
-      "simple": 1,
-      "medium": 1,
-      "complex": 1
+      "simple": 60,
+      "medium": 175,
+      "complex": 17
     }
   }
 }
