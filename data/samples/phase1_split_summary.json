@@ -1,0 +1,59 @@
+{
+  "train": {
+    "num_samples": 1993,
+    "complexity_counts": {
+      "simple": 469,
+      "medium": 1392,
+      "complex": 132
+    },
+    "raw_source_counts": {
+      "console_ai_it_helpdesk_tickets": 394,
+      "kameronb_it_callcenter_tickets": 1599
+    },
+    "category_counts": {
+      "question": 67,
+      "task": 597,
+      "feature": 419,
+      "bug": 497,
+      "incident": 413
+    }
+  },
+  "val": {
+    "num_samples": 247,
+    "complexity_counts": {
+      "simple": 58,
+      "medium": 173,
+      "complex": 16
+    },
+    "raw_source_counts": {
+      "console_ai_it_helpdesk_tickets": 48,
+      "kameronb_it_callcenter_tickets": 199
+    },
+    "category_counts": {
+      "bug": 73,
+      "feature": 49,
+      "task": 76,
+      "question": 8,
+      "incident": 41
+    }
+  },
+  "test": {
+    "num_samples": 254,
+    "complexity_counts": {
+      "simple": 61,
+      "medium": 176,
+      "complex": 17
+    },
+    "raw_source_counts": {
+      "console_ai_it_helpdesk_tickets": 52,
+      "kameronb_it_callcenter_tickets": 202
+    },
+    "category_counts": {
+      "bug": 64,
+      "question": 6,
+      "task": 84,
+      "feature": 51,
+      "incident": 49
+    }
+  }
+}
