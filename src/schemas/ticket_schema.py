@@ -82,4 +82,67 @@ TICKET_SCHEMA_V1 = {
 TICKET_SCHEMA_V1_1 = deepcopy(TICKET_SCHEMA_V1)
 TICKET_SCHEMA_V1_1["properties"]["customer_impact"] = {"type": ["string", "null"]}
 
+TICKET_SCHEMA_V1_REDUCED = {
+    "type": "object",
+    "properties": {
+        "summary": {"type": "string"},
+        "category": {
+            "type": "string",
+            "enum": ["bug", "feature", "question", "incident", "task"],
+        },
+        "priority": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "urgent"],
+        },
+        "requires_followup": {"type": "boolean"},
+        "affected_systems": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "component": {"type": ["string", "null"]},
+                },
+                "required": ["name", "component"],
+                "additionalProperties": False,
+            },
+        },
+        "actions_requested": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "action": {"type": "string"},
+                    "owner": {"type": ["string", "null"]},
+                    "deadline": {"type": ["string", "null"]},
+                },
+                "required": ["action", "owner", "deadline"],
+                "additionalProperties": False,
+            },
+        },
+        "constraints": {
+            "type": "object",
+            "properties": {
+                "environment": {
+                    "type": ["string", "null"],
+                    "enum": ["prod", "staging", "dev", None],
+                },
+                "blocking": {"type": ["boolean", "null"]},
+            },
+            "required": ["environment", "blocking"],
+            "additionalProperties": False,
+        },
+    },
+    "required": [
+        "summary",
+        "category",
+        "priority",
+        "requires_followup",
+        "affected_systems",
+        "actions_requested",
+        "constraints",
+    ],
+    "additionalProperties": False,
+}
+
 TICKET_SCHEMA = TICKET_SCHEMA_V1

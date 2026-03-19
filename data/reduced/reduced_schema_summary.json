@@ -1,0 +1,17 @@
+{
+  "train": {
+    "input_records": 1993,
+    "output_records": 1993,
+    "output_path": "data\\reduced\\phase1_train_reduced.jsonl"
+  },
+  "val": {
+    "input_records": 247,
+    "output_records": 247,
+    "output_path": "data\\reduced\\phase1_val_reduced.jsonl"
+  },
+  "test": {
+    "input_records": 254,
+    "output_records": 254,
+    "output_path": "data\\reduced\\phase1_test_reduced.jsonl"
+  }
+}

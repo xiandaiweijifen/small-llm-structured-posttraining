@@ -56,6 +56,10 @@ Fallback:
 
 - `configs/train/lora_phase1_smollm2_1p7b.yaml`
 
+Reduced-schema follow-up:
+
+- `configs/train/lora_phase1_qwen3b_reduced.yaml`
+
 ## Output Convention
 
 Recommended experiment names:

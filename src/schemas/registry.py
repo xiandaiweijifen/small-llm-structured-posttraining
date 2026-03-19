@@ -2,11 +2,16 @@
 
 from __future__ import annotations
 
-from src.schemas.ticket_schema import TICKET_SCHEMA_V1, TICKET_SCHEMA_V1_1
+from src.schemas.ticket_schema import (
+    TICKET_SCHEMA_V1,
+    TICKET_SCHEMA_V1_1,
+    TICKET_SCHEMA_V1_REDUCED,
+)
 
 SCHEMA_REGISTRY = {
     "ticket_schema_v1": TICKET_SCHEMA_V1,
     "ticket_schema_v1_1": TICKET_SCHEMA_V1_1,
+    "ticket_schema_v1_reduced": TICKET_SCHEMA_V1_REDUCED,
 }
 
 
