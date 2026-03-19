@@ -8,6 +8,7 @@ Recommended usage order:
 - `03_error_analysis.ipynb`: compare experiment reports and review current findings.
 - `04_prompt_only_baseline.ipynb`: prompt-only baseline inference on the phase-1 test set.
 - `05_phase1_qlora_reduced_training.ipynb`: reduced-schema QLoRA baseline training and test export.
+- `06_schema_generalization_qlora.ipynb`: schema-conditioned reduced-schema QLoRA training and seen/unseen schema generalization export.
 
 Current policy:
 
