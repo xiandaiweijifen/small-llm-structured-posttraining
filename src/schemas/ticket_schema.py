@@ -81,6 +81,7 @@ TICKET_SCHEMA_V1 = {
 
 TICKET_SCHEMA_V1_1 = deepcopy(TICKET_SCHEMA_V1)
 TICKET_SCHEMA_V1_1["properties"]["customer_impact"] = {"type": ["string", "null"]}
+TICKET_SCHEMA_V1_1["required"] = TICKET_SCHEMA_V1["required"] + ["customer_impact"]
 
 TICKET_SCHEMA_V1_REDUCED = {
     "type": "object",
@@ -144,5 +145,9 @@ TICKET_SCHEMA_V1_REDUCED = {
     ],
     "additionalProperties": False,
 }
+
+TICKET_SCHEMA_V1_REDUCED_1_1 = deepcopy(TICKET_SCHEMA_V1_REDUCED)
+TICKET_SCHEMA_V1_REDUCED_1_1["properties"]["customer_impact"] = {"type": ["string", "null"]}
+TICKET_SCHEMA_V1_REDUCED_1_1["required"] = TICKET_SCHEMA_V1_REDUCED["required"] + ["customer_impact"]
 
 TICKET_SCHEMA = TICKET_SCHEMA_V1

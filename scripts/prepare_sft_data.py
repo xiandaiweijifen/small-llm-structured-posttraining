@@ -18,13 +18,21 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Prepare SFT-format data from dataset splits.")
     parser.add_argument("--input", required=True, help="Path to dataset split jsonl.")
     parser.add_argument("--output", required=True, help="Path to output SFT jsonl.")
+    parser.add_argument(
+        "--include-schema-definition",
+        action="store_true",
+        help="Embed the JSON schema definition in the user prompt.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     samples = load_jsonl(args.input)
-    records = convert_to_sft_records(samples)
+    records = convert_to_sft_records(
+        samples,
+        include_schema_definition=args.include_schema_definition,
+    )
     dump_jsonl(args.output, records)
     print(f"SFT data written to {args.output}")
 

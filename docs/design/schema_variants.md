@@ -29,6 +29,16 @@ Differences from `ticket_schema_v1`:
 - keeps task semantics nearly unchanged
 - useful for testing whether model behavior transfers to lightly modified schemas
 
+### `ticket_schema_v1_reduced_1_1`
+
+Light variant for reduced-schema generalization.
+
+Differences from `ticket_schema_v1_reduced`:
+
+- adds optional `customer_impact`
+- keeps the reduced-schema task stable
+- suitable for the first seen/unseen reduced-schema experiment
+
 ## Evaluation Usage
 
 Use grouped reporting by:

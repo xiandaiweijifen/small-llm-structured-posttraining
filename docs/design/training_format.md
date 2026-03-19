@@ -55,12 +55,23 @@ User message:
 
 - mention task name
 - mention schema name
+- include schema definition for schema-generalization runs
 - include input text
 - optionally include a short schema summary
 
 Assistant message:
 
 - gold JSON string
+
+## Recommended Generalization Setting
+
+For seen/unseen schema experiments, prefer:
+
+- prompt includes full JSON schema definition
+- train on the base schema
+- evaluate on both base and lightly modified schema variants
+
+This avoids making generalization depend only on schema names.
 
 ## Output File
 

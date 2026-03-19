@@ -58,12 +58,17 @@ def main() -> None:
                 **sample_eval.__dict__,
                 "schema_name": schema_name,
                 "complexity_bucket": gold_record.get("complexity_bucket", "unknown"),
+                "schema_seen_status": gold_record.get(
+                    "schema_seen_status",
+                    gold_record.get("metadata", {}).get("schema_seen_status", "unknown"),
+                ),
             }
         )
 
     summary = summarize_results_from_dicts(sample_results)
     grouped_by_complexity = summarize_grouped_results(sample_results, "complexity_bucket")
     grouped_by_schema = summarize_grouped_results(sample_results, "schema_name")
+    grouped_by_seen_status = summarize_grouped_results(sample_results, "schema_seen_status")
     report = {
         "gold_path": str(Path(args.gold)),
         "pred_path": str(Path(args.pred)),
@@ -71,6 +76,7 @@ def main() -> None:
         "grouped_summary": {
             "by_complexity_bucket": grouped_by_complexity,
             "by_schema_name": grouped_by_schema,
+            "by_schema_seen_status": grouped_by_seen_status,
         },
         "per_sample": sample_results,
     }

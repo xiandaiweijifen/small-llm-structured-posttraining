@@ -1,0 +1,16 @@
+{
+  "input_path": "data\\reduced\\phase1_test_reduced.jsonl",
+  "seen_output_path": "data\\generalization\\phase1_test_seen_reduced.jsonl",
+  "unseen_output_path": "data\\generalization\\phase1_test_unseen_reduced.jsonl",
+  "combined_output_path": "data\\generalization\\phase1_test_seen_unseen_reduced.jsonl",
+  "counts": {
+    "input_records": 254,
+    "seen_records": 254,
+    "unseen_records": 254,
+    "combined_records": 508
+  },
+  "schemas": {
+    "seen_schema_name": "ticket_schema_v1_reduced",
+    "unseen_schema_name": "ticket_schema_v1_reduced_1_1"
+  }
+}
