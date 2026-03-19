@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import re
 from typing import Any
 
 from src.evaluation.metrics import validate_schema
@@ -16,12 +17,69 @@ def repair_prediction(
         return prediction, False
 
     repaired = deepcopy(prediction)
+    changed = apply_alias_repairs(repaired, schema)
     if not isinstance(schema.get("properties"), dict):
-        return repaired, False
+        return repaired, changed
 
-    changed = apply_object_repairs(repaired, schema)
+    changed = apply_object_repairs(repaired, schema) or changed
     is_valid, _ = validate_schema(repaired, schema)
     return repaired, changed and is_valid
+
+
+def apply_alias_repairs(instance: dict[str, Any], schema: dict[str, Any]) -> bool:
+    changed = False
+
+    summary = first_non_empty(
+        instance.get("summary"),
+        instance.get("subject"),
+        instance.get("title"),
+        instance.get("short_description"),
+        extract_first_sentence(instance.get("description")),
+        extract_first_sentence(instance.get("content")),
+    )
+    if summary is not None and instance.get("summary") != summary:
+        instance["summary"] = summary
+        changed = True
+
+    category = infer_category(instance)
+    if category is not None and instance.get("category") != category:
+        instance["category"] = category
+        changed = True
+
+    priority = infer_priority(instance)
+    if priority is not None and instance.get("priority") != priority:
+        instance["priority"] = priority
+        changed = True
+
+    requires_followup = infer_requires_followup(instance)
+    if requires_followup is not None and instance.get("requires_followup") != requires_followup:
+        instance["requires_followup"] = requires_followup
+        changed = True
+
+    if "reporter" in schema.get("properties", {}):
+        reporter = instance.get("reporter")
+        if not isinstance(reporter, dict):
+            reporter = {}
+        reporter_name = first_non_empty(
+            reporter.get("name"),
+            instance.get("created_by"),
+            instance.get("requester"),
+            instance.get("requester_name"),
+            instance.get("customer"),
+        )
+        reporter_team = first_non_empty(
+            reporter.get("team"),
+            instance.get("department"),
+            instance.get("assignment_group"),
+            instance.get("team"),
+            instance.get("group"),
+        )
+        next_reporter = {"name": reporter_name, "team": reporter_team}
+        if instance.get("reporter") != next_reporter:
+            instance["reporter"] = next_reporter
+            changed = True
+
+    return changed
 
 
 def apply_object_repairs(instance: dict[str, Any], schema: dict[str, Any]) -> bool:
@@ -146,3 +204,170 @@ def build_default_value(schema: dict[str, Any]) -> tuple[Any, bool]:
         return False, True
 
     return None, False
+
+
+def first_non_empty(*values: Any) -> Any:
+    for value in values:
+        if isinstance(value, str):
+            cleaned = value.strip()
+            if cleaned:
+                return cleaned
+        elif value is not None:
+            return value
+    return None
+
+
+def extract_first_sentence(value: Any) -> str | None:
+    if not isinstance(value, str):
+        return None
+    text = re.sub(r"\s+", " ", value).strip()
+    if not text:
+        return None
+    parts = re.split(r"(?<=[.!?])\s+", text, maxsplit=1)
+    return parts[0][:160].strip()
+
+
+def infer_category(instance: dict[str, Any]) -> str | None:
+    explicit = normalize_category(instance.get("category"))
+    if explicit is not None:
+        return explicit
+
+    category_sources = " ".join(
+        str(value)
+        for value in [
+            instance.get("type"),
+            instance.get("status"),
+            instance.get("subject"),
+            instance.get("title"),
+            instance.get("short_description"),
+            instance.get("description"),
+            instance.get("content"),
+        ]
+        if value is not None
+    ).lower()
+
+    if any(token in category_sources for token in ["feature", "enhancement", "add ", "new capability"]):
+        return "feature"
+    if any(token in category_sources for token in ["how to", "instruction", "instructions", "where can i", "can you explain", "question"]):
+        return "question"
+    if any(token in category_sources for token in ["outage", "down", "unavailable", "sev", "critical incident", "incident"]):
+        return "incident"
+    if any(token in category_sources for token in ["error", "bug", "broken", "failure", "failing", "cannot", "can't", "unable", "issue"]):
+        return "bug"
+    if "request" in category_sources or "task" in category_sources:
+        return "task"
+    return "task" if category_sources else None
+
+
+def normalize_category(value: Any) -> str | None:
+    if not isinstance(value, str):
+        return None
+    lowered = value.strip().lower()
+    mapping = {
+        "bug": "bug",
+        "incident": "incident",
+        "feature": "feature",
+        "question": "question",
+        "task": "task",
+        "request": "task",
+        "issue": "bug",
+    }
+    return mapping.get(lowered)
+
+
+def infer_priority(instance: dict[str, Any]) -> str | None:
+    explicit = normalize_priority(instance.get("priority"))
+    if explicit is not None:
+        return explicit
+
+    urgency = normalize_int(instance.get("urgency"))
+    if urgency is not None:
+        return map_numeric_priority(urgency)
+
+    text = " ".join(
+        str(value)
+        for value in [
+            instance.get("subject"),
+            instance.get("title"),
+            instance.get("short_description"),
+            instance.get("description"),
+            instance.get("content"),
+        ]
+        if value is not None
+    ).lower()
+
+    if any(token in text for token in ["urgent", "asap", "immediately", "blocker", "critical"]):
+        return "urgent"
+    if any(token in text for token in ["high priority", "soon", "cannot access", "can't access"]):
+        return "high"
+    if any(token in text for token in ["whenever possible", "low priority", "minor"]):
+        return "low"
+    return "medium" if text else None
+
+
+def normalize_priority(value: Any) -> str | None:
+    if isinstance(value, (int, float)):
+        return map_numeric_priority(int(value))
+    if not isinstance(value, str):
+        return None
+
+    cleaned = value.strip().lower()
+    direct = {
+        "low": "low",
+        "medium": "medium",
+        "med": "medium",
+        "high": "high",
+        "urgent": "urgent",
+        "critical": "urgent",
+        "p1": "urgent",
+        "p2": "high",
+        "p3": "medium",
+        "p4": "low",
+    }
+    if cleaned in direct:
+        return direct[cleaned]
+    if cleaned.isdigit():
+        return map_numeric_priority(int(cleaned))
+    return None
+
+
+def map_numeric_priority(value: int) -> str:
+    if value >= 5:
+        return "urgent"
+    if value == 4:
+        return "high"
+    if value == 3:
+        return "medium"
+    return "low"
+
+
+def normalize_int(value: Any) -> int | None:
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float):
+        return int(value)
+    if isinstance(value, str) and value.strip().isdigit():
+        return int(value.strip())
+    return None
+
+
+def infer_requires_followup(instance: dict[str, Any]) -> bool | None:
+    if isinstance(instance.get("requires_followup"), bool):
+        return instance["requires_followup"]
+
+    text = " ".join(
+        str(value)
+        for value in [
+            instance.get("subject"),
+            instance.get("title"),
+            instance.get("description"),
+            instance.get("content"),
+            instance.get("status"),
+        ]
+        if value is not None
+    ).lower()
+    if not text:
+        return None
+    if any(token in text for token in ["please", "need", "can you", "follow up", "pending", "waiting"]):
+        return True
+    return False

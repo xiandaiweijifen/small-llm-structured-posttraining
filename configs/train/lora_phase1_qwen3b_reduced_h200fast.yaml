@@ -1,0 +1,26 @@
+experiment_name: qwen25_3b_phase1_qlora_reduced_h200fast_v1
+task_name: ticket_structured_output
+
+model:
+  base_model: Qwen/Qwen2.5-3B-Instruct
+  max_seq_length: 2048
+
+training:
+  method: qlora
+  learning_rate: 2e-4
+  num_train_epochs: 3
+  per_device_train_batch_size: 16
+  gradient_accumulation_steps: 2
+  warmup_steps: 50
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+
+data:
+  train_file: data/reduced/phase1_sft_train_reduced.jsonl
+  val_file: data/reduced/phase1_sft_val_reduced.jsonl
+
+output:
+  save_dir: results/checkpoints/qwen25_3b_phase1_qlora_reduced_h200fast_v1

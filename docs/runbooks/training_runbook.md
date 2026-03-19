@@ -60,6 +60,10 @@ Reduced-schema follow-up:
 
 - `configs/train/lora_phase1_qwen3b_reduced.yaml`
 
+H200-fast reduced follow-up:
+
+- `configs/train/lora_phase1_qwen3b_reduced_h200fast.yaml`
+
 ## Output Convention
 
 Recommended experiment names:

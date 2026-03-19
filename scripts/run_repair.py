@@ -13,19 +13,25 @@ if str(PROJECT_ROOT) not in sys.path:
 from src.data.io import dump_jsonl, load_jsonl
 from src.evaluation.metrics import try_parse_prediction_text
 from src.inference.repair import repair_prediction
-from src.schemas.ticket_schema import TICKET_SCHEMA
+from src.schemas.registry import get_schema
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Repair prediction jsonl using schema-aware rules.")
     parser.add_argument("--input", required=True, help="Path to prediction jsonl.")
     parser.add_argument("--output", required=True, help="Path to repaired prediction jsonl.")
+    parser.add_argument(
+        "--schema-name",
+        default="ticket_schema_v1",
+        help="Schema name used for repair.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     predictions = load_jsonl(args.input)
+    schema = get_schema(args.schema_name)
     repaired_records = []
 
     for record in predictions:
@@ -35,7 +41,7 @@ def main() -> None:
         if prediction_json is None and isinstance(prediction_text, str):
             _, prediction_json = try_parse_prediction_text(prediction_text)
 
-        repaired_json, repaired = repair_prediction(prediction_json, TICKET_SCHEMA)
+        repaired_json, repaired = repair_prediction(prediction_json, schema)
         repaired_record = dict(record)
         repaired_record["prediction_json"] = repaired_json
         metadata = dict(record.get("metadata", {}))
