@@ -127,6 +127,40 @@ What to check:
 - whether repair still adds near-zero value after post-training
 - whether curriculum or rank changes the worst fields
 
+### Batch E: Minimal Fine-Tuning Ablation
+
+Purpose:
+
+- add one compact, question-driven fine-tuning study without turning the project into a broad parameter sweep
+- test whether additional training epochs mainly help the hardest semantic fields or only add redundant fitting
+
+Notebook:
+
+- `notebooks/07_stage2_experiment_runner.ipynb`
+
+Presets to run:
+
+- `epoch2_rank16_full`
+- `epoch3_rank16_full`
+- `epoch5_rank16_full`
+
+Why this setup:
+
+- fixes LoRA capacity at rank 16
+- fixes learning rate and batch settings
+- isolates the effect of training duration
+
+Expected outputs:
+
+- one prediction file per epoch setting
+- one report file per epoch setting
+- one field-analysis file per epoch setting
+- repaired counterparts
+
+Success criterion:
+
+- determine whether longer training mostly improves `action`, `component`, `category`, and `priority`, or whether gains saturate after the current default
+
 ## What Not To Do Yet
 
 Do not add large new branches before Stage 2 review is complete.
