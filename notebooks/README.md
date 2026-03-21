@@ -16,6 +16,7 @@ Recommended usage order:
 - `11_end_to_end_optimization_suite.ipynb`: batch-run broader end-to-end optimization experiments, including hard-sample mining and staged-checkpoint continuation presets.
 - `12_targeted_end_to_end_suite.ipynb`: batch-run narrower targeted continuation experiments focused on `action`, multi-error, and related semantic subsets.
 - `13_targeted_end_to_end_refinement_suite.ipynb`: batch-run lighter refinement experiments around the most promising `action_or_component` continuation direction.
+- `14_action_canonicalization_suite.ipynb`: batch-run action-canonicalization target-design experiments with single-stage and staged training variants.
 
 Current policy:
 
@@ -28,4 +29,5 @@ Current policy:
 - keep broader end-to-end optimization batch execution in `11_end_to_end_optimization_suite.ipynb`
 - keep narrower targeted continuation batch execution in `12_targeted_end_to_end_suite.ipynb`
 - keep lighter targeted refinement batch execution in `13_targeted_end_to_end_refinement_suite.ipynb`
+- keep action-canonicalization target-design experiments in `14_action_canonicalization_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
