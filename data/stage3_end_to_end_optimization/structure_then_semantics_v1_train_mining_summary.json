@@ -1,0 +1,10 @@
+{
+  "num_train_records": 1993,
+  "num_hard_records": 561,
+  "hard_fraction": 0.2814851981936779,
+  "hard_bucket_counts": {
+    "complex": 43,
+    "medium": 294,
+    "simple": 224
+  }
+}
