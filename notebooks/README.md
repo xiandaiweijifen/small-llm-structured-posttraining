@@ -13,6 +13,7 @@ Recommended usage order:
 - `08_stage2_results_review.ipynb`: compare Stage 1 and Stage 2 reports after syncing new outputs back into the repo.
 - `09_constrained_decoding_eval.ipynb`: evaluate a trained reduced-schema checkpoint with schema-constrained decoding and export reports in the standard format.
 - `10_long_run_ablation_suite.ipynb`: batch-run longer training-time follow-up experiments, including learning-rate ablations and structure-then-semantics two-stage training.
+- `11_end_to_end_optimization_suite.ipynb`: batch-run broader end-to-end optimization experiments, including hard-sample mining and staged-checkpoint continuation presets.
 
 Current policy:
 
@@ -22,4 +23,5 @@ Current policy:
 - keep Stage 2 comparison and consolidation in `08_stage2_results_review.ipynb`
 - keep decode-side constrained evaluation in `09_constrained_decoding_eval.ipynb`
 - keep long-run learning-rate and two-stage training batch execution in `10_long_run_ablation_suite.ipynb`
+- keep broader end-to-end optimization batch execution in `11_end_to_end_optimization_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
