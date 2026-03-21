@@ -10,9 +10,17 @@ Target the project toward a statement like:
 
 Systematically studied small-model capability boundaries on complex schema-based structured output, and analyzed which failures can be resolved by post-training versus decoding-time constraint and repair mechanisms.
 
+Current strongest project-level statement:
+
+Built a small-model structured-output post-training framework for complex text-to-JSON tasks, and showed that target design, data scale, LoRA capacity, and curriculum training all affect semantic accuracy differently, while repair mainly helps prompt-only structural failures.
+
 ## Core Research Question
 
 For complex schema structured output tasks, what are the dominant failure modes of small models, and which of them can be mitigated by SFT / LoRA / data strategy optimization versus decoding-time constraint or repair?
+
+After Stage 2, the clearest refined question is:
+
+Once target design removes noisy fields and structure is mostly solved, which lever matters most for semantic correctness: more data, more LoRA capacity, or a better training curriculum?
 
 ## Non-Goals
 
@@ -58,11 +66,14 @@ For complex schema structured output tasks, what are the dominant failure modes 
 - instruction data formatting
 - SFT / LoRA setup
 - training configuration choices
+- LoRA rank ablations
+- curriculum versus one-shot training
 
 ### Data
 
 - schema-aware sample generation
-- high-quality versus synthetic data comparison
+- reduced-schema target design
+- data scale and coverage comparison
 - complexity-aware sample bucketing
 
 ### Analysis
@@ -70,9 +81,11 @@ For complex schema structured output tasks, what are the dominant failure modes 
 - structure versus semantics error split
 - simple versus complex schema buckets
 - seen versus unseen schema generalization
+- repair delta after post-training
 
 ### Engineering
 
 - modular dataset / schema / eval code
 - config-driven experiments
 - scripts reusable in Jupyter and CLI
+- exported markdown result summaries for notebook runs

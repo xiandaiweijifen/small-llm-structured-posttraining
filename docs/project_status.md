@@ -11,11 +11,12 @@ Current status:
 - repair baseline has been implemented and evaluated
 - reduced-schema ablation has been validated
 - schema-generalization experiment has been run and evaluated
+- Stage 2 data-regime, LoRA-rank, and curriculum ablations have been run and reviewed
 
 The project is currently in:
 
-- **phase-1 result consolidation**
-- **research-story consolidation**
+- **final result consolidation**
+- **research-story finalization**
 
 ## Development History
 
@@ -109,6 +110,31 @@ Key outputs:
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`
 
+### 7. Stage 2 Post-Training Ablations
+
+Completed:
+
+- ran a small-data reduced-schema training regime on 600 training samples
+- ran LoRA rank ablations at 8, 16, and 32
+- implemented and ran curriculum training from simple/medium buckets into full reduced-schema continuation
+- exported a consolidated Stage 2 review summary
+
+Key outputs:
+
+- `results/metrics/qwen25_3b_stage2_data_small_600_test_report.json`
+- `results/metrics/qwen25_3b_stage2_rank8_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_rank32_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_curriculum_sm_then_full_test_report.json`
+- `docs/results/stage2_results_review.md`
+
+Main conclusions:
+
+- small reduced-schema datasets are enough to preserve structure, but not enough to learn the hardest semantic fields
+- rank 8 underfits, rank 16 is competitive, and rank 32 gives a modest additional gain
+- curriculum training is the best run in the project so far
+- repair still adds no measurable value once post-training has already stabilized structure
+
 ## Current Experimental Findings
 
 ### Prompt-only
@@ -151,29 +177,50 @@ Main conclusion:
 - schema-conditioned post-training generalizes reasonably well to unseen schema variants
 - remaining failures are concentrated in semantic fields such as `action`, `component`, `category`, and `priority`
 
+### Stage 2 Reduced-Schema QLoRA, 600 Samples
+
+- valid JSON and schema compliance stay perfect
+- semantic performance drops sharply
+- confirms that data scale and coverage are critical for post-training quality
+
+### Stage 2 Reduced-Schema QLoRA Rank Ablation
+
+- rank 8 is clearly weaker
+- rank 16 recovers the earlier reduced baseline
+- rank 32 becomes the strongest non-curriculum Stage 2 run
+
+### Stage 2 Reduced-Schema Curriculum Training
+
+- overall field exact match: `0.9037`
+- overall end-to-end exact match: `0.5315`
+
+Main conclusion:
+
+- curriculum training produces the strongest result in the repository
+- the gain is concentrated in semantic fields rather than structural repair
+
 ## What Is Still Missing
 
-To reach the originally desired "more complete research project" level, the project still needs:
+To reach the originally desired "more complete research project" level, the project still mainly needs:
 
 - optionally, a decoding-side constrained generation baseline beyond repair
-- final result tables and a concise project summary for resume/interview use
-- one final pass to unify the project narrative around training, repair, target design, and schema generalization
+- final README / summary cleanup for resume and interview use
 
 ## Current Next Step
 
 Immediate next step:
 
-- consolidate final result tables and write one concise project-level findings summary
+- finalize top-level project narrative and README around Stage 2 findings
 
 Expected outcome:
 
-- one stable summary of prompt-only, repair, full-schema QLoRA, reduced-schema QLoRA, and seen/unseen schema generalization
-- one clear statement of what post-training solves, what repair solves, and what schema shift still breaks
+- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, curriculum training, and seen/unseen schema generalization
+- one clear statement of what post-training solves, what repair solves, and what still fails semantically
 
 ## Practical Rule
 
 Current development priority:
 
-- prioritize experiments that deepen the research story
-- do not spend major effort on broad hyperparameter tuning yet
+- prioritize final narrative quality over adding broad new experiment branches
+- do not spend major effort on broad hyperparameter tuning unless it directly supports a stronger final conclusion
 - keep reusable logic in `src/` and `scripts/`, not notebooks
