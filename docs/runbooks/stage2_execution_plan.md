@@ -143,6 +143,8 @@ Presets to run:
 - `epoch2_rank16_full`
 - `epoch3_rank16_full`
 - `epoch5_rank16_full`
+- `epoch7_rank16_full`
+- `epoch9_rank16_full`
 
 Why this setup:
 
@@ -160,6 +162,12 @@ Expected outputs:
 Success criterion:
 
 - determine whether longer training mostly improves `action`, `component`, `category`, and `priority`, or whether gains saturate after the current default
+
+Current interpretation after the first three points:
+
+- `2 -> 3` epochs clearly improves semantic learning
+- `3 -> 5` epochs still gives strong gains and currently becomes the best run in the repo
+- the next question is whether `5 -> 7 -> 9` keeps improving, starts saturating, or begins to overfit
 
 ## What Not To Do Yet
 
