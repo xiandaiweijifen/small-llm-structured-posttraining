@@ -31,6 +31,10 @@ This project studies a focused question:
 | Stage 2 Reduced QLoRA, Rank 16, LR 2e-4, Epoch 5 | 1.0000 | 1.0000 | 0.9141 | 0.5709 | Best learning-rate balance among the tested single-stage runs |
 | Stage 2 Reduced QLoRA, Rank 16, LR 4e-4, Epoch 5 | 1.0000 | 1.0000 | 0.9173 | 0.5591 | Slightly higher field accuracy, but worse end-to-end stability than 2e-4 |
 | Stage 2 Reduced QLoRA, Structure Then Semantics | 1.0000 | 1.0000 | 0.9245 | 0.5787 | Best overall run; staged training improves the hardest semantic fields further |
+| Stage 3 Hard-Only Continuation, x4, Epoch 1, LR 5e-5 | 1.0000 | 1.0000 | 0.8726 | 0.3307 | Hard-only continuation badly hurts overall quality |
+| Stage 3 Full + Hard Mix, x2, Epoch 2, LR 1e-4 | 1.0000 | 1.0000 | 0.9155 | 0.5433 | Best hard-continuation result, but still below the strongest staged baseline |
+| Stage 3 Full + Hard Mix, x3, Epoch 2, LR 1e-4 | 1.0000 | 1.0000 | 0.9023 | 0.5039 | Heavier hard oversampling degrades both field and end-to-end accuracy |
+| Stage 3 Full + Hard Mix, x2, Epoch 2, LR 5e-5 | 1.0000 | 1.0000 | 0.9109 | 0.5354 | Lower learning rate does not recover the strongest staged baseline |
 | Schema-Conditioned Reduced QLoRA Generalization | 0.9980 | 0.9980 | 0.8764 | 0.4646 | Structure transfers well; semantics drop under schema shift |
 
 ## Stage 2 Takeaways
@@ -42,6 +46,7 @@ The Stage 2 and long-run ablations clarify where the strongest gains come from:
 - epoch duration matters up to about epoch 5; after that, field gains are marginal and end-to-end exact match plateaus
 - learning rate matters: `1e-4` is too conservative, `2e-4` is the best balance, and `4e-4` trades a bit of end-to-end stability for higher average field accuracy
 - staged structure-then-semantics training becomes the best run overall
+- hard-sample continuation does not beat the strongest staged baseline; direct hard-only continuation and heavy oversampling both degrade performance
 - repair still adds essentially no value once post-training has stabilized structure
 
 ## Generalization Breakdown
@@ -79,6 +84,11 @@ The strongest long-run staged training provides the strongest improvement on the
 
 - `actions_requested[0].action`: `0.7323` in the structure-then-semantics run vs `0.6457` in the H200-fast reduced baseline
 
+Stage 3 hard mining also shows that the remaining semantic bottleneck is concentrated in a real subset of difficult samples:
+
+- `561 / 1993` training samples still contain at least one error among `action`, `component`, `category`, and `priority`
+- however, broad hard-subset continuation does not convert this finding into a stronger model under the current recipe
+
 ## Project-Level Conclusions
 
 The experiments support a clear division of labor:
@@ -89,6 +99,7 @@ The experiments support a clear division of labor:
 - target design matters: noisy identity fields can dominate failure modes and hide the model's real extraction ability
 - after target cleanup, training strategy matters more than repair; structure-first then semantics-focused training gives the strongest overall result
 - LoRA capacity, epoch duration, and learning rate all help, but they are secondary levers compared with target design plus stronger staged training
+- hard-example continuation is not automatically beneficial; if applied too broadly, it causes distribution drift and hurts end-to-end exact match
 - once structure is solved, the remaining bottleneck is semantic accuracy
 - under mild schema shift, structure generalizes better than field semantics
 
@@ -118,5 +129,9 @@ The most defensible summary of the project is:
 - `results/metrics/qwen25_3b_stage2_lr2e4_epoch5_rank16_full_test_report.json`
 - `results/metrics/qwen25_3b_stage2_lr4e4_epoch5_rank16_full_test_report.json`
 - `results/metrics/qwen25_3b_stage2_structure_then_semantics_v1_test_report.json`
+- `results/metrics/qwen25_3b_stage3_sts_v2_hard_only_x4_epoch1_lr5e5_test_report.json`
+- `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x2_epoch2_lr1e4_test_report.json`
+- `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x3_epoch2_lr1e4_test_report.json`
+- `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x2_epoch2_lr5e5_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`

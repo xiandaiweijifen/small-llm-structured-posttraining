@@ -317,6 +317,69 @@ Main improved semantic fields:
 - `category`: `0.8780`
 - `priority`: `0.8583`
 
+## Stage 3 Hard-Sample Continuation
+
+### Hard Mining Summary
+
+- training records mined: `1993`
+- hard records identified: `561`
+- hard fraction: `0.2815`
+
+Interpretation:
+
+- the remaining bottleneck really is concentrated in a substantial hard semantic subset
+- the strongest staged model still misses key fields on roughly 28 percent of the training set
+- this justifies testing targeted continuation, but does not guarantee that naive hard-subset continuation will help
+
+### Hard-Only Continuation
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.8726`
+- end-to-end exact match: `0.3307`
+
+Interpretation:
+
+- hard-only continuation badly harms overall quality
+- removing the full-data distribution is clearly too aggressive
+
+### Full Plus Hard Mix, x2, Epoch 2, LR 1e-4
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9155`
+- end-to-end exact match: `0.5433`
+
+Interpretation:
+
+- this is the best Stage 3 continuation result
+- it remains below the strongest staged baseline
+- lightly mixing hard samples is safer than hard-only continuation, but it still does not improve the final best result
+
+### Full Plus Hard Mix, x3, Epoch 2, LR 1e-4
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9023`
+- end-to-end exact match: `0.5039`
+
+Interpretation:
+
+- heavier hard oversampling clearly degrades quality
+- pushing the hard subset too hard creates distribution drift and hurts exact full-record correctness
+
+### Full Plus Hard Mix, x2, Epoch 2, LR 5e-5
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9109`
+- end-to-end exact match: `0.5354`
+
+Interpretation:
+
+- lowering the learning rate does not recover the best staged baseline
+- the main issue here is not just optimization step size; it is the continuation data recipe itself
+
 ## Current Project-Level Conclusion
 
 The combined Stage 1 and Stage 2 experiments support a clear division of labor:
@@ -327,5 +390,6 @@ The combined Stage 1 and Stage 2 experiments support a clear division of labor:
 - noisy target fields can dominate failure modes and hide real extraction ability
 - training strategy matters after target design is cleaned up: staged structure-then-semantics training now gives the strongest result
 - LoRA capacity, epoch duration, and learning rate all matter, but their gains are smaller than the gains from target design plus stronger staged training
+- hard-example continuation confirms where the remaining difficult cases are, but the current broad continuation recipe does not improve the strongest staged baseline
 - after structure is solved, the remaining problem is semantic accuracy rather than formatting
 - mild schema shift mostly hurts semantic fields, not structural compliance

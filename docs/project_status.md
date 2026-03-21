@@ -121,8 +121,10 @@ Completed:
 - ran rank-16 epoch ablations through epoch 9
 - ran rank-16 learning-rate ablations at epoch 5
 - implemented and ran structure-first then semantics-focused staged training
+- ran Stage 3 hard-sample mining and continuation experiments on top of the strongest staged-training checkpoint
 - exported a consolidated Stage 2 review summary
 - exported a consolidated long-run batch summary
+- exported a Stage 3 end-to-end optimization batch summary
 
 Key outputs:
 
@@ -136,6 +138,8 @@ Key outputs:
 - `results/metrics/qwen25_3b_stage2_structure_then_semantics_v1_test_report.json`
 - `docs/results/stage2_results_review.md`
 - `docs/results/long_run_ablation_batch_summary.md`
+- `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x2_epoch2_lr1e4_test_report.json`
+- `docs/results/end_to_end_optimization_batch_summary.md`
 
 Main conclusions:
 
@@ -144,6 +148,7 @@ Main conclusions:
 - epoch helps strongly up to about epoch 5, then mostly saturates
 - `2e-4` is the best learning-rate balance among the tested single-stage runs
 - structure-then-semantics staged training is the best run in the project so far
+- hard-sample continuation identifies a real semantic hard subset, but the current continuation recipes do not beat the strongest staged baseline
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
@@ -234,12 +239,26 @@ Main conclusion:
 - staged training now produces the strongest result in the repository
 - explicitly separating structure-focused and semantics-focused phases improves the hardest semantic fields further
 
+### Stage 3 Hard-Sample Continuation
+
+- hard mining finds `561 / 1993` train samples with errors on the key semantic fields
+- best continuation run: `0.9155 / 0.5433`
+- strongest baseline remains `0.9245 / 0.5787`
+
+Main conclusion:
+
+- hard-sample mining confirms that the remaining bottleneck is concentrated in a real subset of difficult semantic examples
+- however, direct hard-only continuation and heavy hard oversampling both hurt overall quality
+- even the best mixed continuation remains below the strongest staged-training baseline
+- the current hard-continuation recipe is therefore a useful negative result, not a new best model
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
 
 - final README / summary cleanup for resume and interview use
 - optionally, a cleaner constrained-decoding baseline if a better schema-compatible tool is used
+- optionally, a more targeted hard-example strategy only if it is narrower than the current broad hard-subset continuation
 
 ## Current Next Step
 
@@ -251,6 +270,7 @@ Immediate next step:
 Expected outcome:
 
 - one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, and seen/unseen schema generalization
+- one clear statement that the current hard-example continuation branch did not beat the strongest staged baseline
 - one clear statement of what post-training solves, what repair solves, and what still fails semantically
 
 ## Practical Rule
