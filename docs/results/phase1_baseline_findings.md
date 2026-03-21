@@ -192,7 +192,7 @@ Rank trend summary:
 
 Interpretation:
 
-- curriculum training is the strongest run in the project so far
+- curriculum training was the strongest run at this stage of the project
 - it outperforms the previous H200-fast reduced baseline on end-to-end exact match
 - the gain comes from better semantic learning rather than any structural repair effect
 
@@ -215,6 +215,108 @@ Interpretation:
 - repair again adds no measurable value once post-training has already solved structure
 - the curriculum result strengthens the project's conclusion about training-vs-repair division of labor
 
+## Stage 2 Epoch Ablation
+
+### Rank 16, Epoch 2
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.8590`
+- end-to-end exact match: `0.3858`
+
+Interpretation:
+
+- structure is already solved by epoch 2
+- the remaining weakness is concentrated in semantic fields
+- this run is clearly under-trained relative to later epoch settings
+
+### Rank 16, Epoch 5
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9145`
+- end-to-end exact match: `0.5709`
+
+Interpretation:
+
+- most of the useful epoch-driven gain is already achieved by epoch 5
+- the gain is concentrated in `action`, `component`, `category`, and `priority`
+- longer training is improving semantic extraction rather than structural compliance
+
+### Rank 16, Epoch 9
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9166`
+- end-to-end exact match: `0.5709`
+
+Interpretation:
+
+- training beyond epoch 5 gives only marginal additional field-level gain
+- end-to-end exact match has effectively plateaued by this point
+- epoch is important, but the return after epoch 5 is small
+
+## Stage 2 Learning-Rate Ablation
+
+### Rank 16, Epoch 5, LR 1e-4
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.8901`
+- end-to-end exact match: `0.4882`
+
+Interpretation:
+
+- `1e-4` is too conservative for this setup
+- structure is perfect, but semantic convergence is incomplete
+
+### Rank 16, Epoch 5, LR 2e-4
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9141`
+- end-to-end exact match: `0.5709`
+
+Interpretation:
+
+- `2e-4` is the strongest balance among the tested single-stage learning-rate settings
+- it improves the hardest semantic fields without hurting end-to-end stability
+
+### Rank 16, Epoch 5, LR 4e-4
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9173`
+- end-to-end exact match: `0.5591`
+
+Interpretation:
+
+- `4e-4` slightly improves average field accuracy
+- but it is less stable on full-sample exact match than `2e-4`
+- larger step size helps some fields while hurting exact full-record correctness
+
+## Stage 2 Structure-Then-Semantics Training
+
+### Structure-First, Then Full Semantic Continuation
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9245`
+- end-to-end exact match: `0.5787`
+
+Interpretation:
+
+- this is now the strongest run in the repository
+- explicit staging of structure-focused learning followed by semantic continuation improves the hardest semantic fields further
+- the result supports the hypothesis that structure learning and semantic learning benefit from different training phases
+
+Main improved semantic fields:
+
+- `actions_requested[0].action`: `0.7323`
+- `affected_systems[0].component`: `0.8701`
+- `category`: `0.8780`
+- `priority`: `0.8583`
+
 ## Current Project-Level Conclusion
 
 The combined Stage 1 and Stage 2 experiments support a clear division of labor:
@@ -223,7 +325,7 @@ The combined Stage 1 and Stage 2 experiments support a clear division of labor:
 - repair is strong for structural normalization
 - post-training is the main lever for stable structured generation
 - noisy target fields can dominate failure modes and hide real extraction ability
-- training strategy matters after target design is cleaned up: curriculum improves semantic learning beyond one-shot reduced-schema training
-- LoRA capacity matters, but its gains are smaller than the gains from the best training strategy
+- training strategy matters after target design is cleaned up: staged structure-then-semantics training now gives the strongest result
+- LoRA capacity, epoch duration, and learning rate all matter, but their gains are smaller than the gains from target design plus stronger staged training
 - after structure is solved, the remaining problem is semantic accuracy rather than formatting
 - mild schema shift mostly hurts semantic fields, not structural compliance

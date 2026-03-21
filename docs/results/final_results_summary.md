@@ -24,16 +24,24 @@ This project studies a focused question:
 | Stage 2 Reduced QLoRA, Rank 8 | 0.9961 | 0.9961 | 0.8604 | 0.4173 | Lower LoRA capacity underfits the hardest semantic fields |
 | Stage 2 Reduced QLoRA, Rank 16 | 1.0000 | 1.0000 | 0.8844 | 0.4843 | Rank 16 roughly recovers the original reduced-schema baseline |
 | Stage 2 Reduced QLoRA, Rank 32 | 1.0000 | 1.0000 | 0.8912 | 0.5079 | Higher LoRA capacity gives a small end-to-end gain |
-| Stage 2 Reduced QLoRA, Curriculum | 1.0000 | 1.0000 | 0.9037 | 0.5315 | Best overall run; curriculum improves semantic learning beyond one-shot training |
+| Stage 2 Reduced QLoRA, Curriculum | 1.0000 | 1.0000 | 0.9037 | 0.5315 | Strong training-strategy gain over one-shot reduced-schema training |
+| Stage 2 Reduced QLoRA, Rank 16, Epoch 5 | 1.0000 | 1.0000 | 0.9145 | 0.5709 | Longer training mainly improves the hardest semantic fields |
+| Stage 2 Reduced QLoRA, Rank 16, Epoch 9 | 1.0000 | 1.0000 | 0.9166 | 0.5709 | Longer training past epoch 5 gives only marginal additional gain |
+| Stage 2 Reduced QLoRA, Rank 16, LR 1e-4, Epoch 5 | 1.0000 | 1.0000 | 0.8901 | 0.4882 | Lower learning rate under-trains semantic fields |
+| Stage 2 Reduced QLoRA, Rank 16, LR 2e-4, Epoch 5 | 1.0000 | 1.0000 | 0.9141 | 0.5709 | Best learning-rate balance among the tested single-stage runs |
+| Stage 2 Reduced QLoRA, Rank 16, LR 4e-4, Epoch 5 | 1.0000 | 1.0000 | 0.9173 | 0.5591 | Slightly higher field accuracy, but worse end-to-end stability than 2e-4 |
+| Stage 2 Reduced QLoRA, Structure Then Semantics | 1.0000 | 1.0000 | 0.9245 | 0.5787 | Best overall run; staged training improves the hardest semantic fields further |
 | Schema-Conditioned Reduced QLoRA Generalization | 0.9980 | 0.9980 | 0.8764 | 0.4646 | Structure transfers well; semantics drop under schema shift |
 
 ## Stage 2 Takeaways
 
-The Stage 2 ablations clarify where the strongest gains come from:
+The Stage 2 and long-run ablations clarify where the strongest gains come from:
 
 - small reduced-schema training sets are enough for structure, but not enough for the hardest semantic fields
 - LoRA rank matters: rank 8 is clearly weaker, rank 16 is already competitive, and rank 32 gives a modest additional gain
-- curriculum training matters more than rank tuning in this project; it becomes the best run overall
+- epoch duration matters up to about epoch 5; after that, field gains are marginal and end-to-end exact match plateaus
+- learning rate matters: `1e-4` is too conservative, `2e-4` is the best balance, and `4e-4` trades a bit of end-to-end stability for higher average field accuracy
+- staged structure-then-semantics training becomes the best run overall
 - repair still adds essentially no value once post-training has stabilized structure
 
 ## Generalization Breakdown
@@ -67,9 +75,9 @@ Fields that become highly stable after post-training include:
 - `constraints.environment`
 - `constraints.blocking`
 
-Curriculum provides the strongest improvement on the hardest field:
+The strongest long-run staged training provides the strongest improvement on the hardest field:
 
-- `actions_requested[0].action`: `0.6811` in the curriculum run vs `0.6457` in the H200-fast reduced baseline
+- `actions_requested[0].action`: `0.7323` in the structure-then-semantics run vs `0.6457` in the H200-fast reduced baseline
 
 ## Project-Level Conclusions
 
@@ -79,8 +87,8 @@ The experiments support a clear division of labor:
 - repair is effective for structural normalization and schema cleanup
 - post-training is the main lever for stable structured generation
 - target design matters: noisy identity fields can dominate failure modes and hide the model's real extraction ability
-- after target cleanup, training strategy matters more than repair; curriculum gives the strongest overall result
-- LoRA capacity helps, but it is a secondary lever compared with target design and curriculum-style training
+- after target cleanup, training strategy matters more than repair; structure-first then semantics-focused training gives the strongest overall result
+- LoRA capacity, epoch duration, and learning rate all help, but they are secondary levers compared with target design plus stronger staged training
 - once structure is solved, the remaining bottleneck is semantic accuracy
 - under mild schema shift, structure generalizes better than field semantics
 
@@ -89,7 +97,7 @@ The experiments support a clear division of labor:
 The most defensible summary of the project is:
 
 - built a structured-output post-training and evaluation framework for small models on complex text-to-JSON tasks
-- compared prompt-only, post-training, repair, reduced-schema target design, curriculum training, LoRA-rank ablations, and seen/unseen schema generalization
+- compared prompt-only, post-training, repair, reduced-schema target design, curriculum training, LoRA-rank ablations, epoch and learning-rate ablations, staged structure-then-semantics training, and seen/unseen schema generalization
 - found that repair mainly fixes structure, while semantic correctness depends more on post-training quality, target design, training strategy, and schema-conditioned generalization
 
 ## Key Result Files
@@ -104,5 +112,11 @@ The most defensible summary of the project is:
 - `results/metrics/qwen25_3b_stage2_rank16_full_test_report.json`
 - `results/metrics/qwen25_3b_stage2_rank32_full_test_report.json`
 - `results/metrics/qwen25_3b_stage2_curriculum_sm_then_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_epoch5_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_epoch9_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_lr1e4_epoch5_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_lr2e4_epoch5_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_lr4e4_epoch5_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_structure_then_semantics_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`

@@ -45,6 +45,9 @@ Why this task:
    - small-data reduced-schema training
    - LoRA rank 8 / 16 / 32
    - curriculum simple/medium then full training
+   - epoch-duration ablations at fixed rank 16
+   - learning-rate ablations at fixed rank 16, epoch 5
+   - structure-first then semantics-focused two-stage training
 7. Error decomposition:
    - JSON format errors
    - schema compliance errors
@@ -105,21 +108,23 @@ The repository currently contains:
 - full phase-1 data pipeline
 - prompt-only, repair, and QLoRA baselines
 - reduced-schema ablation and H200-fast rerun
-- Stage 2 data-regime, LoRA-rank, and curriculum ablations
+- Stage 2 data-regime, LoRA-rank, curriculum, epoch, and learning-rate ablations
+- structure-first then semantics-focused two-stage training
 - seen/unseen schema generalization results
 
 Current strongest run:
 
-- Stage 2 reduced-schema curriculum training
-- field exact match: `0.9037`
-- end-to-end exact match: `0.5315`
+- Stage 2 structure-first then semantics-focused two-stage training
+- field exact match: `0.9245`
+- end-to-end exact match: `0.5787`
 
 Current high-level conclusions:
 
 - prompt-only mainly fails on structure
 - repair strongly helps prompt-only structure, but adds essentially no value once post-training already stabilizes output format
 - reduced target design materially improves semantic learning
-- LoRA rank matters, but curriculum training matters more
+- epoch duration and learning rate both matter, but their gains saturate and are smaller than the gains from target design plus stronger training strategy
+- structure-first then semantics-focused training is now the best result in the repo
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:
@@ -128,3 +133,4 @@ Recommended entry points for the current project state:
 - [phase1_baseline_findings.md](d:/project/small-llm-structured-posttraining/docs/results/phase1_baseline_findings.md)
 - [final_results_summary.md](d:/project/small-llm-structured-posttraining/docs/results/final_results_summary.md)
 - [stage2_results_review.md](d:/project/small-llm-structured-posttraining/docs/results/stage2_results_review.md)
+- [long_run_ablation_batch_summary.md](d:/project/small-llm-structured-posttraining/docs/results/long_run_ablation_batch_summary.md)

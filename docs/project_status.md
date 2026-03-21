@@ -11,7 +11,8 @@ Current status:
 - repair baseline has been implemented and evaluated
 - reduced-schema ablation has been validated
 - schema-generalization experiment has been run and evaluated
-- Stage 2 data-regime, LoRA-rank, and curriculum ablations have been run and reviewed
+- Stage 2 data-regime, LoRA-rank, curriculum, epoch, and learning-rate ablations have been run and reviewed
+- structure-then-semantics staged training has been run and reviewed
 
 The project is currently in:
 
@@ -117,7 +118,11 @@ Completed:
 - ran a small-data reduced-schema training regime on 600 training samples
 - ran LoRA rank ablations at 8, 16, and 32
 - implemented and ran curriculum training from simple/medium buckets into full reduced-schema continuation
+- ran rank-16 epoch ablations through epoch 9
+- ran rank-16 learning-rate ablations at epoch 5
+- implemented and ran structure-first then semantics-focused staged training
 - exported a consolidated Stage 2 review summary
+- exported a consolidated long-run batch summary
 
 Key outputs:
 
@@ -126,13 +131,19 @@ Key outputs:
 - `results/metrics/qwen25_3b_stage2_rank16_full_test_report.json`
 - `results/metrics/qwen25_3b_stage2_rank32_full_test_report.json`
 - `results/metrics/qwen25_3b_stage2_curriculum_sm_then_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_epoch9_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_lr2e4_epoch5_rank16_full_test_report.json`
+- `results/metrics/qwen25_3b_stage2_structure_then_semantics_v1_test_report.json`
 - `docs/results/stage2_results_review.md`
+- `docs/results/long_run_ablation_batch_summary.md`
 
 Main conclusions:
 
 - small reduced-schema datasets are enough to preserve structure, but not enough to learn the hardest semantic fields
 - rank 8 underfits, rank 16 is competitive, and rank 32 gives a modest additional gain
-- curriculum training is the best run in the project so far
+- epoch helps strongly up to about epoch 5, then mostly saturates
+- `2e-4` is the best learning-rate balance among the tested single-stage runs
+- structure-then-semantics staged training is the best run in the project so far
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
@@ -196,25 +207,50 @@ Main conclusion:
 
 Main conclusion:
 
-- curriculum training produces the strongest result in the repository
+- curriculum training is a strong improvement over one-shot reduced-schema training
 - the gain is concentrated in semantic fields rather than structural repair
+
+### Stage 2 Epoch and Learning-Rate Follow-Ups
+
+- epoch 5 reaches `0.9145 / 0.5709`
+- epoch 9 reaches `0.9166 / 0.5709`
+- learning rate `1e-4` reaches `0.8901 / 0.4882`
+- learning rate `2e-4` reaches `0.9141 / 0.5709`
+- learning rate `4e-4` reaches `0.9173 / 0.5591`
+
+Main conclusion:
+
+- training duration matters mainly because it continues to improve semantic fields after structure is already solved
+- learning rate changes semantic convergence quality more than structural stability
+- the best single-stage balance in this set remains rank 16, epoch 5, learning rate `2e-4`
+
+### Stage 2 Structure-Then-Semantics Training
+
+- overall field exact match: `0.9245`
+- overall end-to-end exact match: `0.5787`
+
+Main conclusion:
+
+- staged training now produces the strongest result in the repository
+- explicitly separating structure-focused and semantics-focused phases improves the hardest semantic fields further
 
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
 
-- optionally, a decoding-side constrained generation baseline beyond repair
 - final README / summary cleanup for resume and interview use
+- optionally, a cleaner constrained-decoding baseline if a better schema-compatible tool is used
 
 ## Current Next Step
 
 Immediate next step:
 
 - finalize top-level project narrative and README around Stage 2 findings
+- keep additional experimentation narrow unless it clearly improves the final research story
 
 Expected outcome:
 
-- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, curriculum training, and seen/unseen schema generalization
+- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, and seen/unseen schema generalization
 - one clear statement of what post-training solves, what repair solves, and what still fails semantically
 
 ## Practical Rule
