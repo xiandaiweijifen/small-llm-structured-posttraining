@@ -11,6 +11,7 @@ Recommended usage order:
 - `06_schema_generalization_qlora.ipynb`: schema-conditioned reduced-schema QLoRA training and seen/unseen schema generalization export.
 - `07_stage2_experiment_runner.ipynb`: run the next reduced-schema Stage 2 experiments, including data-regime, curriculum, and LoRA-rank ablations.
 - `08_stage2_results_review.ipynb`: compare Stage 1 and Stage 2 reports after syncing new outputs back into the repo.
+- `09_constrained_decoding_eval.ipynb`: evaluate a trained reduced-schema checkpoint with schema-constrained decoding and export reports in the standard format.
 
 Current policy:
 
@@ -18,4 +19,5 @@ Current policy:
 - keep result comparison in `03_error_analysis.ipynb`
 - keep Stage 2 ablation execution in `07_stage2_experiment_runner.ipynb`
 - keep Stage 2 comparison and consolidation in `08_stage2_results_review.ipynb`
+- keep decode-side constrained evaluation in `09_constrained_decoding_eval.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
