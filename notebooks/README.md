@@ -14,6 +14,7 @@ Recommended usage order:
 - `09_constrained_decoding_eval.ipynb`: evaluate a trained reduced-schema checkpoint with schema-constrained decoding and export reports in the standard format.
 - `10_long_run_ablation_suite.ipynb`: batch-run longer training-time follow-up experiments, including learning-rate ablations and structure-then-semantics two-stage training.
 - `11_end_to_end_optimization_suite.ipynb`: batch-run broader end-to-end optimization experiments, including hard-sample mining and staged-checkpoint continuation presets.
+- `12_targeted_end_to_end_suite.ipynb`: batch-run narrower targeted continuation experiments focused on `action`, multi-error, and related semantic subsets.
 
 Current policy:
 
@@ -24,4 +25,5 @@ Current policy:
 - keep decode-side constrained evaluation in `09_constrained_decoding_eval.ipynb`
 - keep long-run learning-rate and two-stage training batch execution in `10_long_run_ablation_suite.ipynb`
 - keep broader end-to-end optimization batch execution in `11_end_to_end_optimization_suite.ipynb`
+- keep narrower targeted continuation batch execution in `12_targeted_end_to_end_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
