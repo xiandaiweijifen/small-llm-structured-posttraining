@@ -20,6 +20,7 @@ from src.data.io import dump_jsonl, load_jsonl
 from src.evaluation.field_analysis import analyze_field_errors
 from src.evaluation.metrics import evaluate_sample, summarize_results, try_parse_prediction_text
 from src.evaluation.reporting import group_sample_results, write_json_report
+from src.inference.batch_generate import batched_generate_texts
 from src.inference.repair import repair_prediction
 from src.schemas.registry import get_schema
 from src.training.formatters import DEFAULT_SYSTEM_PROMPT, build_user_prompt, convert_to_sft_records
@@ -168,6 +169,7 @@ GENERATION_KWARGS = {
     "temperature": 1.0,
     "top_p": 1.0,
 }
+INFERENCE_BATCH_SIZE = 16
 
 USE_BF16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
 BNB_CONFIG = BitsAndBytesConfig(
@@ -303,15 +305,6 @@ def build_inference_messages(record: dict) -> list[dict]:
     ]
 
 
-def generate_prediction_text(model, tokenizer, record: dict) -> str:
-    messages = build_inference_messages(record)
-    prompt_text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-    inputs = tokenizer(prompt_text, return_tensors="pt").to(model.device)
-    outputs = model.generate(**inputs, **GENERATION_KWARGS)
-    generated_tokens = outputs[0][inputs["input_ids"].shape[1] :]
-    return tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
-
-
 def sample_eval_dicts(gold_records: list[dict], pred_records: list[dict], schema: dict):
     predictions_by_id = {record["sample_id"]: record for record in pred_records}
     results = []
@@ -384,6 +377,7 @@ def run():
         print("bf16_supported =", torch.cuda.is_bf16_supported())
     print("scheduled_presets =", RUN_PRESETS)
     print("skip_completed =", SKIP_COMPLETED)
+    print("inference_batch_size =", INFERENCE_BATCH_SIZE)
 
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
     train_records = [canonicalize_action(record) for record in load_jsonl(PROJECT_ROOT / "data" / "reduced" / "phase1_train_reduced.jsonl")]
@@ -494,9 +488,16 @@ def run():
                 trainer.save_model(str(output_root))
                 print("train_loss =", train_result.training_loss)
 
+            prediction_texts = batched_generate_texts(
+                model=model,
+                tokenizer=tokenizer,
+                records=test_records,
+                build_messages=build_inference_messages,
+                generation_kwargs=GENERATION_KWARGS,
+                batch_size=INFERENCE_BATCH_SIZE,
+            )
             predictions = []
-            for idx, record in enumerate(test_records, 1):
-                prediction_text = generate_prediction_text(model, tokenizer, record)
+            for idx, (record, prediction_text) in enumerate(zip(test_records, prediction_texts, strict=True), 1):
                 try:
                     prediction_json = json.loads(prediction_text)
                 except json.JSONDecodeError:
