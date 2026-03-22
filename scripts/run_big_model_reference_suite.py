@@ -31,22 +31,22 @@ MODEL_PRESETS = [
     {
         "experiment_name": "qwen25_3b_reference_canonical_prompt",
         "model_name": "Qwen/Qwen2.5-3B-Instruct",
-        "batch_size": 16,
+        "batch_size": 32,
     },
     {
         "experiment_name": "qwen25_7b_reference_canonical_prompt",
         "model_name": "Qwen/Qwen2.5-7B-Instruct",
-        "batch_size": 12,
+        "batch_size": 24,
     },
     {
         "experiment_name": "qwen25_14b_reference_canonical_prompt",
         "model_name": "Qwen/Qwen2.5-14B-Instruct",
-        "batch_size": 8,
+        "batch_size": 12,
     },
     {
         "experiment_name": "qwen25_32b_reference_canonical_prompt",
         "model_name": "Qwen/Qwen2.5-32B-Instruct",
-        "batch_size": 4,
+        "batch_size": 6,
     },
 ]
 
