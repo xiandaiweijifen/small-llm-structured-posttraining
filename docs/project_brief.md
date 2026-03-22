@@ -12,15 +12,15 @@ Systematically studied small-model capability boundaries on complex schema-based
 
 Current strongest project-level statement:
 
-Built a small-model structured-output post-training framework for complex text-to-JSON tasks, and showed that target design, data scale, LoRA capacity, epoch duration, learning rate, staged structure-then-semantics training, and finally action-target canonicalization all affect semantic accuracy differently, while repair mainly helps prompt-only structural failures.
+Built a small-model structured-output post-training framework for complex text-to-JSON tasks, and showed that target design, data scale, LoRA capacity, epoch duration, learning rate, staged structure-then-semantics training, action-target canonicalization, and joint action+component target redesign all affect semantic accuracy differently, while repair mainly helps prompt-only structural failures.
 
 ## Core Research Question
 
 For complex schema structured output tasks, what are the dominant failure modes of small models, and which of them can be mitigated by SFT / LoRA / data strategy optimization versus decoding-time constraint or repair?
 
-After Stage 6, the clearest refined question is:
+After Stage 7, the clearest refined question is:
 
-Once target design removes noisy fields and structure is mostly solved, which lever matters most for semantic correctness: more data, more LoRA capacity, stronger optimization settings, better staged training, or further target canonicalization of the hardest semantic field?
+Once target design removes noisy fields and structure is mostly solved, which lever matters most for semantic correctness: more data, more LoRA capacity, stronger optimization settings, better staged training, or further target canonicalization of the hardest remaining semantic fields?
 
 ## Non-Goals
 
@@ -71,6 +71,7 @@ Once target design removes noisy fields and structure is mostly solved, which le
 - epoch and learning-rate ablations
 - structure-first then semantics-focused staged training
 - action-target canonicalization as a target-design intervention
+- component follow-up target redesign and interaction with staged training
 
 ### Data
 

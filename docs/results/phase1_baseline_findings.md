@@ -391,7 +391,7 @@ Interpretation:
 
 Interpretation:
 
-- this becomes the strongest run in the repository
+- this was the first run to become the strongest result in the repository after target canonicalization
 - the main gain comes from target redesign, not from repair or hard-example continuation
 - canonicalizing `actions_requested[0].action` sharply reduces target entropy and unlocks a large exact-match gain
 - under the canonicalized target, a simpler single-stage run is slightly stronger than the staged alternatives
@@ -416,6 +416,29 @@ Interpretation:
 - however, it no longer clearly outperforms the simpler best single-stage setup
 - once the hardest `action` target is normalized, training complexity matters less than it did before
 
+## Stage 7 Component Canonicalization Follow-Up
+
+### Canonical Action + Component, Structure Then Semantics, Stage 2 Epoch 9
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9402`
+- end-to-end exact match: `0.6772`
+
+Interpretation:
+
+- this is now the strongest run in the repository
+- `component` canonicalization is not strong enough on its own, but it becomes useful when combined with the already-validated `action` canonicalization and staged training
+- the main gain comes from a large improvement on `affected_systems[0].component`, which is enough to offset a small drop in `action`
+- this result strengthens the overall story that target redesign works best when it is both precise and paired with the right training strategy
+
+Main improved semantic fields:
+
+- `affected_systems[0].component`: `0.9173`
+- `affected_systems[0].name`: `0.9252`
+- `priority`: `0.8701`
+- `actions_requested[0].action`: `0.8504`
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:
@@ -427,4 +450,5 @@ The combined experiments now support a more refined story:
 - staged structure-then-semantics training became the strongest pre-canonicalization baseline
 - broad hard-example continuation did not beat that baseline
 - canonicalizing the hardest semantic field, `actions_requested[0].action`, is the first change that clearly breaks through the previous end-to-end ceiling
+- `component` canonicalization alone is weak, but joint `action + component` canonicalization plus staged training pushes the best result further
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

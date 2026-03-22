@@ -15,6 +15,7 @@ Current status:
 - structure-then-semantics staged training has been run and reviewed
 - Stage 3/4/5 hard-example continuation and targeted refinement branches have been run and reviewed
 - Stage 6 action-canonicalization experiments have been run and reviewed
+- Stage 7 component-canonicalization follow-ups have been run and reviewed
 
 The project is currently in:
 
@@ -127,10 +128,12 @@ Completed:
 - ran Stage 4 targeted continuation experiments on narrower semantic subsets
 - ran Stage 5 targeted refinement experiments around the best Stage 4 subset
 - implemented and ran Stage 6 action-canonicalization experiments in both single-stage and staged forms
+- implemented and ran Stage 7 component-canonicalization follow-ups, including joint `action + component` target redesign
 - exported a consolidated Stage 2 review summary
 - exported a consolidated long-run batch summary
 - exported a Stage 3 end-to-end optimization batch summary
 - exported a Stage 6 action-canonicalization batch summary
+- exported a Stage 7 component-canonicalization batch summary
 
 Key outputs:
 
@@ -148,6 +151,8 @@ Key outputs:
 - `docs/results/end_to_end_optimization_batch_summary.md`
 - `results/metrics/qwen25_3b_stage6_canonical_action_single_stage_epoch7_lr2e4_test_report.json`
 - `docs/results/action_canonicalization_batch_summary.md`
+- `results/metrics/qwen25_3b_stage7_canonical_action_component_structure_then_semantics_stage2_epoch9_test_report.json`
+- `docs/results/component_canonicalization_batch_summary.md`
 
 Main conclusions:
 
@@ -157,7 +162,8 @@ Main conclusions:
 - `2e-4` is the best learning-rate balance among the tested single-stage runs
 - broad hard-sample continuation and targeted refinement branches do not beat the strongest staged baseline
 - action canonicalization is the first post-Stage-2 change that materially raises the end-to-end ceiling
-- under the canonicalized target, the best run is single-stage epoch 7 at learning rate `2e-4`
+- component canonicalization alone is weak, but joint `action + component` canonicalization becomes effective when paired with staged training
+- the current best run is Stage 7 joint `action + component` canonicalization with staged structure-then-semantics training
 - hard-sample continuation identifies a real semantic hard subset, but the current continuation recipes do not beat the strongest staged baseline
 - repair still adds no measurable value once post-training has already stabilized structure
 
@@ -275,25 +281,38 @@ Main conclusion:
 - under the canonicalized target, a simpler single-stage run is slightly stronger than the more complex staged variants
 - this result should be interpreted as a target-design improvement, not just a training-hyperparameter gain
 
+### Stage 7 Component Canonicalization Follow-Up
+
+- best run: `qwen25_3b_stage7_canonical_action_component_structure_then_semantics_stage2_epoch9`
+- overall field exact match: `0.9402`
+- overall end-to-end exact match: `0.6772`
+
+Main conclusion:
+
+- `component` canonicalization alone is not a strong direction
+- however, joint `action + component` canonicalization does improve the best result when it is paired with staged training
+- the main Stage 7 gain comes from a large improvement on `affected_systems[0].component`, which compensates for a slight drop in `action`
+- this is the current strongest run in the repository
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
 
 - final README / summary cleanup for resume and interview use
 - optionally, a cleaner constrained-decoding baseline if a better schema-compatible tool is used
-- optionally, further target redesign for fields like `component`, `category`, or `priority`
+- optionally, further target redesign or two-stage supervision for `category` and `priority`
 
 ## Current Next Step
 
 Immediate next step:
 
-- finalize top-level project narrative around the Stage 6 canonicalization result
+- finalize top-level project narrative around the Stage 7 joint canonicalization result
 - keep additional experimentation narrow unless it clearly improves the final research story
 
 Expected outcome:
 
-- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, and seen/unseen schema generalization
-- one clear statement that broad continuation did not beat the strongest staged baseline, while target redesign did
+- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, component follow-ups, and seen/unseen schema generalization
+- one clear statement that broad continuation did not beat the strongest staged baseline, while joint target redesign plus staged training did
 - one clear statement of what post-training solves, what repair solves, and what still fails semantically
 
 ## Practical Rule
