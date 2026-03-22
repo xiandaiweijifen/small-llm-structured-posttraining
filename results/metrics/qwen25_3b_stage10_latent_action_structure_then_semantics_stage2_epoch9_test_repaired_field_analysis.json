@@ -1,0 +1,385 @@
+{
+  "num_samples": 254,
+  "num_fields": 11,
+  "per_field": {
+    "actions_requested[0].action": {
+      "total": 254,
+      "match_count": 34,
+      "mismatch_count": 220,
+      "match_rate": 0.13385826771653545,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "Investigate issue: Password Reset Assistance Needed",
+          "pred": "Handle request: Password Reset Assistance Needed"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": "Answer and clarify: Updating Personal Profile on Intranet",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "Investigate issue: Cloud Identity Verification Issue",
+          "pred": "Investigate and mitigate incident: Cloud Identity Verification Issue"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "Handle request: Instructions Needed for Password Reset on Internal Ticketing System",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "Handle request: Access to Virtual Machine Instances",
+          "pred": null
+        }
+      ]
+    },
+    "actions_requested[0].deadline": {
+      "total": 254,
+      "match_count": 254,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "actions_requested[0].owner": {
+      "total": 254,
+      "match_count": 254,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "affected_systems[0].component": {
+      "total": 254,
+      "match_count": 32,
+      "mismatch_count": 222,
+      "match_rate": 0.12598425196850394,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "software",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": "software",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "account",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000343-0f4son7ut",
+          "gold": "remotework",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "network",
+          "pred": null
+        }
+      ]
+    },
+    "affected_systems[0].name": {
+      "total": 254,
+      "match_count": 52,
+      "mismatch_count": 202,
+      "match_rate": 0.2047244094488189,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "Software",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": "Software",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "Account",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000343-0f4son7ut",
+          "gold": "RemoteWork",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "Network",
+          "pred": null
+        }
+      ]
+    },
+    "category": {
+      "total": 254,
+      "match_count": 54,
+      "mismatch_count": 200,
+      "match_rate": 0.2125984251968504,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "bug",
+          "pred": "task"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": "question",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+          "gold": "bug",
+          "pred": "incident"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "task",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "task",
+          "pred": null
+        }
+      ]
+    },
+    "constraints.blocking": {
+      "total": 254,
+      "match_count": 241,
+      "mismatch_count": 13,
+      "match_rate": 0.9488188976377953,
+      "examples": [
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-010099-INC0043880",
+          "gold": null,
+          "pred": true
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-020723-INC0036507",
+          "gold": null,
+          "pred": true
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-010513-INC0027136",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-012684-INC001234",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-016094-INC006119",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "constraints.environment": {
+      "total": 254,
+      "match_count": 241,
+      "mismatch_count": 13,
+      "match_rate": 0.9488188976377953,
+      "examples": [
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-010099-INC0043880",
+          "gold": null,
+          "pred": "dev"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-020723-INC0036507",
+          "gold": null,
+          "pred": "dev"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-000597-TASK0045912",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-015225-TASK0042979",
+          "gold": "prod",
+          "pred": null
+        },
+        {
+          "sample_id": "kameronb_it_callcenter_tickets-008910-TASK0045824",
+          "gold": "prod",
+          "pred": null
+        }
+      ]
+    },
+    "priority": {
+      "total": 254,
+      "match_count": 68,
+      "mismatch_count": 186,
+      "match_rate": 0.2677165354330709,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+          "gold": "medium",
+          "pred": "high"
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": "medium",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "medium",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "high",
+          "pred": null
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000105-bbdl37pcd",
+          "gold": "medium",
+          "pred": null
+        }
+      ]
+    },
+    "requires_followup": {
+      "total": 254,
+      "match_count": 93,
+      "mismatch_count": 161,
+      "match_rate": 0.3661417322834646,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": true,
+          "pred": false
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": true,
+          "pred": false
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": true,
+          "pred": false
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000105-bbdl37pcd",
+          "gold": true,
+          "pred": false
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000436-tywvbsemu",
+          "gold": true,
+          "pred": false
+        }
+      ]
+    },
+    "summary": {
+      "total": 254,
+      "match_count": 115,
+      "mismatch_count": 139,
+      "match_rate": 0.452755905511811,
+      "examples": [
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+          "gold": "Updating Personal Profile on Intranet",
+          "pred": ""
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+          "gold": "Instructions Needed for Password Reset on Internal Ticketing System",
+          "pred": ""
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+          "gold": "Access to Virtual Machine Instances",
+          "pred": ""
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000052-kqzbzny9x",
+          "gold": "MFA Setup for VPN Access",
+          "pred": ""
+        },
+        {
+          "sample_id": "console_ai_it_helpdesk_tickets-000105-bbdl37pcd",
+          "gold": "ZD Support Portal Access",
+          "pred": ""
+        }
+      ]
+    }
+  },
+  "worst_fields": [
+    {
+      "field_name": "affected_systems[0].component",
+      "match_rate": 0.12598425196850394,
+      "mismatch_count": 222,
+      "total": 254
+    },
+    {
+      "field_name": "actions_requested[0].action",
+      "match_rate": 0.13385826771653545,
+      "mismatch_count": 220,
+      "total": 254
+    },
+    {
+      "field_name": "affected_systems[0].name",
+      "match_rate": 0.2047244094488189,
+      "mismatch_count": 202,
+      "total": 254
+    },
+    {
+      "field_name": "category",
+      "match_rate": 0.2125984251968504,
+      "mismatch_count": 200,
+      "total": 254
+    },
+    {
+      "field_name": "priority",
+      "match_rate": 0.2677165354330709,
+      "mismatch_count": 186,
+      "total": 254
+    },
+    {
+      "field_name": "requires_followup",
+      "match_rate": 0.3661417322834646,
+      "mismatch_count": 161,
+      "total": 254
+    },
+    {
+      "field_name": "summary",
+      "match_rate": 0.452755905511811,
+      "mismatch_count": 139,
+      "total": 254
+    },
+    {
+      "field_name": "constraints.blocking",
+      "match_rate": 0.9488188976377953,
+      "mismatch_count": 13,
+      "total": 254
+    },
+    {
+      "field_name": "constraints.environment",
+      "match_rate": 0.9488188976377953,
+      "mismatch_count": 13,
+      "total": 254
+    },
+    {
+      "field_name": "actions_requested[0].deadline",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 254
+    },
+    {
+      "field_name": "actions_requested[0].owner",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 254
+    }
+  ]
+}
