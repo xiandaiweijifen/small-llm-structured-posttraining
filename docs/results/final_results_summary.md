@@ -30,23 +30,27 @@ This project studies a focused question:
 | Stage 2 Reduced QLoRA, Rank 16, LR 1e-4, Epoch 5 | 1.0000 | 1.0000 | 0.8901 | 0.4882 | Lower learning rate under-trains semantic fields |
 | Stage 2 Reduced QLoRA, Rank 16, LR 2e-4, Epoch 5 | 1.0000 | 1.0000 | 0.9141 | 0.5709 | Best learning-rate balance among the tested single-stage runs |
 | Stage 2 Reduced QLoRA, Rank 16, LR 4e-4, Epoch 5 | 1.0000 | 1.0000 | 0.9173 | 0.5591 | Slightly higher field accuracy, but worse end-to-end stability than 2e-4 |
-| Stage 2 Reduced QLoRA, Structure Then Semantics | 1.0000 | 1.0000 | 0.9245 | 0.5787 | Best overall run; staged training improves the hardest semantic fields further |
+| Stage 2 Reduced QLoRA, Structure Then Semantics | 1.0000 | 1.0000 | 0.9245 | 0.5787 | Strongest pre-canonicalization baseline; staged training improves the hardest semantic fields further |
 | Stage 3 Hard-Only Continuation, x4, Epoch 1, LR 5e-5 | 1.0000 | 1.0000 | 0.8726 | 0.3307 | Hard-only continuation badly hurts overall quality |
 | Stage 3 Full + Hard Mix, x2, Epoch 2, LR 1e-4 | 1.0000 | 1.0000 | 0.9155 | 0.5433 | Best hard-continuation result, but still below the strongest staged baseline |
 | Stage 3 Full + Hard Mix, x3, Epoch 2, LR 1e-4 | 1.0000 | 1.0000 | 0.9023 | 0.5039 | Heavier hard oversampling degrades both field and end-to-end accuracy |
 | Stage 3 Full + Hard Mix, x2, Epoch 2, LR 5e-5 | 1.0000 | 1.0000 | 0.9109 | 0.5354 | Lower learning rate does not recover the strongest staged baseline |
+| Stage 6 Canonical Action, Single-Stage, Epoch 7, LR 2e-4 | 1.0000 | 1.0000 | 0.9341 | 0.6654 | Best overall run; target canonicalization sharply reduces `action` entropy and lifts exact match |
+| Stage 6 Canonical Action, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9320 | 0.6654 | Best staged canonicalized run, but not stronger than the simpler single-stage epoch-7 variant |
 | Schema-Conditioned Reduced QLoRA Generalization | 0.9980 | 0.9980 | 0.8764 | 0.4646 | Structure transfers well; semantics drop under schema shift |
 
 ## Stage 2 Takeaways
 
-The Stage 2 and long-run ablations clarify where the strongest gains come from:
+The Stage 2 through Stage 6 ablations clarify where the strongest gains come from:
 
 - small reduced-schema training sets are enough for structure, but not enough for the hardest semantic fields
 - LoRA rank matters: rank 8 is clearly weaker, rank 16 is already competitive, and rank 32 gives a modest additional gain
 - epoch duration matters up to about epoch 5; after that, field gains are marginal and end-to-end exact match plateaus
 - learning rate matters: `1e-4` is too conservative, `2e-4` is the best balance, and `4e-4` trades a bit of end-to-end stability for higher average field accuracy
-- staged structure-then-semantics training becomes the best run overall
+- staged structure-then-semantics training becomes the strongest pre-canonicalization baseline
 - hard-sample continuation does not beat the strongest staged baseline; direct hard-only continuation and heavy oversampling both degrade performance
+- action canonicalization is the first post-Stage-2 intervention that materially breaks through the previous end-to-end ceiling
+- under the canonicalized target, a simpler single-stage epoch-7 run is as strong as or slightly stronger than the staged alternatives
 - repair still adds essentially no value once post-training has stabilized structure
 
 ## Generalization Breakdown
@@ -80,9 +84,14 @@ Fields that become highly stable after post-training include:
 - `constraints.environment`
 - `constraints.blocking`
 
-The strongest long-run staged training provides the strongest improvement on the hardest field:
+The strongest pre-canonicalization staged training provides the strongest improvement on the hardest field:
 
 - `actions_requested[0].action`: `0.7323` in the structure-then-semantics run vs `0.6457` in the H200-fast reduced baseline
+
+Stage 6 action canonicalization changes the picture further:
+
+- `actions_requested[0].action`: `0.8622` in the canonical-action single-stage epoch-7 run
+- this large gain is the main reason end-to-end exact match rises from the `0.57x` range into the `0.66x` range
 
 Stage 3 hard mining also shows that the remaining semantic bottleneck is concentrated in a real subset of difficult samples:
 
@@ -97,9 +106,10 @@ The experiments support a clear division of labor:
 - repair is effective for structural normalization and schema cleanup
 - post-training is the main lever for stable structured generation
 - target design matters: noisy identity fields can dominate failure modes and hide the model's real extraction ability
-- after target cleanup, training strategy matters more than repair; structure-first then semantics-focused training gives the strongest overall result
+- after target cleanup, training strategy matters more than repair; structure-first then semantics-focused training gives the strongest pre-canonicalization result
 - LoRA capacity, epoch duration, and learning rate all help, but they are secondary levers compared with target design plus stronger staged training
 - hard-example continuation is not automatically beneficial; if applied too broadly, it causes distribution drift and hurts end-to-end exact match
+- further target redesign can matter even more than continuation; canonicalizing the hardest semantic field produces the strongest overall run in the repository
 - once structure is solved, the remaining bottleneck is semantic accuracy
 - under mild schema shift, structure generalizes better than field semantics
 
@@ -108,7 +118,7 @@ The experiments support a clear division of labor:
 The most defensible summary of the project is:
 
 - built a structured-output post-training and evaluation framework for small models on complex text-to-JSON tasks
-- compared prompt-only, post-training, repair, reduced-schema target design, curriculum training, LoRA-rank ablations, epoch and learning-rate ablations, staged structure-then-semantics training, and seen/unseen schema generalization
+- compared prompt-only, post-training, repair, reduced-schema target design, curriculum training, LoRA-rank ablations, epoch and learning-rate ablations, staged structure-then-semantics training, hard-example continuation, action canonicalization, and seen/unseen schema generalization
 - found that repair mainly fixes structure, while semantic correctness depends more on post-training quality, target design, training strategy, and schema-conditioned generalization
 
 ## Key Result Files
@@ -133,5 +143,8 @@ The most defensible summary of the project is:
 - `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x2_epoch2_lr1e4_test_report.json`
 - `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x3_epoch2_lr1e4_test_report.json`
 - `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x2_epoch2_lr5e5_test_report.json`
+- `results/metrics/qwen25_3b_stage6_canonical_action_single_stage_epoch7_lr2e4_test_report.json`
+- `results/metrics/qwen25_3b_stage6_canonical_action_structure_then_semantics_stage2_epoch9_test_report.json`
+- `docs/results/action_canonicalization_batch_summary.md`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`

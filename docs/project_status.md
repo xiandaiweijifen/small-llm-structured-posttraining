@@ -13,6 +13,8 @@ Current status:
 - schema-generalization experiment has been run and evaluated
 - Stage 2 data-regime, LoRA-rank, curriculum, epoch, and learning-rate ablations have been run and reviewed
 - structure-then-semantics staged training has been run and reviewed
+- Stage 3/4/5 hard-example continuation and targeted refinement branches have been run and reviewed
+- Stage 6 action-canonicalization experiments have been run and reviewed
 
 The project is currently in:
 
@@ -122,9 +124,13 @@ Completed:
 - ran rank-16 learning-rate ablations at epoch 5
 - implemented and ran structure-first then semantics-focused staged training
 - ran Stage 3 hard-sample mining and continuation experiments on top of the strongest staged-training checkpoint
+- ran Stage 4 targeted continuation experiments on narrower semantic subsets
+- ran Stage 5 targeted refinement experiments around the best Stage 4 subset
+- implemented and ran Stage 6 action-canonicalization experiments in both single-stage and staged forms
 - exported a consolidated Stage 2 review summary
 - exported a consolidated long-run batch summary
 - exported a Stage 3 end-to-end optimization batch summary
+- exported a Stage 6 action-canonicalization batch summary
 
 Key outputs:
 
@@ -140,6 +146,8 @@ Key outputs:
 - `docs/results/long_run_ablation_batch_summary.md`
 - `results/metrics/qwen25_3b_stage3_sts_v2_full_plus_hard_x2_epoch2_lr1e4_test_report.json`
 - `docs/results/end_to_end_optimization_batch_summary.md`
+- `results/metrics/qwen25_3b_stage6_canonical_action_single_stage_epoch7_lr2e4_test_report.json`
+- `docs/results/action_canonicalization_batch_summary.md`
 
 Main conclusions:
 
@@ -147,7 +155,9 @@ Main conclusions:
 - rank 8 underfits, rank 16 is competitive, and rank 32 gives a modest additional gain
 - epoch helps strongly up to about epoch 5, then mostly saturates
 - `2e-4` is the best learning-rate balance among the tested single-stage runs
-- structure-then-semantics staged training is the best run in the project so far
+- broad hard-sample continuation and targeted refinement branches do not beat the strongest staged baseline
+- action canonicalization is the first post-Stage-2 change that materially raises the end-to-end ceiling
+- under the canonicalized target, the best run is single-stage epoch 7 at learning rate `2e-4`
 - hard-sample continuation identifies a real semantic hard subset, but the current continuation recipes do not beat the strongest staged baseline
 - repair still adds no measurable value once post-training has already stabilized structure
 
@@ -236,14 +246,14 @@ Main conclusion:
 
 Main conclusion:
 
-- staged training now produces the strongest result in the repository
+- staged training now produces the strongest pre-canonicalization result in the repository
 - explicitly separating structure-focused and semantics-focused phases improves the hardest semantic fields further
 
 ### Stage 3 Hard-Sample Continuation
 
 - hard mining finds `561 / 1993` train samples with errors on the key semantic fields
 - best continuation run: `0.9155 / 0.5433`
-- strongest baseline remains `0.9245 / 0.5787`
+- strongest pre-canonicalization baseline remains `0.9245 / 0.5787`
 
 Main conclusion:
 
@@ -252,25 +262,38 @@ Main conclusion:
 - even the best mixed continuation remains below the strongest staged-training baseline
 - the current hard-continuation recipe is therefore a useful negative result, not a new best model
 
+### Stage 6 Action Canonicalization
+
+- best run: `qwen25_3b_stage6_canonical_action_single_stage_epoch7_lr2e4`
+- overall field exact match: `0.9341`
+- overall end-to-end exact match: `0.6654`
+
+Main conclusion:
+
+- canonicalizing `actions_requested[0].action` is the first change that clearly breaks through the Stage 2 performance ceiling
+- the main gain comes from target redesign rather than additional continuation or repair
+- under the canonicalized target, a simpler single-stage run is slightly stronger than the more complex staged variants
+- this result should be interpreted as a target-design improvement, not just a training-hyperparameter gain
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
 
 - final README / summary cleanup for resume and interview use
 - optionally, a cleaner constrained-decoding baseline if a better schema-compatible tool is used
-- optionally, a more targeted hard-example strategy only if it is narrower than the current broad hard-subset continuation
+- optionally, further target redesign for fields like `component`, `category`, or `priority`
 
 ## Current Next Step
 
 Immediate next step:
 
-- finalize top-level project narrative and README around Stage 2 findings
+- finalize top-level project narrative around the Stage 6 canonicalization result
 - keep additional experimentation narrow unless it clearly improves the final research story
 
 Expected outcome:
 
-- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, and seen/unseen schema generalization
-- one clear statement that the current hard-example continuation branch did not beat the strongest staged baseline
+- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, and seen/unseen schema generalization
+- one clear statement that broad continuation did not beat the strongest staged baseline, while target redesign did
 - one clear statement of what post-training solves, what repair solves, and what still fails semantically
 
 ## Practical Rule

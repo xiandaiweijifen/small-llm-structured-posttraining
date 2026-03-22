@@ -306,7 +306,7 @@ Interpretation:
 
 Interpretation:
 
-- this is now the strongest run in the repository
+- this is now the strongest pre-canonicalization run in the repository
 - explicit staging of structure-focused learning followed by semantic continuation improves the hardest semantic fields further
 - the result supports the hypothesis that structure learning and semantic learning benefit from different training phases
 
@@ -380,16 +380,51 @@ Interpretation:
 - lowering the learning rate does not recover the best staged baseline
 - the main issue here is not just optimization step size; it is the continuation data recipe itself
 
-## Current Project-Level Conclusion
+## Stage 6 Action Canonicalization
 
-The combined Stage 1 and Stage 2 experiments support a clear division of labor:
+### Canonical Action, Single-Stage, Epoch 7, LR 2e-4
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9341`
+- end-to-end exact match: `0.6654`
+
+Interpretation:
+
+- this becomes the strongest run in the repository
+- the main gain comes from target redesign, not from repair or hard-example continuation
+- canonicalizing `actions_requested[0].action` sharply reduces target entropy and unlocks a large exact-match gain
+- under the canonicalized target, a simpler single-stage run is slightly stronger than the staged alternatives
+
+Main improved semantic fields:
+
+- `actions_requested[0].action`: `0.8622`
+- `affected_systems[0].component`: `0.8583`
+- `category`: `0.8661`
+- `priority`: `0.8543`
+
+### Canonical Action, Structure Then Semantics, Stage 2 Epoch 9
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9320`
+- end-to-end exact match: `0.6654`
+
+Interpretation:
+
+- staged training remains strong under the canonicalized target
+- however, it no longer clearly outperforms the simpler best single-stage setup
+- once the hardest `action` target is normalized, training complexity matters less than it did before
+
+## Updated Project-Level Conclusion
+
+The combined experiments now support a more refined story:
 
 - prompt-only is weak on schema compliance
 - repair is strong for structural normalization
 - post-training is the main lever for stable structured generation
-- noisy target fields can dominate failure modes and hide real extraction ability
-- training strategy matters after target design is cleaned up: staged structure-then-semantics training now gives the strongest result
-- LoRA capacity, epoch duration, and learning rate all matter, but their gains are smaller than the gains from target design plus stronger staged training
-- hard-example continuation confirms where the remaining difficult cases are, but the current broad continuation recipe does not improve the strongest staged baseline
-- after structure is solved, the remaining problem is semantic accuracy rather than formatting
-- mild schema shift mostly hurts semantic fields, not structural compliance
+- reduced-schema target design was the first major semantic improvement
+- staged structure-then-semantics training became the strongest pre-canonicalization baseline
+- broad hard-example continuation did not beat that baseline
+- canonicalizing the hardest semantic field, `actions_requested[0].action`, is the first change that clearly breaks through the previous end-to-end ceiling
+- after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

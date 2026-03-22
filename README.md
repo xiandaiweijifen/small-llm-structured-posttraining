@@ -110,13 +110,15 @@ The repository currently contains:
 - reduced-schema ablation and H200-fast rerun
 - Stage 2 data-regime, LoRA-rank, curriculum, epoch, and learning-rate ablations
 - structure-first then semantics-focused two-stage training
+- Stage 3/4/5 hard-example continuation and targeted refinement branches
+- Stage 6 action-canonicalization experiments across single-stage and staged settings
 - seen/unseen schema generalization results
 
 Current strongest run:
 
-- Stage 2 structure-first then semantics-focused two-stage training
-- field exact match: `0.9245`
-- end-to-end exact match: `0.5787`
+- Stage 6 canonical-action single-stage training, epoch 7, learning rate `2e-4`
+- field exact match: `0.9341`
+- end-to-end exact match: `0.6654`
 
 Current high-level conclusions:
 
@@ -124,7 +126,9 @@ Current high-level conclusions:
 - repair strongly helps prompt-only structure, but adds essentially no value once post-training already stabilizes output format
 - reduced target design materially improves semantic learning
 - epoch duration and learning rate both matter, but their gains saturate and are smaller than the gains from target design plus stronger training strategy
-- structure-first then semantics-focused training is now the best result in the repo
+- broad hard-sample continuation and refinement do not beat the strongest staged baseline
+- canonicalizing the `action` target is the first change that materially lifts end-to-end exact match beyond the Stage 2 ceiling
+- under the canonicalized target, single-stage training with the right epoch budget beats the more complex staged variants
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:
