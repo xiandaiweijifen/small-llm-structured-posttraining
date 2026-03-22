@@ -39,6 +39,7 @@ This project studies a focused question:
 | Stage 6 Canonical Action, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9320 | 0.6654 | Best staged canonicalized run, but not stronger than the simpler single-stage epoch-7 variant |
 | Stage 7 Canonical Action + Component, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9402 | 0.6772 | Best trained run; joint target redesign plus staged training improves `component` enough to set a new best before postprocessing |
 | Stage 8 Deterministic Action + Component Postprocess | 1.0000 | 1.0000 | 0.9427 | 0.6929 | Best overall result; a no-train consistency pass on top of Stage 7 gives another exact-match gain |
+| Stage 9 Combined Lexical Postprocess | 1.0000 | 1.0000 | 0.9470 | 0.7205 | New best overall result; a high-precision lexical layer further improves `priority` and `blocking` without retraining |
 | Schema-Conditioned Reduced QLoRA Generalization | 0.9980 | 0.9980 | 0.8764 | 0.4646 | Structure transfers well; semantics drop under schema shift |
 
 ## Stage 2 Takeaways
@@ -55,6 +56,7 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - component canonicalization alone is weak, but joint `action + component` canonicalization becomes effective when paired with staged training
 - the current strongest trained run combines target redesign and staged semantic continuation
 - a final deterministic consistency pass on top of that trained run is still able to push exact match further
+- a final lexical postprocess layer can still push exact match further when it is restricted to a small set of high-precision severity cues
 - repair still adds essentially no value once post-training has stabilized structure
 
 ## Generalization Breakdown
@@ -100,6 +102,8 @@ Stage 6 and Stage 7 canonicalization change the picture further:
 - this `component` gain is what pushes the best end-to-end exact match from `0.6654` to `0.6772`
 - Stage 8 deterministic postprocessing pushes `affected_systems[0].component` further to `0.9370`
 - this low-cost consistency pass is what moves the best end-to-end exact match from `0.6772` to `0.6929`
+- Stage 9 lexical postprocessing pushes `priority` to `0.9016` and `constraints.blocking` to `0.9724`
+- this is what moves the best end-to-end exact match from `0.6929` to `0.7205`
 
 Stage 3 hard mining also shows that the remaining semantic bottleneck is concentrated in a real subset of difficult samples:
 
@@ -120,6 +124,7 @@ The experiments support a clear division of labor:
 - further target redesign can matter even more than continuation; canonicalizing the hardest semantic field produces the strongest overall run in the repository
 - additional target redesign can still help when it is precise; `component` canonicalization only becomes useful when paired with the already-validated `action` redesign and staged training
 - even after target redesign saturates, a narrow deterministic consistency layer can still recover a few remaining exact-match errors without retraining
+- even after deterministic consistency saturates, a very small high-precision lexical rule layer can still recover additional exact-match errors without retraining
 - once structure is solved, the remaining bottleneck is semantic accuracy
 - under mild schema shift, structure generalizes better than field semantics
 
@@ -160,5 +165,7 @@ The most defensible summary of the project is:
 - `docs/results/component_canonicalization_batch_summary.md`
 - `results/metrics/qwen25_3b_stage8_action_component_majority_test_report.json`
 - `docs/results/deterministic_postprocess_batch_summary.md`
+- `results/metrics/qwen25_3b_stage9_lexical_combined_test_report.json`
+- `docs/results/lexical_postprocess_batch_summary.md`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`

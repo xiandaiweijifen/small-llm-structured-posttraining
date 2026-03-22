@@ -17,6 +17,7 @@ Current status:
 - Stage 6 action-canonicalization experiments have been run and reviewed
 - Stage 7 component-canonicalization follow-ups have been run and reviewed
 - Stage 8 deterministic postprocessing follow-ups have been run and reviewed
+- Stage 9 lexical postprocessing follow-ups have been run and reviewed
 
 The project is currently in:
 
@@ -131,12 +132,14 @@ Completed:
 - implemented and ran Stage 6 action-canonicalization experiments in both single-stage and staged forms
 - implemented and ran Stage 7 component-canonicalization follow-ups, including joint `action + component` target redesign
 - implemented and ran Stage 8 deterministic postprocessing variants on top of the Stage 7 best predictions
+- implemented and ran Stage 9 lexical postprocessing variants on top of the Stage 8 best predictions
 - exported a consolidated Stage 2 review summary
 - exported a consolidated long-run batch summary
 - exported a Stage 3 end-to-end optimization batch summary
 - exported a Stage 6 action-canonicalization batch summary
 - exported a Stage 7 component-canonicalization batch summary
 - exported a Stage 8 deterministic postprocessing batch summary
+- exported a Stage 9 lexical postprocessing batch summary
 
 Key outputs:
 
@@ -158,6 +161,8 @@ Key outputs:
 - `docs/results/component_canonicalization_batch_summary.md`
 - `results/metrics/qwen25_3b_stage8_action_component_majority_test_report.json`
 - `docs/results/deterministic_postprocess_batch_summary.md`
+- `results/metrics/qwen25_3b_stage9_lexical_combined_test_report.json`
+- `docs/results/lexical_postprocess_batch_summary.md`
 
 Main conclusions:
 
@@ -169,7 +174,8 @@ Main conclusions:
 - action canonicalization is the first post-Stage-2 change that materially raises the end-to-end ceiling
 - component canonicalization alone is weak, but joint `action + component` canonicalization becomes effective when paired with staged training
 - deterministic postprocessing on top of the Stage 7 best run yields a further no-train gain
-- the current best run is Stage 8 `action + component` deterministic postprocessing on top of the Stage 7 best model
+- lexical postprocessing on top of the Stage 8 best run yields another no-train gain
+- the current best run is Stage 9 combined lexical postprocessing on top of the Stage 8 best model
 - hard-sample continuation identifies a real semantic hard subset, but the current continuation recipes do not beat the strongest staged baseline
 - repair still adds no measurable value once post-training has already stabilized structure
 
@@ -313,6 +319,19 @@ Main conclusion:
 - almost all of the Stage 8 gain comes from the `component <- name` consistency rule; `action` refresh improves field exact match slightly but does not change end-to-end exact match by itself
 - this is now the current strongest run in the repository
 
+### Stage 9 Lexical Postprocessing
+
+- best run: `qwen25_3b_stage9_lexical_combined`
+- overall field exact match: `0.9470`
+- overall end-to-end exact match: `0.7205`
+
+Main conclusion:
+
+- a final high-precision lexical cleanup layer can still deliver another meaningful no-train gain after deterministic consistency has already been applied
+- the useful gain comes mainly from promoting a small set of clearly severe cases to `priority=urgent` and `blocking=true`
+- lexical `incident` relabeling does not help by itself; the Stage 9 gain is primarily a `priority` and `blocking` gain
+- this is now the current strongest run in the repository
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
@@ -327,12 +346,12 @@ To reach the originally desired "more complete research project" level, the proj
 Immediate next step:
 
 - finalize top-level project narrative around the Stage 7 joint canonicalization result
-- finalize top-level project narrative around the Stage 8 no-train postprocessing gain
+- finalize top-level project narrative around the Stage 9 lexical postprocessing gain
 - keep additional experimentation narrow unless it clearly improves the final research story
 
 Expected outcome:
 
-- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, component follow-ups, deterministic postprocessing, and seen/unseen schema generalization
+- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, component follow-ups, deterministic postprocessing, lexical postprocessing, and seen/unseen schema generalization
 - one clear statement that broad continuation did not beat the strongest staged baseline, while joint target redesign plus staged training did
 - one clear statement of what post-training solves, what repair solves, what deterministic consistency can still clean up cheaply, and what still fails semantically
 

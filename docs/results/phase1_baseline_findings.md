@@ -462,6 +462,28 @@ Main improved semantic fields:
 - `actions_requested[0].action`: `0.8583`
 - overall end-to-end exact match: `0.6929`
 
+## Stage 9 Lexical Postprocessing
+
+### Combined Lexical Postprocess
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9470`
+- end-to-end exact match: `0.7205`
+
+Interpretation:
+
+- this is now the strongest overall result in the repository
+- it does not require retraining; it is a small lexical rule layer applied on top of the Stage 8 predictions
+- the useful gain comes mainly from promoting a small set of clearly severe cases to `priority=urgent` and `constraints.blocking=true`
+- lexical `incident` relabeling is not helpful by itself; the Stage 9 gain is primarily a severity gain rather than a category gain
+
+Main improved semantic fields:
+
+- `priority`: `0.9016`
+- `constraints.blocking`: `0.9724`
+- overall end-to-end exact match: `0.7205`
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:
@@ -475,4 +497,5 @@ The combined experiments now support a more refined story:
 - canonicalizing the hardest semantic field, `actions_requested[0].action`, is the first change that clearly breaks through the previous end-to-end ceiling
 - `component` canonicalization alone is weak, but joint `action + component` canonicalization plus staged training pushes the best result further
 - a final deterministic consistency pass on top of the strongest trained run pushes the best result further again, without any new optimization steps
+- a final lexical severity-focused postprocess pass pushes the best result further again, again without retraining
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

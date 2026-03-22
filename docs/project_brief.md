@@ -12,15 +12,15 @@ Systematically studied small-model capability boundaries on complex schema-based
 
 Current strongest project-level statement:
 
-Built a small-model structured-output post-training framework for complex text-to-JSON tasks, and showed that target design, data scale, LoRA capacity, epoch duration, learning rate, staged structure-then-semantics training, action-target canonicalization, joint action+component target redesign, and a final deterministic consistency pass all affect semantic accuracy differently, while repair mainly helps prompt-only structural failures.
+Built a small-model structured-output post-training framework for complex text-to-JSON tasks, and showed that target design, data scale, LoRA capacity, epoch duration, learning rate, staged structure-then-semantics training, action-target canonicalization, joint action+component target redesign, deterministic consistency passes, and a final high-precision lexical postprocess layer all affect semantic accuracy differently, while repair mainly helps prompt-only structural failures.
 
 ## Core Research Question
 
 For complex schema structured output tasks, what are the dominant failure modes of small models, and which of them can be mitigated by SFT / LoRA / data strategy optimization versus decoding-time constraint or repair?
 
-After Stage 8, the clearest refined question is:
+After Stage 9, the clearest refined question is:
 
-Once target design removes noisy fields and structure is mostly solved, which lever matters most for semantic correctness: more data, more LoRA capacity, stronger optimization settings, better staged training, further target canonicalization, or a final deterministic consistency pass on top of the best trained model?
+Once target design removes noisy fields and structure is mostly solved, which lever matters most for semantic correctness: more data, more LoRA capacity, stronger optimization settings, better staged training, further target canonicalization, deterministic consistency, or a final high-precision lexical postprocess pass on top of the best trained model?
 
 ## Non-Goals
 
@@ -73,6 +73,7 @@ Once target design removes noisy fields and structure is mostly solved, which le
 - action-target canonicalization as a target-design intervention
 - component follow-up target redesign and interaction with staged training
 - deterministic postprocessing as a low-cost final consistency lever
+- lexical postprocessing as a final precision-focused semantic cleanup layer
 
 ### Data
 
