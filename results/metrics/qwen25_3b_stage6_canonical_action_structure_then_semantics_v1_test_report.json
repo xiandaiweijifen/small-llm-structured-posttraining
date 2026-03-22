@@ -1,0 +1,2616 @@
+{
+  "summary": {
+    "num_samples": 254,
+    "valid_json_rate": 1.0,
+    "schema_compliance_rate": 1.0,
+    "field_exact_match": 0.9294917680744452,
+    "end_to_end_exact_match": 0.6259842519685039,
+    "error_counts": {
+      "invalid_json": 0,
+      "schema_violation": 0,
+      "missing_required_field": 0,
+      "enum_error": 0,
+      "type_error": 0,
+      "value_hallucination": 95,
+      "extraction_omission": 0,
+      "cross_field_inconsistency": 0
+    }
+  },
+  "grouped_summary": {
+    "by_complexity_bucket": {
+      "simple": {
+        "num_samples": 61,
+        "valid_json_rate": 1.0,
+        "schema_compliance_rate": 1.0,
+        "field_exact_match": 0.9046199701937406,
+        "end_to_end_exact_match": 0.5573770491803278,
+        "error_counts": {
+          "invalid_json": 0,
+          "schema_violation": 0,
+          "missing_required_field": 0,
+          "enum_error": 0,
+          "type_error": 0,
+          "value_hallucination": 27,
+          "extraction_omission": 0,
+          "cross_field_inconsistency": 0
+        }
+      },
+      "medium": {
+        "num_samples": 176,
+        "valid_json_rate": 1.0,
+        "schema_compliance_rate": 1.0,
+        "field_exact_match": 0.9426652892561983,
+        "end_to_end_exact_match": 0.6988636363636364,
+        "error_counts": {
+          "invalid_json": 0,
+          "schema_violation": 0,
+          "missing_required_field": 0,
+          "enum_error": 0,
+          "type_error": 0,
+          "value_hallucination": 53,
+          "extraction_omission": 0,
+          "cross_field_inconsistency": 0
+        }
+      },
+      "complex": {
+        "num_samples": 17,
+        "valid_json_rate": 1.0,
+        "schema_compliance_rate": 1.0,
+        "field_exact_match": 0.8823529411764706,
+        "end_to_end_exact_match": 0.11764705882352941,
+        "error_counts": {
+          "invalid_json": 0,
+          "schema_violation": 0,
+          "missing_required_field": 0,
+          "enum_error": 0,
+          "type_error": 0,
+          "value_hallucination": 15,
+          "extraction_omission": 0,
+          "cross_field_inconsistency": 0
+        }
+      }
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000409-sai67ttf1",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000017-xka1oq83l",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000256-hnpv99ci1",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000382-0z2ch52ua",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000343-0f4son7ut",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000046-6l81v8qok",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000052-kqzbzny9x",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000105-bbdl37pcd",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000436-tywvbsemu",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000187-mhq047k94",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000030-hi50xah0r",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000060-l9p6pnvxf",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000098-v4f7z7h45",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000308-r8xk85wma",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000464-pqbmfi7sl",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000330-89pyqinfl",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000495-9f0mw3p93",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000181-3g7nmxqkp",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000424-2evw3m55s",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000403-iqx5g8jyb",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000405-b130osr1h",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000057-6qxzkta3q",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000041-jqe2pb7of",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000398-7ooucrvfi",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000388-koode322a",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000294-0xx6q15n4",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000381-pw4ehe1iq",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000111-1i3dnus2c",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000399-6je8ewqp2",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000328-jpkse6jqb",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000461-e1eyevqyf",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000092-c5ak82f61",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000094-z31bb02tg",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000152-ubucd171m",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000180-57xrvwqoz",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000084-e91xtsiwv",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000038-7dcfxsag7",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000036-0k8ro1kdx",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000117-nc5voxprn",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000439-3iclill17",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000153-2jjbgmaie",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000272-feycb1s0u",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000089-m3x9hdi2v",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000144-25gu6wlyw",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000448-j5g3oz1hd",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000176-vzl46789t",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016549-TASK0034967",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026931-INC1023456",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-012514-INC0047697",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-001115-TASK0038760",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000537-INC0040513",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010099-INC0043880",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020029-TASK0047386",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024788-INC004330",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-014717-INC001105",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-002141-TASK0036566",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-015340-TASK0046405",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020723-INC0036507",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022856-TASK0038388",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010281-INC0041989",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-007403-TASK006176",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024684-INC0047772",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026906-TICK1029384",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006203-INC0046237",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022176-INC0039775",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-025494-TASK0034966",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022187-TASK0041512",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008838-TASK0035414",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011533-INC0038703",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009407-INC0045806",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-002478-TASK0043958",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008043-TASK0040499",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-027468-INC0098723",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-023930-TASK0039576",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-014495-TASK0038555",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009862-TASK0043146",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-019612-INC004353",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000736-INC0041120",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-023959-INC0044430",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016565-INC0035148",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-001331-TASK0045726",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-007133-INC0039216",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-025176-TASK0048330",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009206-INC0042225",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008546-TASK0034639",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-019727-INC0038111",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-007941-TASK0039134",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011771-INC0036041",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009489-INC0047270",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-015475-INC005347",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-005286-INC0042994",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-012990-INC0042304",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-025239-INC0045834",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-023213-TASK0035668",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016139-INC0034339",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-003850-TASK0041918",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-027527-TICK0098743",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010019-INC0034518",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-003975-INC0042890",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011546-INC006975",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004528-TASK0041817",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006677-TASK0039409",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011955-INC0039312",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020262-TASK0037355",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-015179-INC0039963",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-012648-INC0036455",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006197-TASK0041432",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011071-TASK0043204",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026544-TASK0037051",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-017340-INC007387",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024001-TASK0037438",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-017610-TASK0047083",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011853-INC001003",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000597-TASK0045912",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016327-TASK0035280",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026102-INC0041962",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026771-REQ0098743",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000346-INC0039050",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011540-INC0042456",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024215-INC008877",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010330-INC0045740",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-007885-TASK0044498",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026516-INC0034198",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004126-TASK0048516",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004407-TASK006385",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026964-REQ0098723",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-025359-TASK0037361",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004209-INC0041994",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009724-INC0044359",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010194-TASK0044745",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-013212-INC0044414",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-018613-INC0045527",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-027241-INC1023456",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-012694-TASK0039993",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016744-INC0037197",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-023791-INC0047241",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022332-TASK0047893",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009466-INC0043320",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006356-TASK0043712",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022027-INC0039943",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020026-TASK0034696",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011999-TASK0041039",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009107-TASK0041780",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-014732-TASK0048476",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-014633-TASK0038686",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020569-INC0045574",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-018895-TASK0046960",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-018287-INC0035411",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010224-TASK0048524",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-005274-TASK0034405",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-013865-TASK006683",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026801-REQ0098743",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-002342-INC0044915",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-007349-TASK0038579",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008109-TASK0038819",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006030-INC002957",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008199-TASK0037878",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016329-TASK0037575",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024302-INC0040364",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016906-INC0038743",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-007993-TASK0039576",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011787-INC0037719",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-027047-TICK0082745",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022598-TASK0047986",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-021689-TASK0048395",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000569-TASK0046088",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-014990-INC0046214",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004497-TASK0041364",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004814-INC0041228",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-015846-TASK0041423",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-005688-TASK0037342",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026182-TASK0040350",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024297-INC003636",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020711-INC0035905",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006582-INC0037919",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-002074-TASK0037160",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-019942-INC0035728",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-019085-INC0040687",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020288-INC0043010",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-013161-INC0041332",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-015658-INC009604",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016835-TASK0047548",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000206-INC0046722",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008130-TASK0042702",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009478-INC0035300",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-003686-TASK0037754",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022842-INC0043448",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010725-INC0034869",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026843-REQ1004587",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-017995-TASK0043942",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010830-TASK0047238",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004512-INC005769",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-014185-INC0048782",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010531-INC0046447",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-002787-INC0044148",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-018783-INC0040214",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-021099-TASK0035671",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-012911-TASK0048197",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-018084-TASK0050695",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016650-INC0047240",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-007362-TASK0047995",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-018803-TASK0047819",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009037-INC008597",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-003488-TASK0037319",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-002308-INC0040000",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010513-INC0027136",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020869-INC002788",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-020251-INC009939",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-026609-REQ0098745",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006898-TASK0042940",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-004747-INC0049034",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-025065-TASK0047091",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-023112-TASK0037843",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-012914-TASK0039451",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016485-INC0044675",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-001819-TASK0048377",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022545-INC0025787",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024725-INC0058777",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-009504-INC0064932",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022526-INC0039230",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-002138-INC0082318",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-019303-INC0095818",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008294-INC0079380",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000036-INC0027150",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000452-INC0054773",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010363-INC0041837",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000688-INC0059242",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008300-INC0088514",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010829-INC0076184",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-025260-INC0082858",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-022381-INC0047573",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-012684-INC001234",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-016094-INC006119",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-025435-INC0040975",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-015225-TASK0042979",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008910-TASK0045824",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-011722-INC0047522",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-019762-TASK0047948",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024091-TASK0037571",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008156-TASK0049134",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-019483-TASK0043524",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-008456-INC005741",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-003242-INC004102",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000480-TASK0035809",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-000440-TASK0037492",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-024669-INC0047522",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-006999-INC008202",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "kameronb_it_callcenter_tickets-010267-INC0038608",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.9090909090909091,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "complex"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000497-y655s5pjx",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000320-d9sz7vm8o",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000362-28w58vbny",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000093-j7ewcvsq8",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 1.0,
+      "exact_match": true,
+      "primary_error": null,
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000437-xljo7q748",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "console_ai_it_helpdesk_tickets-000192-gzm0m2o5i",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    }
+  ]
+}
