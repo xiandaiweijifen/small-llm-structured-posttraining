@@ -116,6 +116,7 @@ The repository currently contains:
 - Stage 8 deterministic postprocessing follow-ups on the Stage 7 best predictions
 - Stage 9 lexical postprocessing follow-ups on top of the Stage 8 best predictions
 - multi-model same-family prompt-only reference comparisons at `3B / 7B / 14B / 32B`
+- external-dataset generalization references on a mapped customer-support ticket dataset
 - seen/unseen schema generalization results
 
 For Stage 8 and Stage 9:
@@ -148,6 +149,7 @@ Current high-level conclusions:
 - a final deterministic consistency pass on top of the strongest Stage 7 run lifts end-to-end exact match further without retraining
 - a final high-precision lexical postprocess layer lifts `priority` and `blocking` further, pushing end-to-end exact match above `0.72`
 - same-family larger prompt-only models (`7B / 14B / 32B`) still fail to satisfy the target schema reliably, so raw scaling does not replace post-training and target redesign
+- on a mapped out-of-domain customer-support eval set, the strongest trained 3B still beats `14B/32B` prompt-only references at field level, but schema completeness collapses and the Stage 8/9 postprocess layers do not transfer
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:

@@ -500,6 +500,23 @@ Interpretation:
 - repair can recover some structural compliance for larger prompt-only models, but still does not convert them into usable end-to-end systems on this task
 - this comparison strengthens the core project claim that post-training, target redesign, and final consistency layers matter more than raw prompt-only scaling for complex schema extraction
 
+## External Mapped-Dataset Generalization
+
+On a mapped customer-support eval set built from `gorkemsevinc/customer_support_tickets`, the strongest trained 3B remains the best field-level performer among the tested references:
+
+- strongest trained 3B: `field_exact_match = 0.6040`, `end_to_end_exact_match = 0.0000`
+- strongest 3B system line with Stage 8/9 postprocess: `0.6030`, `0.0000`
+- `14B` prompt-only raw: `0.4201`, `0.0000`
+- `32B` prompt-only raw: `0.4212`, `0.0000`
+
+Interpretation:
+
+- the trained 3B keeps a real field-level advantage over larger same-family prompt-only models even on a new mapped dataset
+- however, schema completeness drops sharply across the board, so all methods fall to zero end-to-end exact match
+- the dominant error for the trained 3B is still missing required fields on the new dataset, not invalid JSON
+- the Stage 8 deterministic and Stage 9 lexical postprocess layers do not add measurable gains on this external mapped dataset, which indicates that those gains are task-aware rather than broadly transferable
+- this result suggests that the post-trained model itself has some transferable structure-and-semantics bias, but the strongest system-level cleanup rules are much more distribution-specific
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:
@@ -515,4 +532,5 @@ The combined experiments now support a more refined story:
 - a final deterministic consistency pass on top of the strongest trained run pushes the best result further again, without any new optimization steps
 - a final lexical severity-focused postprocess pass pushes the best result further again, again without retraining
 - same-family prompt-only scaling up to `32B` remains well below the post-trained `3B` pipeline because schema completeness does not emerge reliably from prompt-only prompting alone
+- on a mapped external dataset, the trained `3B` still beats larger prompt-only references at field level, but the deterministic and lexical cleanup layers do not transfer cleanly
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

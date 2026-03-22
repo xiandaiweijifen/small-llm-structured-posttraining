@@ -19,6 +19,7 @@ Current status:
 - Stage 8 deterministic postprocessing follow-ups have been run and reviewed
 - Stage 9 lexical postprocessing follow-ups have been run and reviewed
 - same-family big-model prompt-only reference runs have been executed and reviewed
+- external-dataset generalization references have been executed and reviewed
 
 The project is currently in:
 
@@ -137,6 +138,9 @@ Completed:
 - kept Stage 8 and Stage 9 as script-driven postprocessing experiments with matching notebook launchers, rather than notebook-only workflows
 - ran `3B / 7B / 14B / 32B` same-family prompt-only reference comparisons under the canonicalized reduced-schema evaluation target
 - exported a big-model reference summary
+- built a mapped reduced-schema eval set from `gorkemsevinc/customer_support_tickets`
+- ran cross-dataset references comparing the strongest trained/system 3B lines against `14B` and `32B` prompt-only references
+- exported an external generalization reference summary
 - exported a consolidated Stage 2 review summary
 - exported a consolidated long-run batch summary
 - exported a Stage 3 end-to-end optimization batch summary
@@ -182,6 +186,8 @@ Main conclusions:
 - the current best run is Stage 9 combined lexical postprocessing on top of the Stage 8 best model
 - hard-sample continuation identifies a real semantic hard subset, but the current continuation recipes do not beat the strongest staged baseline
 - same-family larger prompt-only models remain far below the trained 3B pipeline because they still fail on required-field completeness and schema compliance
+- on the mapped customer-support eval set, the strongest trained 3B still outperforms `14B/32B` prompt-only references, but all runs fall to zero end-to-end exact match because schema completeness does not transfer cleanly
+- Stage 8/9 postprocessing gains are strongly task-aware and do not meaningfully transfer to this external mapped dataset
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
@@ -361,6 +367,7 @@ Expected outcome:
 - one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, component follow-ups, deterministic postprocessing, lexical postprocessing, and seen/unseen schema generalization
 - one clear statement that broad continuation did not beat the strongest staged baseline, while joint target redesign plus staged training did
 - one explicit reference comparison showing that same-family prompt-only scaling to `7B / 14B / 32B` still does not match the post-trained 3B system on this task
+- one explicit cross-dataset generalization comparison showing that the trained 3B keeps a field-level advantage over larger prompt-only models, while task-specific postprocess layers fail to transfer
 - one clear statement of what post-training solves, what repair solves, what deterministic consistency can still clean up cheaply, and what still fails semantically
 
 ## Practical Rule

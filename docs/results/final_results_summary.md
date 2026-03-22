@@ -68,6 +68,8 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - a final lexical postprocess layer can still push exact match further when it is restricted to a small set of high-precision severity cues
 - repair still adds essentially no value once post-training has stabilized structure
 - same-family prompt-only scaling helps field-level averages somewhat, but none of the `3B / 7B / 14B / 32B` prompt-only references achieve non-zero end-to-end exact match under the canonicalized reduced-schema evaluation target
+- on a mapped external customer-support eval set, the strongest trained 3B still leads `14B/32B` prompt-only references at field level (`0.6040` vs `0.4201/0.4212`), but all methods fall to `0.0000` end-to-end exact match because required-field completeness does not transfer
+- the Stage 8/9 deterministic and lexical postprocess layers do not add measurable gains on that external mapped dataset, indicating that those layers are task-aware rather than broadly transferable
 
 ## Generalization Breakdown
 
@@ -126,6 +128,7 @@ The experiments support a clear division of labor:
 
 - prompt-only is weak mainly because it does not reliably satisfy schema requirements
 - same-family larger prompt-only models remain structurally weak on this task; larger scale alone does not replace post-training
+- cross-dataset mapped evaluation shows that post-training still transfers better than prompt-only scaling, but the strongest system-level gains are less transferable than the core trained model
 - repair is effective for structural normalization and schema cleanup
 - post-training is the main lever for stable structured generation
 - target design matters: noisy identity fields can dominate failure modes and hide the model's real extraction ability
@@ -179,9 +182,14 @@ The most defensible summary of the project is:
 - `results/metrics/qwen25_3b_stage9_lexical_combined_test_report.json`
 - `docs/results/lexical_postprocess_batch_summary.md`
 - `docs/results/big_model_reference_summary.md`
+- `docs/results/gorkemsevinc_cst_eval_generalization_reference_summary.md`
 - `results/metrics/qwen25_3b_reference_canonical_prompt_test_report.json`
 - `results/metrics/qwen25_7b_reference_canonical_prompt_test_report.json`
 - `results/metrics/qwen25_14b_reference_canonical_prompt_test_report.json`
 - `results/metrics/qwen25_32b_reference_canonical_prompt_test_report.json`
+- `results/metrics/gorkemsevinc_cst_eval_trained_stage7_raw_test_report.json`
+- `results/metrics/gorkemsevinc_cst_eval_trained_stage9_lexical_test_report.json`
+- `results/metrics/gorkemsevinc_cst_eval_prompt_14b_raw_test_report.json`
+- `results/metrics/gorkemsevinc_cst_eval_prompt_32b_raw_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`
