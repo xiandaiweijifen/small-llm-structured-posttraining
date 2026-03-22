@@ -12,7 +12,7 @@ Systematically studied small-model capability boundaries on complex schema-based
 
 Current strongest project-level statement:
 
-Built a small-model structured-output post-training framework for complex text-to-JSON tasks, and showed that target design, data scale, LoRA capacity, epoch duration, learning rate, staged structure-then-semantics training, action-target canonicalization, joint action+component target redesign, deterministic consistency passes, and a final high-precision lexical postprocess layer all affect semantic accuracy differently, while repair mainly helps prompt-only structural failures.
+Built a small-model structured-output post-training framework for complex text-to-JSON tasks, and showed that target design, data scale, LoRA capacity, epoch duration, learning rate, staged structure-then-semantics training, action-target canonicalization, joint action+component target redesign, deterministic consistency passes, and a final high-precision lexical postprocess layer all affect semantic accuracy differently, while repair mainly helps prompt-only structural failures. Same-family prompt-only scaling from `3B` to `7B / 14B / 32B` still remains far below the post-trained 3B system because schema completeness does not emerge reliably from prompt-only use alone.
 
 ## Core Research Question
 

@@ -40,6 +40,10 @@ This project studies a focused question:
 | Stage 7 Canonical Action + Component, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9402 | 0.6772 | Best trained run; joint target redesign plus staged training improves `component` enough to set a new best before postprocessing |
 | Stage 8 Deterministic Action + Component Postprocess | 1.0000 | 1.0000 | 0.9427 | 0.6929 | Best overall result; a no-train consistency pass on top of Stage 7 gives another exact-match gain |
 | Stage 9 Combined Lexical Postprocess | 1.0000 | 1.0000 | 0.9470 | 0.7205 | New best overall result; a high-precision lexical layer further improves `priority` and `blocking` without retraining |
+| Qwen2.5-3B Prompt-Only Reference, Canonicalized Target | 0.9724 | 0.0000 | 0.4470 | 0.0000 | Raw prompt-only on the same base model still fails mainly on required fields |
+| Qwen2.5-7B Prompt-Only Reference, Canonicalized Target | 1.0000 | 0.0000 | 0.5251 | 0.0000 | Larger prompt-only model improves field average, but still misses required fields systematically |
+| Qwen2.5-14B Prompt-Only Reference, Canonicalized Target | 0.9961 | 0.0000 | 0.5777 | 0.0000 | Strongest raw prompt-only reference, but still structurally unusable under exact schema evaluation |
+| Qwen2.5-32B Prompt-Only Reference, Canonicalized Target | 1.0000 | 0.0000 | 0.5634 | 0.0000 | More scale alone does not solve schema completeness |
 | Schema-Conditioned Reduced QLoRA Generalization | 0.9980 | 0.9980 | 0.8764 | 0.4646 | Structure transfers well; semantics drop under schema shift |
 
 Implementation note for Stage 8 and Stage 9:
@@ -63,6 +67,7 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - a final deterministic consistency pass on top of that trained run is still able to push exact match further
 - a final lexical postprocess layer can still push exact match further when it is restricted to a small set of high-precision severity cues
 - repair still adds essentially no value once post-training has stabilized structure
+- same-family prompt-only scaling helps field-level averages somewhat, but none of the `3B / 7B / 14B / 32B` prompt-only references achieve non-zero end-to-end exact match under the canonicalized reduced-schema evaluation target
 
 ## Generalization Breakdown
 
@@ -120,6 +125,7 @@ Stage 3 hard mining also shows that the remaining semantic bottleneck is concent
 The experiments support a clear division of labor:
 
 - prompt-only is weak mainly because it does not reliably satisfy schema requirements
+- same-family larger prompt-only models remain structurally weak on this task; larger scale alone does not replace post-training
 - repair is effective for structural normalization and schema cleanup
 - post-training is the main lever for stable structured generation
 - target design matters: noisy identity fields can dominate failure modes and hide the model's real extraction ability
@@ -172,5 +178,10 @@ The most defensible summary of the project is:
 - `docs/results/deterministic_postprocess_batch_summary.md`
 - `results/metrics/qwen25_3b_stage9_lexical_combined_test_report.json`
 - `docs/results/lexical_postprocess_batch_summary.md`
+- `docs/results/big_model_reference_summary.md`
+- `results/metrics/qwen25_3b_reference_canonical_prompt_test_report.json`
+- `results/metrics/qwen25_7b_reference_canonical_prompt_test_report.json`
+- `results/metrics/qwen25_14b_reference_canonical_prompt_test_report.json`
+- `results/metrics/qwen25_32b_reference_canonical_prompt_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`

@@ -484,6 +484,22 @@ Main improved semantic fields:
 - `constraints.blocking`: `0.9724`
 - overall end-to-end exact match: `0.7205`
 
+## Same-Family Prompt-Only Reference Models
+
+Prompt-only reference runs on the canonicalized reduced-schema target show that scaling the base instruct model without post-training is not enough:
+
+- `Qwen2.5-3B-Instruct`: `field_exact_match = 0.4470`, `end_to_end_exact_match = 0.0000`
+- `Qwen2.5-7B-Instruct`: `0.5251`, `0.0000`
+- `Qwen2.5-14B-Instruct`: `0.5777`, `0.0000`
+- `Qwen2.5-32B-Instruct`: `0.5634`, `0.0000`
+
+Interpretation:
+
+- larger same-family prompt-only models improve average field overlap somewhat, but none of them satisfy the target schema reliably enough to achieve non-zero end-to-end exact match
+- the dominant failure mode remains missing required fields rather than pure JSON validity
+- repair can recover some structural compliance for larger prompt-only models, but still does not convert them into usable end-to-end systems on this task
+- this comparison strengthens the core project claim that post-training, target redesign, and final consistency layers matter more than raw prompt-only scaling for complex schema extraction
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:
@@ -498,4 +514,5 @@ The combined experiments now support a more refined story:
 - `component` canonicalization alone is weak, but joint `action + component` canonicalization plus staged training pushes the best result further
 - a final deterministic consistency pass on top of the strongest trained run pushes the best result further again, without any new optimization steps
 - a final lexical severity-focused postprocess pass pushes the best result further again, again without retraining
+- same-family prompt-only scaling up to `32B` remains well below the post-trained `3B` pipeline because schema completeness does not emerge reliably from prompt-only prompting alone
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

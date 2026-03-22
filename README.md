@@ -115,6 +115,7 @@ The repository currently contains:
 - Stage 7 component-canonicalization follow-ups, including joint action+component target redesign
 - Stage 8 deterministic postprocessing follow-ups on the Stage 7 best predictions
 - Stage 9 lexical postprocessing follow-ups on top of the Stage 8 best predictions
+- multi-model same-family prompt-only reference comparisons at `3B / 7B / 14B / 32B`
 - seen/unseen schema generalization results
 
 For Stage 8 and Stage 9:
@@ -129,6 +130,12 @@ Current strongest run:
 - field exact match: `0.9470`
 - end-to-end exact match: `0.7205`
 
+Current strongest trained run:
+
+- Stage 7 joint canonical action+component redesign with staged training
+- field exact match: `0.9402`
+- end-to-end exact match: `0.6772`
+
 Current high-level conclusions:
 
 - prompt-only mainly fails on structure
@@ -140,6 +147,7 @@ Current high-level conclusions:
 - `component` canonicalization alone is weak, but joint `action + component` canonicalization becomes effective when paired with staged training
 - a final deterministic consistency pass on top of the strongest Stage 7 run lifts end-to-end exact match further without retraining
 - a final high-precision lexical postprocess layer lifts `priority` and `blocking` further, pushing end-to-end exact match above `0.72`
+- same-family larger prompt-only models (`7B / 14B / 32B`) still fail to satisfy the target schema reliably, so raw scaling does not replace post-training and target redesign
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:
