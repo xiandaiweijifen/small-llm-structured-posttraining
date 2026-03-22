@@ -1,0 +1,359 @@
+{
+  "num_samples": 512,
+  "num_fields": 11,
+  "per_field": {
+    "actions_requested[0].action": {
+      "total": 512,
+      "match_count": 1,
+      "mismatch_count": 511,
+      "match_rate": 0.001953125,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "Investigate issue: installation support",
+          "pred": "Answer and clarify: Data recovery and error message clarification for deleted files on ASUS ROG"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "Answer and clarify: installation support",
+          "pred": "Investigate issue: Hardware issue with Garmin Forerunner causing screen flickering"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "Answer and clarify: display issue",
+          "pred": "Investigate issue: display issue with Nintendo Switch Pro Controller"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "Answer and clarify: cancellation request",
+          "pred": "Handle request: cancellation request for asus rog issue"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "Handle request: network problem",
+          "pred": "Investigate issue: network problem with Roomba robot vacuum"
+        }
+      ]
+    },
+    "actions_requested[0].deadline": {
+      "total": 512,
+      "match_count": 512,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "actions_requested[0].owner": {
+      "total": 512,
+      "match_count": 512,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "affected_systems[0].component": {
+      "total": 512,
+      "match_count": 7,
+      "mismatch_count": 505,
+      "match_rate": 0.013671875,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "error",
+          "pred": "storage"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "software",
+          "pred": "hardware"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "software",
+          "pred": "controller"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "account",
+          "pred": "rog_device"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "request",
+          "pred": "network"
+        }
+      ]
+    },
+    "affected_systems[0].name": {
+      "total": 512,
+      "match_count": 118,
+      "mismatch_count": 394,
+      "match_rate": 0.23046875,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "asus rog",
+          "pred": "ASUS ROG"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "garmin forerunner",
+          "pred": "Garmin Forerunner"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "nintendo switch pro controller",
+          "pred": "Nintendo Switch Pro Controller"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "roomba robot vacuum",
+          "pred": "Roomba robot vacuum"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08370",
+          "gold": "iphone",
+          "pred": "iPhone"
+        }
+      ]
+    },
+    "category": {
+      "total": 512,
+      "match_count": 134,
+      "mismatch_count": 378,
+      "match_rate": 0.26171875,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "bug",
+          "pred": "question"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "question",
+          "pred": "bug"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "question",
+          "pred": "bug"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "question",
+          "pred": "task"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "task",
+          "pred": "bug"
+        }
+      ]
+    },
+    "constraints.blocking": {
+      "total": 512,
+      "match_count": 504,
+      "mismatch_count": 8,
+      "match_rate": 0.984375,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07719",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04918",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01733",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-02316",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00239",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "constraints.environment": {
+      "total": 512,
+      "match_count": 512,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "priority": {
+      "total": 512,
+      "match_count": 63,
+      "mismatch_count": 449,
+      "match_rate": 0.123046875,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "medium",
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "high",
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "low",
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "urgent",
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03530",
+          "gold": "low",
+          "pred": "high"
+        }
+      ]
+    },
+    "requires_followup": {
+      "total": 512,
+      "match_count": 0,
+      "mismatch_count": 512,
+      "match_rate": 0.0,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "summary": {
+      "total": 512,
+      "match_count": 3,
+      "mismatch_count": 509,
+      "match_rate": 0.005859375,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "installation support",
+          "pred": "Data recovery and error message clarification for deleted files on ASUS ROG"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "installation support",
+          "pred": "Hardware issue with Garmin Forerunner causing screen flickering"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "display issue",
+          "pred": "display issue with Nintendo Switch Pro Controller"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "cancellation request",
+          "pred": "cancellation request for asus rog issue"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "network problem",
+          "pred": "network problem with Roomba robot vacuum"
+        }
+      ]
+    }
+  },
+  "worst_fields": [
+    {
+      "field_name": "requires_followup",
+      "match_rate": 0.0,
+      "mismatch_count": 512,
+      "total": 512
+    },
+    {
+      "field_name": "actions_requested[0].action",
+      "match_rate": 0.001953125,
+      "mismatch_count": 511,
+      "total": 512
+    },
+    {
+      "field_name": "summary",
+      "match_rate": 0.005859375,
+      "mismatch_count": 509,
+      "total": 512
+    },
+    {
+      "field_name": "affected_systems[0].component",
+      "match_rate": 0.013671875,
+      "mismatch_count": 505,
+      "total": 512
+    },
+    {
+      "field_name": "priority",
+      "match_rate": 0.123046875,
+      "mismatch_count": 449,
+      "total": 512
+    },
+    {
+      "field_name": "affected_systems[0].name",
+      "match_rate": 0.23046875,
+      "mismatch_count": 394,
+      "total": 512
+    },
+    {
+      "field_name": "category",
+      "match_rate": 0.26171875,
+      "mismatch_count": 378,
+      "total": 512
+    },
+    {
+      "field_name": "constraints.blocking",
+      "match_rate": 0.984375,
+      "mismatch_count": 8,
+      "total": 512
+    },
+    {
+      "field_name": "actions_requested[0].deadline",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 512
+    },
+    {
+      "field_name": "actions_requested[0].owner",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 512
+    },
+    {
+      "field_name": "constraints.environment",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 512
+    }
+  ]
+}

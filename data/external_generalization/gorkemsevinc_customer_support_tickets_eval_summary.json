@@ -1,0 +1,25 @@
+{
+  "input_path": "/home/lyan11/small-llm-structured-posttraining/data/raw/exports/gorkemsevinc_customer_support_tickets/train.jsonl",
+  "output_path": "/home/lyan11/small-llm-structured-posttraining/data/external_generalization/gorkemsevinc_customer_support_tickets_eval_reduced.jsonl",
+  "raw_count": 8469,
+  "mapped_count": 8469,
+  "sampled_count": 512,
+  "max_samples": 512,
+  "seed": 42,
+  "complexity_counts": {
+    "medium": 8,
+    "simple": 504
+  },
+  "category_counts": {
+    "bug": 108,
+    "incident": 6,
+    "question": 193,
+    "task": 205
+  },
+  "priority_counts": {
+    "high": 135,
+    "low": 126,
+    "medium": 127,
+    "urgent": 124
+  }
+}

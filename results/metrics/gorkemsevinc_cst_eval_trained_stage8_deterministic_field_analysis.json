@@ -1,0 +1,385 @@
+{
+  "num_samples": 512,
+  "num_fields": 11,
+  "per_field": {
+    "actions_requested[0].action": {
+      "total": 512,
+      "match_count": 115,
+      "mismatch_count": 397,
+      "match_rate": 0.224609375,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "Investigate issue: installation support",
+          "pred": "Investigate and mitigate incident: accidental data deletion on asus rog"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "Answer and clarify: installation support",
+          "pred": "Handle request: installation support"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "Answer and clarify: display issue",
+          "pred": "Answer and clarify: display issue\n\nhow does the store get any money without my permission? do you have a refund of your purchase when I make a purchase? if you have a question about this"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "Answer and clarify: cancellation request",
+          "pred": "Handle request: cancellation request"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "Handle request: network problem",
+          "pred": "Investigate and mitigate incident: network problem"
+        }
+      ]
+    },
+    "actions_requested[0].deadline": {
+      "total": 512,
+      "match_count": 512,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "actions_requested[0].owner": {
+      "total": 512,
+      "match_count": 512,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "affected_systems[0].component": {
+      "total": 512,
+      "match_count": 25,
+      "mismatch_count": 487,
+      "match_rate": 0.048828125,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "error",
+          "pred": "malfunction"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "software",
+          "pred": "configuration"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "software",
+          "pred": "hardware"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "account",
+          "pred": "malfunction"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "request",
+          "pred": "configuration"
+        }
+      ]
+    },
+    "affected_systems[0].name": {
+      "total": 512,
+      "match_count": 46,
+      "mismatch_count": 466,
+      "match_rate": 0.08984375,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "asus rog",
+          "pred": "Computer"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "nintendo switch pro controller",
+          "pred": "Hardware"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "asus rog",
+          "pred": "Computer"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "roomba robot vacuum",
+          "pred": "EnderIO"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08370",
+          "gold": "iphone",
+          "pred": "Iphone"
+        }
+      ]
+    },
+    "category": {
+      "total": 512,
+      "match_count": 117,
+      "mismatch_count": 395,
+      "match_rate": 0.228515625,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "bug",
+          "pred": "incident"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "question",
+          "pred": "task"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "question",
+          "pred": "task"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "task",
+          "pred": "incident"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08370",
+          "gold": "question",
+          "pred": "incident"
+        }
+      ]
+    },
+    "constraints.blocking": {
+      "total": 512,
+      "match_count": 495,
+      "mismatch_count": 17,
+      "match_rate": 0.966796875,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01673",
+          "gold": null,
+          "pred": false
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05784",
+          "gold": null,
+          "pred": false
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08126",
+          "gold": null,
+          "pred": false
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07719",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00759",
+          "gold": null,
+          "pred": false
+        }
+      ]
+    },
+    "constraints.environment": {
+      "total": 512,
+      "match_count": 494,
+      "mismatch_count": 18,
+      "match_rate": 0.96484375,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01673",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05784",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08126",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00759",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07334",
+          "gold": null,
+          "pred": "home"
+        }
+      ]
+    },
+    "priority": {
+      "total": 512,
+      "match_count": 131,
+      "mismatch_count": 381,
+      "match_rate": 0.255859375,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "medium",
+          "pred": "high"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+          "gold": "high",
+          "pred": "medium"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "low",
+          "pred": "medium"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+          "gold": "urgent",
+          "pred": "medium"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+          "gold": "medium",
+          "pred": "high"
+        }
+      ]
+    },
+    "requires_followup": {
+      "total": 512,
+      "match_count": 506,
+      "mismatch_count": 6,
+      "match_rate": 0.98828125,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05937",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01226",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-02276",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01794",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03126",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "summary": {
+      "total": 512,
+      "match_count": 467,
+      "mismatch_count": 45,
+      "match_rate": 0.912109375,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+          "gold": "installation support",
+          "pred": "accidental data deletion on asus rog"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+          "gold": "display issue",
+          "pred": "display issue\n\nhow does the store get any money without my permission? do you have a refund of your purchase when I make a purchase? if you have a question about this"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04277",
+          "gold": "battery life",
+          "pred": "software bug in the autodesk autocad app"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05031",
+          "gold": "software bug",
+          "pred": "software bug\n\nDescription: i'm having an issue with the gopro hero. please assist. thank you.\n\nproduct: kiki\n\ndescription: an apple for everyone! the kiki apple is a delicious treat for those who are very passionate about the issue i'm facing is intermittent. sometimes it works fine, but other times it acts up unexpectedly. resolution pending"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-02178",
+          "gold": "refund request",
+          "pred": "network connectivity problem is a symptom of an underlying issue that is not isolated (google pixel)"
+        }
+      ]
+    }
+  },
+  "worst_fields": [
+    {
+      "field_name": "affected_systems[0].component",
+      "match_rate": 0.048828125,
+      "mismatch_count": 487,
+      "total": 512
+    },
+    {
+      "field_name": "affected_systems[0].name",
+      "match_rate": 0.08984375,
+      "mismatch_count": 466,
+      "total": 512
+    },
+    {
+      "field_name": "actions_requested[0].action",
+      "match_rate": 0.224609375,
+      "mismatch_count": 397,
+      "total": 512
+    },
+    {
+      "field_name": "category",
+      "match_rate": 0.228515625,
+      "mismatch_count": 395,
+      "total": 512
+    },
+    {
+      "field_name": "priority",
+      "match_rate": 0.255859375,
+      "mismatch_count": 381,
+      "total": 512
+    },
+    {
+      "field_name": "summary",
+      "match_rate": 0.912109375,
+      "mismatch_count": 45,
+      "total": 512
+    },
+    {
+      "field_name": "constraints.environment",
+      "match_rate": 0.96484375,
+      "mismatch_count": 18,
+      "total": 512
+    },
+    {
+      "field_name": "constraints.blocking",
+      "match_rate": 0.966796875,
+      "mismatch_count": 17,
+      "total": 512
+    },
+    {
+      "field_name": "requires_followup",
+      "match_rate": 0.98828125,
+      "mismatch_count": 6,
+      "total": 512
+    },
+    {
+      "field_name": "actions_requested[0].deadline",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 512
+    },
+    {
+      "field_name": "actions_requested[0].owner",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 512
+    }
+  ]
+}

@@ -1,0 +1,5179 @@
+{
+  "summary": {
+    "num_samples": 512,
+    "valid_json_rate": 1.0,
+    "schema_compliance_rate": 0.421875,
+    "field_exact_match": 0.4465553977272727,
+    "end_to_end_exact_match": 0.0,
+    "error_counts": {
+      "invalid_json": 0,
+      "schema_violation": 0,
+      "missing_required_field": 48,
+      "enum_error": 248,
+      "type_error": 0,
+      "value_hallucination": 216,
+      "extraction_omission": 0,
+      "cross_field_inconsistency": 0
+    }
+  },
+  "grouped_summary": {
+    "by_complexity_bucket": {
+      "simple": {
+        "num_samples": 504,
+        "valid_json_rate": 1.0,
+        "schema_compliance_rate": 0.4246031746031746,
+        "field_exact_match": 0.4482323232323232,
+        "end_to_end_exact_match": 0.0,
+        "error_counts": {
+          "invalid_json": 0,
+          "schema_violation": 0,
+          "missing_required_field": 45,
+          "enum_error": 245,
+          "type_error": 0,
+          "value_hallucination": 214,
+          "extraction_omission": 0,
+          "cross_field_inconsistency": 0
+        }
+      },
+      "medium": {
+        "num_samples": 8,
+        "valid_json_rate": 1.0,
+        "schema_compliance_rate": 0.25,
+        "field_exact_match": 0.3409090909090909,
+        "end_to_end_exact_match": 0.0,
+        "error_counts": {
+          "invalid_json": 0,
+          "schema_violation": 0,
+          "missing_required_field": 3,
+          "enum_error": 3,
+          "type_error": 0,
+          "value_hallucination": 2,
+          "extraction_omission": 0,
+          "cross_field_inconsistency": 0
+        }
+      }
+    }
+  },
+  "per_sample": [
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07696",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04559",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08115",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01769",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03097",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08370",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03530",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07992",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01673",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05353",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01834",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02029",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05732",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07883",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00667",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02193",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06268",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00097",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07839",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03464",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00644",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00229",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03351",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06668",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06500",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06349",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02638",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06760",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04277",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07168",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02430",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01648",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03212",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03266",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00856",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07191",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05031",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00169",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00315",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05784",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04158",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01706",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07193",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01702",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02479",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01087",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00690",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00016",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05055",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02911",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07179",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08126",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04576",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01538",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05861",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06948",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03414",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07830",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01901",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03338",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08313",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02429",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05794",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00226",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02181",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07741",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00182",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07454",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08016",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03839",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02055",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06530",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05450",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05447",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02178",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00573",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01857",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06279",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05498",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03428",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04467",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01010",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06550",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07937",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07015",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02629",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02376",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06138",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00871",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02156",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01604",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00450",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05418",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04983",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07958",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08402",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07719",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02626",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03294",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06995",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06551",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03773",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04695",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08178",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02788",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08018",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04950",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03148",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04784",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03582",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03763",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01650",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02738",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00339",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05175",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04818",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04538",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05635",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03198",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03409",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03043",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02540",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05421",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06633",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08353",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00759",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03866",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02237",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07332",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01335",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08371",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06044",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03341",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07209",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08090",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02757",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03303",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01412",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08265",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07095",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01565",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06200",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02165",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01108",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02072",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00444",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00096",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07930",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02486",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06220",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00535",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05645",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01176",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06432",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07334",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06087",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02271",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08083",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02037",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05593",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02499",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08441",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04588",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08247",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08163",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05072",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00386",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05083",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00405",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02375",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07175",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06708",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00655",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00705",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05521",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06505",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04577",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01649",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05518",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02312",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02753",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00132",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01250",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02282",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02518",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04444",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06541",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05833",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02353",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06176",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00157",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03834",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06028",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02212",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00862",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00761",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01195",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01365",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01431",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01122",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00825",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01434",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02179",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02975",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06595",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07009",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00709",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07238",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04693",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03397",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05217",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05937",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05576",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05927",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04110",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04126",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02529",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00007",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06347",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02978",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04923",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02948",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01381",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03380",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08164",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04144",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03727",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04918",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.2727272727272727,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08450",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00916",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01339",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02425",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07380",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07519",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00723",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01788",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07602",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07972",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01733",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05998",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04400",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02676",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08270",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00441",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03080",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03506",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05704",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08128",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03932",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00205",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01804",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02182",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02465",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05914",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07525",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01606",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07994",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04873",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04072",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01582",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00731",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05327",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00802",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01202",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00168",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08010",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07566",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01559",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02086",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02316",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04186",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05084",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03056",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08407",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06058",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06139",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07961",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00383",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04063",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05945",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00152",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00568",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03958",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07753",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07410",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02013",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00239",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08049",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06327",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08285",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02426",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05243",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04479",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01226",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00537",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06463",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01688",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03357",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.2727272727272727,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01878",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04237",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00192",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01918",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06468",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07090",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05546",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03307",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05534",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06311",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06946",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08242",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02617",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07589",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00387",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01742",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00103",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01113",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06205",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03419",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00117",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02563",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08432",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03382",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07141",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06928",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05519",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04202",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06850",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03155",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04035",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01697",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03364",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04408",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04949",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06195",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07623",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08426",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04354",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07275",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07764",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00970",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00820",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03821",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00469",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04855",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07314",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01586",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02888",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08181",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01364",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02276",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07016",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05818",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08008",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05007",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05126",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00472",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07159",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07399",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01145",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04858",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04218",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00753",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02036",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04947",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03724",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08463",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07800",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04385",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02334",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06187",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07400",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07522",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04064",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02770",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07720",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04604",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00121",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06786",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00003",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00215",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03878",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07810",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05667",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04654",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04642",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06057",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06511",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02469",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01097",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08236",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06408",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01351",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05626",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06037",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06963",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.7272727272727273,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01781",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07481",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07766",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06362",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00869",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04932",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03798",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01794",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03131",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01453",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02098",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08059",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01008",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07625",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03239",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07283",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02597",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03876",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04356",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03034",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00912",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00042",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01016",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07906",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01003",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07804",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03980",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08091",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03098",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01062",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01948",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00069",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02914",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04863",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04038",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01859",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03857",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04208",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02258",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05166",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08295",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06024",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00388",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03903",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03209",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03070",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05594",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01554",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07465",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01300",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.2727272727272727,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07436",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08434",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05965",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00799",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03166",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08272",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06941",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04152",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03507",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08369",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.8181818181818182,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00984",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03096",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07133",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00520",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01803",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00621",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03608",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02082",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06916",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06042",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05646",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02608",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05979",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03279",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02343",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06896",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04715",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06801",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03752",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03126",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03190",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00033",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08384",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.6363636363636364,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06751",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05279",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06594",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04068",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02041",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07218",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04261",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05830",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-08210",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01547",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04085",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02892",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03157",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04167",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02861",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05467",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06619",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-05457",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-03361",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02329",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07108",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02716",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07278",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.5454545454545454,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00335",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00251",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06529",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-04623",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-00019",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.45454545454545453,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07450",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-07438",
+      "valid_json": true,
+      "schema_compliant": true,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "value_hallucination",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-02668",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06325",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "medium"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-06103",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "missing_required_field",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    },
+    {
+      "sample_id": "gorkemsevinc_customer_support_tickets-01362",
+      "valid_json": true,
+      "schema_compliant": false,
+      "field_exact_match": 0.36363636363636365,
+      "exact_match": false,
+      "primary_error": "enum_error",
+      "schema_name": "ticket_schema_v1_reduced",
+      "complexity_bucket": "simple"
+    }
+  ]
+}
