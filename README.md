@@ -117,6 +117,12 @@ The repository currently contains:
 - Stage 9 lexical postprocessing follow-ups on top of the Stage 8 best predictions
 - seen/unseen schema generalization results
 
+For Stage 8 and Stage 9:
+
+- the reusable experiment logic lives in `scripts/`
+- the notebooks are thin launchers for Jupyter use
+- the local verification runs were executed through the Python scripts directly, not through the Jupyter UI
+
 Current strongest run:
 
 - Stage 9 combined lexical postprocessing on top of the Stage 8 best run

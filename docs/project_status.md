@@ -133,6 +133,7 @@ Completed:
 - implemented and ran Stage 7 component-canonicalization follow-ups, including joint `action + component` target redesign
 - implemented and ran Stage 8 deterministic postprocessing variants on top of the Stage 7 best predictions
 - implemented and ran Stage 9 lexical postprocessing variants on top of the Stage 8 best predictions
+- kept Stage 8 and Stage 9 as script-driven postprocessing experiments with matching notebook launchers, rather than notebook-only workflows
 - exported a consolidated Stage 2 review summary
 - exported a consolidated long-run batch summary
 - exported a Stage 3 end-to-end optimization batch summary
@@ -318,6 +319,7 @@ Main conclusion:
 - the useful rule is simple: refresh canonical `action` from predicted `category + summary`, and map `component` from predicted `name` using the train-set majority mapping
 - almost all of the Stage 8 gain comes from the `component <- name` consistency rule; `action` refresh improves field exact match slightly but does not change end-to-end exact match by itself
 - this is now the current strongest run in the repository
+- this stage was validated by running the Python postprocessing script directly; the notebook is only a thin Jupyter launcher for the same script
 
 ### Stage 9 Lexical Postprocessing
 
@@ -331,6 +333,7 @@ Main conclusion:
 - the useful gain comes mainly from promoting a small set of clearly severe cases to `priority=urgent` and `blocking=true`
 - lexical `incident` relabeling does not help by itself; the Stage 9 gain is primarily a `priority` and `blocking` gain
 - this is now the current strongest run in the repository
+- this stage was also validated by running the Python postprocessing script directly; the notebook is only a thin Jupyter launcher for the same script
 
 ## What Is Still Missing
 

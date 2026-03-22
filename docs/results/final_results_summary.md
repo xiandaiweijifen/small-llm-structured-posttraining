@@ -42,6 +42,11 @@ This project studies a focused question:
 | Stage 9 Combined Lexical Postprocess | 1.0000 | 1.0000 | 0.9470 | 0.7205 | New best overall result; a high-precision lexical layer further improves `priority` and `blocking` without retraining |
 | Schema-Conditioned Reduced QLoRA Generalization | 0.9980 | 0.9980 | 0.8764 | 0.4646 | Structure transfers well; semantics drop under schema shift |
 
+Implementation note for Stage 8 and Stage 9:
+
+- both are script-driven postprocessing/evaluation stages
+- their notebooks are thin Jupyter launchers, not separate notebook-only implementations
+
 ## Stage 2 Takeaways
 
 The Stage 2 through Stage 7 ablations clarify where the strongest gains come from:
