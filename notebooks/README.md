@@ -22,6 +22,7 @@ Recommended usage order:
 - `17_lexical_postprocess_suite.ipynb`: batch-run fast lexical postprocessing variants on top of the Stage 8 best predictions without retraining.
 - `18_big_model_reference_suite.ipynb`: batch-run larger prompt-only reference models on the canonicalized reduced-schema task and export raw / repaired / postprocessed comparisons.
 - `19_external_generalization_suite.ipynb`: run cross-dataset generalization references on a new reduced-schema project-format eval set, comparing the strongest trained/system 3B line against larger prompt-only references.
+- `20_action_template_latent_suite.ipynb`: batch-run a latent-action experiment where the model predicts action template IDs and a deterministic renderer converts them back to canonical action strings before evaluation.
 
 Current policy:
 
@@ -40,4 +41,5 @@ Current policy:
 - keep fast lexical postprocessing experiments in `17_lexical_postprocess_suite.ipynb`
 - keep larger prompt-only reference comparisons in `18_big_model_reference_suite.ipynb`
 - keep external-dataset generalization references in `19_external_generalization_suite.ipynb`
+- keep latent semantic-intermediate experiments in `20_action_template_latent_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
