@@ -20,6 +20,7 @@ Recommended usage order:
 - `15_component_canonicalization_suite.ipynb`: batch-run a smaller component-canonicalization target-design suite, including a component-only control and joint action+component variants.
 - `16_deterministic_postprocess_suite.ipynb`: batch-run fast deterministic postprocessing variants on the current Stage 7 best predictions without retraining.
 - `17_lexical_postprocess_suite.ipynb`: batch-run fast lexical postprocessing variants on top of the Stage 8 best predictions without retraining.
+- `18_big_model_reference_suite.ipynb`: batch-run larger prompt-only reference models on the canonicalized reduced-schema task and export raw / repaired / postprocessed comparisons.
 
 Current policy:
 
@@ -36,4 +37,5 @@ Current policy:
 - keep component-canonicalization follow-up experiments in `15_component_canonicalization_suite.ipynb`
 - keep fast deterministic postprocessing experiments in `16_deterministic_postprocess_suite.ipynb`
 - keep fast lexical postprocessing experiments in `17_lexical_postprocess_suite.ipynb`
+- keep larger prompt-only reference comparisons in `18_big_model_reference_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
