@@ -18,6 +18,7 @@ Recommended usage order:
 - `13_targeted_end_to_end_refinement_suite.ipynb`: batch-run lighter refinement experiments around the most promising `action_or_component` continuation direction.
 - `14_action_canonicalization_suite.ipynb`: batch-run action-canonicalization target-design experiments with single-stage and staged training variants.
 - `15_component_canonicalization_suite.ipynb`: batch-run a smaller component-canonicalization target-design suite, including a component-only control and joint action+component variants.
+- `16_deterministic_postprocess_suite.ipynb`: batch-run fast deterministic postprocessing variants on the current Stage 7 best predictions without retraining.
 
 Current policy:
 
@@ -32,4 +33,5 @@ Current policy:
 - keep lighter targeted refinement batch execution in `13_targeted_end_to_end_refinement_suite.ipynb`
 - keep action-canonicalization target-design experiments in `14_action_canonicalization_suite.ipynb`
 - keep component-canonicalization follow-up experiments in `15_component_canonicalization_suite.ipynb`
+- keep fast deterministic postprocessing experiments in `16_deterministic_postprocess_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`

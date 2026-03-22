@@ -439,6 +439,29 @@ Main improved semantic fields:
 - `priority`: `0.8701`
 - `actions_requested[0].action`: `0.8504`
 
+## Stage 8 Deterministic Postprocessing
+
+### Action + Component Majority Postprocess
+
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9427`
+- end-to-end exact match: `0.6929`
+
+Interpretation:
+
+- this is now the strongest overall result in the repository
+- it does not require retraining; it is a deterministic postprocessing pass applied on top of the Stage 7 best predictions
+- the main useful rule is `component <- predicted name` using the train-set majority mapping
+- refreshing canonical `action` from `category + summary` helps field exact match slightly, but the end-to-end gain is driven mainly by `component` consistency
+- this is a useful final result because it cleanly separates training-time gains from a cheap final consistency layer
+
+Main improved semantic fields:
+
+- `affected_systems[0].component`: `0.9370`
+- `actions_requested[0].action`: `0.8583`
+- overall end-to-end exact match: `0.6929`
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:
@@ -451,4 +474,5 @@ The combined experiments now support a more refined story:
 - broad hard-example continuation did not beat that baseline
 - canonicalizing the hardest semantic field, `actions_requested[0].action`, is the first change that clearly breaks through the previous end-to-end ceiling
 - `component` canonicalization alone is weak, but joint `action + component` canonicalization plus staged training pushes the best result further
+- a final deterministic consistency pass on top of the strongest trained run pushes the best result further again, without any new optimization steps
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

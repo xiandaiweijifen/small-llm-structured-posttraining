@@ -16,6 +16,7 @@ Current status:
 - Stage 3/4/5 hard-example continuation and targeted refinement branches have been run and reviewed
 - Stage 6 action-canonicalization experiments have been run and reviewed
 - Stage 7 component-canonicalization follow-ups have been run and reviewed
+- Stage 8 deterministic postprocessing follow-ups have been run and reviewed
 
 The project is currently in:
 
@@ -129,11 +130,13 @@ Completed:
 - ran Stage 5 targeted refinement experiments around the best Stage 4 subset
 - implemented and ran Stage 6 action-canonicalization experiments in both single-stage and staged forms
 - implemented and ran Stage 7 component-canonicalization follow-ups, including joint `action + component` target redesign
+- implemented and ran Stage 8 deterministic postprocessing variants on top of the Stage 7 best predictions
 - exported a consolidated Stage 2 review summary
 - exported a consolidated long-run batch summary
 - exported a Stage 3 end-to-end optimization batch summary
 - exported a Stage 6 action-canonicalization batch summary
 - exported a Stage 7 component-canonicalization batch summary
+- exported a Stage 8 deterministic postprocessing batch summary
 
 Key outputs:
 
@@ -153,6 +156,8 @@ Key outputs:
 - `docs/results/action_canonicalization_batch_summary.md`
 - `results/metrics/qwen25_3b_stage7_canonical_action_component_structure_then_semantics_stage2_epoch9_test_report.json`
 - `docs/results/component_canonicalization_batch_summary.md`
+- `results/metrics/qwen25_3b_stage8_action_component_majority_test_report.json`
+- `docs/results/deterministic_postprocess_batch_summary.md`
 
 Main conclusions:
 
@@ -163,7 +168,8 @@ Main conclusions:
 - broad hard-sample continuation and targeted refinement branches do not beat the strongest staged baseline
 - action canonicalization is the first post-Stage-2 change that materially raises the end-to-end ceiling
 - component canonicalization alone is weak, but joint `action + component` canonicalization becomes effective when paired with staged training
-- the current best run is Stage 7 joint `action + component` canonicalization with staged structure-then-semantics training
+- deterministic postprocessing on top of the Stage 7 best run yields a further no-train gain
+- the current best run is Stage 8 `action + component` deterministic postprocessing on top of the Stage 7 best model
 - hard-sample continuation identifies a real semantic hard subset, but the current continuation recipes do not beat the strongest staged baseline
 - repair still adds no measurable value once post-training has already stabilized structure
 
@@ -292,7 +298,20 @@ Main conclusion:
 - `component` canonicalization alone is not a strong direction
 - however, joint `action + component` canonicalization does improve the best result when it is paired with staged training
 - the main Stage 7 gain comes from a large improvement on `affected_systems[0].component`, which compensates for a slight drop in `action`
-- this is the current strongest run in the repository
+- this becomes the strongest trained run in the repository before any deterministic postprocessing
+
+### Stage 8 Deterministic Postprocessing
+
+- best run: `qwen25_3b_stage8_action_component_majority`
+- overall field exact match: `0.9427`
+- overall end-to-end exact match: `0.6929`
+
+Main conclusion:
+
+- a deterministic consistency pass can still extract additional gains after training saturates
+- the useful rule is simple: refresh canonical `action` from predicted `category + summary`, and map `component` from predicted `name` using the train-set majority mapping
+- almost all of the Stage 8 gain comes from the `component <- name` consistency rule; `action` refresh improves field exact match slightly but does not change end-to-end exact match by itself
+- this is now the current strongest run in the repository
 
 ## What Is Still Missing
 
@@ -301,19 +320,21 @@ To reach the originally desired "more complete research project" level, the proj
 - final README / summary cleanup for resume and interview use
 - optionally, a cleaner constrained-decoding baseline if a better schema-compatible tool is used
 - optionally, further target redesign or two-stage supervision for `category` and `priority`
+- optionally, tighter deterministic handling for `category` and `priority` if a high-precision rule set can be found
 
 ## Current Next Step
 
 Immediate next step:
 
 - finalize top-level project narrative around the Stage 7 joint canonicalization result
+- finalize top-level project narrative around the Stage 8 no-train postprocessing gain
 - keep additional experimentation narrow unless it clearly improves the final research story
 
 Expected outcome:
 
-- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, component follow-ups, and seen/unseen schema generalization
+- one stable top-level summary of prompt-only, repair, reduced-schema target design, LoRA-rank ablations, epoch and learning-rate ablations, staged training, hard-example negative results, action canonicalization, component follow-ups, deterministic postprocessing, and seen/unseen schema generalization
 - one clear statement that broad continuation did not beat the strongest staged baseline, while joint target redesign plus staged training did
-- one clear statement of what post-training solves, what repair solves, and what still fails semantically
+- one clear statement of what post-training solves, what repair solves, what deterministic consistency can still clean up cheaply, and what still fails semantically
 
 ## Practical Rule
 

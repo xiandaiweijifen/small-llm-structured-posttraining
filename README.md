@@ -113,13 +113,14 @@ The repository currently contains:
 - Stage 3/4/5 hard-example continuation and targeted refinement branches
 - Stage 6 action-canonicalization experiments across single-stage and staged settings
 - Stage 7 component-canonicalization follow-ups, including joint action+component target redesign
+- Stage 8 deterministic postprocessing follow-ups on the Stage 7 best predictions
 - seen/unseen schema generalization results
 
 Current strongest run:
 
-- Stage 7 canonical-action+component structure-then-semantics training, stage-2 epoch 9
-- field exact match: `0.9402`
-- end-to-end exact match: `0.6772`
+- Stage 8 action+component deterministic postprocessing on top of the Stage 7 best run
+- field exact match: `0.9427`
+- end-to-end exact match: `0.6929`
 
 Current high-level conclusions:
 
@@ -130,7 +131,7 @@ Current high-level conclusions:
 - broad hard-sample continuation and refinement do not beat the strongest staged baseline
 - canonicalizing the `action` target is the first change that materially lifts end-to-end exact match beyond the Stage 2 ceiling
 - `component` canonicalization alone is weak, but joint `action + component` canonicalization becomes effective when paired with staged training
-- the current best result comes from combining target redesign with staged semantic continuation, not from either lever alone
+- a final deterministic consistency pass on top of the strongest Stage 7 run lifts end-to-end exact match further without retraining
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:

@@ -37,7 +37,8 @@ This project studies a focused question:
 | Stage 3 Full + Hard Mix, x2, Epoch 2, LR 5e-5 | 1.0000 | 1.0000 | 0.9109 | 0.5354 | Lower learning rate does not recover the strongest staged baseline |
 | Stage 6 Canonical Action, Single-Stage, Epoch 7, LR 2e-4 | 1.0000 | 1.0000 | 0.9341 | 0.6654 | First major canonicalization breakthrough; sharply reduces `action` entropy and lifts exact match |
 | Stage 6 Canonical Action, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9320 | 0.6654 | Best staged canonicalized run, but not stronger than the simpler single-stage epoch-7 variant |
-| Stage 7 Canonical Action + Component, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9402 | 0.6772 | Best overall run; joint target redesign plus staged training improves `component` enough to set a new best |
+| Stage 7 Canonical Action + Component, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9402 | 0.6772 | Best trained run; joint target redesign plus staged training improves `component` enough to set a new best before postprocessing |
+| Stage 8 Deterministic Action + Component Postprocess | 1.0000 | 1.0000 | 0.9427 | 0.6929 | Best overall result; a no-train consistency pass on top of Stage 7 gives another exact-match gain |
 | Schema-Conditioned Reduced QLoRA Generalization | 0.9980 | 0.9980 | 0.8764 | 0.4646 | Structure transfers well; semantics drop under schema shift |
 
 ## Stage 2 Takeaways
@@ -52,7 +53,8 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - hard-sample continuation does not beat the strongest staged baseline; direct hard-only continuation and heavy oversampling both degrade performance
 - action canonicalization is the first post-Stage-2 intervention that materially breaks through the previous end-to-end ceiling
 - component canonicalization alone is weak, but joint `action + component` canonicalization becomes effective when paired with staged training
-- the current strongest run combines target redesign and staged semantic continuation rather than relying on either lever alone
+- the current strongest trained run combines target redesign and staged semantic continuation
+- a final deterministic consistency pass on top of that trained run is still able to push exact match further
 - repair still adds essentially no value once post-training has stabilized structure
 
 ## Generalization Breakdown
@@ -96,6 +98,8 @@ Stage 6 and Stage 7 canonicalization change the picture further:
 - this large gain is the main reason end-to-end exact match rises from the `0.57x` range into the `0.66x` range
 - `affected_systems[0].component`: `0.9173` in the Stage 7 joint canonicalized staged run
 - this `component` gain is what pushes the best end-to-end exact match from `0.6654` to `0.6772`
+- Stage 8 deterministic postprocessing pushes `affected_systems[0].component` further to `0.9370`
+- this low-cost consistency pass is what moves the best end-to-end exact match from `0.6772` to `0.6929`
 
 Stage 3 hard mining also shows that the remaining semantic bottleneck is concentrated in a real subset of difficult samples:
 
@@ -115,6 +119,7 @@ The experiments support a clear division of labor:
 - hard-example continuation is not automatically beneficial; if applied too broadly, it causes distribution drift and hurts end-to-end exact match
 - further target redesign can matter even more than continuation; canonicalizing the hardest semantic field produces the strongest overall run in the repository
 - additional target redesign can still help when it is precise; `component` canonicalization only becomes useful when paired with the already-validated `action` redesign and staged training
+- even after target redesign saturates, a narrow deterministic consistency layer can still recover a few remaining exact-match errors without retraining
 - once structure is solved, the remaining bottleneck is semantic accuracy
 - under mild schema shift, structure generalizes better than field semantics
 
@@ -153,5 +158,7 @@ The most defensible summary of the project is:
 - `docs/results/action_canonicalization_batch_summary.md`
 - `results/metrics/qwen25_3b_stage7_canonical_action_component_structure_then_semantics_stage2_epoch9_test_report.json`
 - `docs/results/component_canonicalization_batch_summary.md`
+- `results/metrics/qwen25_3b_stage8_action_component_majority_test_report.json`
+- `docs/results/deterministic_postprocess_batch_summary.md`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`
