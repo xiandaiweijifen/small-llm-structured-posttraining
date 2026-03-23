@@ -378,8 +378,6 @@ def build_trainer(model, dataset, tokenizer, config: dict, output_dir: Path, num
         "train_dataset": dataset["train"],
         "eval_dataset": dataset["validation"],
         "processing_class": tokenizer,
-        "dataset_text_field": "text",
-        "max_seq_length": 1024,
     }
     if peft_config is not None:
         trainer_kwargs["peft_config"] = peft_config
