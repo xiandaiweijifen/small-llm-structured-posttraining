@@ -20,6 +20,7 @@ Current status:
 - Stage 9 lexical postprocessing follow-ups have been run and reviewed
 - same-family big-model prompt-only reference runs have been executed and reviewed
 - external-dataset generalization references have been executed and reviewed
+- Stage 10 latent-action, Stage 11 semantic-core intermediate, and Stage 12 semantic-slot auxiliary-supervision explorations have been executed and reviewed
 
 The project is currently in:
 
@@ -37,6 +38,7 @@ Active workflows:
 - same-family big-model prompt-only reference comparison
 - external-dataset generalization comparison
 - semantic-core intermediate exploration
+- semantic-slot auxiliary-supervision exploration
 
 Retired workflows:
 
@@ -209,6 +211,9 @@ Main conclusions:
 - same-family larger prompt-only models remain far below the trained 3B pipeline because they still fail on required-field completeness and schema compliance
 - on the mapped customer-support eval set, the strongest trained 3B still outperforms `14B/32B` prompt-only references, but all runs fall to zero end-to-end exact match because schema completeness does not transfer cleanly
 - Stage 8/9 postprocessing gains are strongly task-aware and do not meaningfully transfer to this external mapped dataset
+- Stage 10 latent-action targets are a negative result
+- Stage 11 semantic-core intermediate modeling is a more reasonable exploration, but still below the canonicalized main line
+- Stage 12 semantic-slot auxiliary supervision is the strongest algorithmic exploration branch after Stage 9, but still does not beat the Stage 7 canonicalized staged-training baseline
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
@@ -366,6 +371,20 @@ Main conclusion:
 - this is now the current strongest run in the repository
 - this stage was also validated by running the Python postprocessing script directly; the notebook is only a thin Jupyter launcher for the same script
 
+### Stage 10, Stage 11, and Stage 12 Algorithmic Exploration Branches
+
+- Stage 10 latent-action targets are a useful negative result: directly replacing the final `action` text with template tokens destabilizes the task rather than improving it
+- Stage 11 semantic-core intermediate modeling is much more reasonable than Stage 10, but still remains below the canonicalized main line
+- Stage 12 semantic-slot auxiliary supervision is the strongest of these three exploration branches
+- best Stage 12 run: `qwen25_3b_stage12_semantic_slot_structure_then_semantics_stage2_epoch11`
+- Stage 12 best metrics: `field_exact_match = 0.9298`, `end_to_end_exact_match = 0.6496`
+
+Main conclusion:
+
+- explicit semantic-slot auxiliary supervision is a valid algorithmic direction
+- however, on this task it still does not outperform the simpler and stronger `action + component` canonicalization line with staged training
+- this makes Stage 12 a useful depth-enhancing exploration result, not a new top-level best system
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
@@ -374,6 +393,7 @@ To reach the originally desired "more complete research project" level, the proj
 - optionally, a cleaner constrained-decoding baseline if a better schema-compatible tool is used
 - optionally, further target redesign or two-stage supervision for `category` and `priority`
 - optionally, tighter deterministic handling for `category` and `priority` if a high-precision rule set can be found
+- optionally, a cleaner multi-task or preference-tuning branch if the project is pushed further for research depth rather than immediate benchmark gain
 
 ## Current Next Step
 

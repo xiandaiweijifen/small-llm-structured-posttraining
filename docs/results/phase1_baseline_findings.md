@@ -484,6 +484,45 @@ Main improved semantic fields:
 - `constraints.blocking`: `0.9724`
 - overall end-to-end exact match: `0.7205`
 
+## Stage 10 / Stage 11 / Stage 12 Deeper Algorithmic Exploration
+
+### Stage 10 Latent Action Targets
+
+Interpretation:
+
+- this is a negative result
+- directly replacing the final `action` text with template-like latent tokens destabilizes the task and does not create a useful intermediate representation
+
+### Stage 11 Semantic-Core Intermediate
+
+Best result:
+
+- strongest run: `qwen25_3b_stage11_semantic_core_structure_then_semantics_stage2_epoch9`
+- field exact match: `0.9256`
+- end-to-end exact match: `0.6299`
+
+Interpretation:
+
+- separating semantic-core prediction from final rendering is more principled than the Stage 10 latent-action target
+- however, the current semantic-core design still does not outperform the simpler canonicalized target-design baseline
+
+### Stage 12 Semantic-Slot Auxiliary Supervision
+
+Best run:
+
+- `qwen25_3b_stage12_semantic_slot_structure_then_semantics_stage2_epoch11`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.9298`
+- end-to-end exact match: `0.6496`
+
+Interpretation:
+
+- explicit semantic-slot auxiliary supervision is a valid direction and is clearly stronger than the Stage 11 semantic-core branch
+- the same project-wide patterns still hold inside this branch: staged training is stronger than single-stage, `2e-4` is stronger than `1e-4`, and longer training still helps somewhat
+- however, this branch still does not beat the simpler Stage 7 canonicalized staged-training baseline (`0.9402 / 0.6772`)
+- the main lesson is that more algorithmic supervision structure is not automatically stronger than good target redesign
+
 ## Same-Family Prompt-Only Reference Models
 
 Prompt-only reference runs on the canonicalized reduced-schema target show that scaling the base instruct model without post-training is not enough:

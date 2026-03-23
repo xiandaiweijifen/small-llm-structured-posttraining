@@ -40,6 +40,8 @@ This project studies a focused question:
 | Stage 7 Canonical Action + Component, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9402 | 0.6772 | Best trained run; joint target redesign plus staged training improves `component` enough to set a new best before postprocessing |
 | Stage 8 Deterministic Action + Component Postprocess | 1.0000 | 1.0000 | 0.9427 | 0.6929 | Best overall result; a no-train consistency pass on top of Stage 7 gives another exact-match gain |
 | Stage 9 Combined Lexical Postprocess | 1.0000 | 1.0000 | 0.9470 | 0.7205 | New best overall result; a high-precision lexical layer further improves `priority` and `blocking` without retraining |
+| Stage 11 Semantic-Core Intermediate, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9256 | 0.6299 | A more principled intermediate-representation branch than Stage 10, but still below the canonicalized main line |
+| Stage 12 Semantic-Slot Supervision, Staged, Stage 2 Epoch 11 | 1.0000 | 1.0000 | 0.9298 | 0.6496 | Strongest algorithmic exploration branch after Stage 9, but still below the Stage 7 canonicalized staged-training best |
 | Qwen2.5-3B Prompt-Only Reference, Canonicalized Target | 0.9724 | 0.0000 | 0.4470 | 0.0000 | Raw prompt-only on the same base model still fails mainly on required fields |
 | Qwen2.5-7B Prompt-Only Reference, Canonicalized Target | 1.0000 | 0.0000 | 0.5251 | 0.0000 | Larger prompt-only model improves field average, but still misses required fields systematically |
 | Qwen2.5-14B Prompt-Only Reference, Canonicalized Target | 0.9961 | 0.0000 | 0.5777 | 0.0000 | Strongest raw prompt-only reference, but still structurally unusable under exact schema evaluation |
@@ -66,6 +68,9 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - the current strongest trained run combines target redesign and staged semantic continuation
 - a final deterministic consistency pass on top of that trained run is still able to push exact match further
 - a final lexical postprocess layer can still push exact match further when it is restricted to a small set of high-precision severity cues
+- Stage 10 latent-action targets are not a viable direction under the current formulation
+- Stage 11 semantic-core intermediates are more reasonable than Stage 10, but still weaker than the canonicalized main line
+- Stage 12 semantic-slot auxiliary supervision is a valid algorithmic exploration direction and beats Stage 11, but still does not overtake Stage 7
 - repair still adds essentially no value once post-training has stabilized structure
 - same-family prompt-only scaling helps field-level averages somewhat, but none of the `3B / 7B / 14B / 32B` prompt-only references achieve non-zero end-to-end exact match under the canonicalized reduced-schema evaluation target
 - on a mapped external customer-support eval set, the strongest trained 3B still leads `14B/32B` prompt-only references at field level (`0.6040` vs `0.4201/0.4212`), but all methods fall to `0.0000` end-to-end exact match because required-field completeness does not transfer
@@ -137,6 +142,7 @@ The experiments support a clear division of labor:
 - hard-example continuation is not automatically beneficial; if applied too broadly, it causes distribution drift and hurts end-to-end exact match
 - further target redesign can matter even more than continuation; canonicalizing the hardest semantic field produces the strongest overall run in the repository
 - additional target redesign can still help when it is precise; `component` canonicalization only becomes useful when paired with the already-validated `action` redesign and staged training
+- more algorithmic supervision designs are not automatically stronger: in this project, semantic-slot auxiliary supervision helps but still remains below the canonicalized target-design line
 - even after target redesign saturates, a narrow deterministic consistency layer can still recover a few remaining exact-match errors without retraining
 - even after deterministic consistency saturates, a very small high-precision lexical rule layer can still recover additional exact-match errors without retraining
 - once structure is solved, the remaining bottleneck is semantic accuracy
