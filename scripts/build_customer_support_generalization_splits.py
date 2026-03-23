@@ -224,7 +224,7 @@ def main() -> None:
     schema = get_schema("ticket_schema_v1_reduced")
     for split_name, split_records in [
         ("train", train_records),
-        ("validation", val_records),
+        ("val", val_records),
         ("test", test_records),
     ]:
         for record in split_records:
