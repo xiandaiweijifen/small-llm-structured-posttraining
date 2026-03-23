@@ -1,0 +1,365 @@
+{
+  "num_samples": 1698,
+  "num_fields": 11,
+  "per_field": {
+    "actions_requested[0].action": {
+      "total": 1698,
+      "match_count": 317,
+      "mismatch_count": 1381,
+      "match_rate": 0.18669022379269729,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "Answer and clarify: payment issue",
+          "pred": "Handle request: payment issue"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05878",
+          "gold": "Handle request: payment issue",
+          "pred": "Review and plan request: payment issue"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05367",
+          "gold": "Handle request: installation support",
+          "pred": "Review and plan request: installation support"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "Answer and clarify: refund request",
+          "pred": "Investigate and mitigate incident: refund request"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08253",
+          "gold": "Answer and clarify: payment issue",
+          "pred": "Review and plan request: payment issue"
+        }
+      ]
+    },
+    "actions_requested[0].deadline": {
+      "total": 1698,
+      "match_count": 1697,
+      "mismatch_count": 1,
+      "match_rate": 0.9994110718492344,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-06117",
+          "gold": null,
+          "pred": "2023-08-21T10:00:00-07:00"
+        }
+      ]
+    },
+    "actions_requested[0].owner": {
+      "total": 1698,
+      "match_count": 1698,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "affected_systems[0].component": {
+      "total": 1698,
+      "match_count": 173,
+      "mismatch_count": 1525,
+      "match_rate": 0.10188457008244994,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "software",
+          "pred": "account"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05878",
+          "gold": "request",
+          "pred": "configuration"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05367",
+          "gold": "deactivation",
+          "pred": "installation"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "software",
+          "pred": "error"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08253",
+          "gold": "software",
+          "pred": "configuration"
+        }
+      ]
+    },
+    "affected_systems[0].name": {
+      "total": 1698,
+      "match_count": 895,
+      "mismatch_count": 803,
+      "match_rate": 0.5270906949352179,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "philips hue lights",
+          "pred": "account"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08253",
+          "gold": "lg smart tv",
+          "pred": "lg"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04082",
+          "gold": "canon eos",
+          "pred": "access"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07398",
+          "gold": "samsung soundbar",
+          "pred": "SAMSUNG TV & AUDIO"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00635",
+          "gold": "fitbit charge",
+          "pred": "Fitbit Charge"
+        }
+      ]
+    },
+    "category": {
+      "total": 1698,
+      "match_count": 328,
+      "mismatch_count": 1370,
+      "match_rate": 0.19316843345111898,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "question",
+          "pred": "task"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05878",
+          "gold": "task",
+          "pred": "feature"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05367",
+          "gold": "task",
+          "pred": "feature"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "question",
+          "pred": "incident"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08253",
+          "gold": "question",
+          "pred": "feature"
+        }
+      ]
+    },
+    "constraints.blocking": {
+      "total": 1698,
+      "match_count": 1673,
+      "mismatch_count": 25,
+      "match_rate": 0.9852767962308598,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04511",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04789",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-02184",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00077",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07934",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "constraints.environment": {
+      "total": 1698,
+      "match_count": 1680,
+      "mismatch_count": 18,
+      "match_rate": 0.9893992932862191,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08330",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07028",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-02863",
+          "gold": null,
+          "pred": "dev"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-02123",
+          "gold": null,
+          "pred": "prod"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-06204",
+          "gold": null,
+          "pred": "prod"
+        }
+      ]
+    },
+    "priority": {
+      "total": 1698,
+      "match_count": 427,
+      "mismatch_count": 1271,
+      "match_rate": 0.251472320376914,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "high",
+          "pred": "urgent"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05367",
+          "gold": "urgent",
+          "pred": "medium"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "high",
+          "pred": "urgent"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08253",
+          "gold": "urgent",
+          "pred": "medium"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03921",
+          "gold": "medium",
+          "pred": "high"
+        }
+      ]
+    },
+    "requires_followup": {
+      "total": 1698,
+      "match_count": 1698,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "summary": {
+      "total": 1698,
+      "match_count": 1661,
+      "mismatch_count": 37,
+      "match_rate": 0.9782096584216725,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04511",
+          "gold": "battery life",
+          "pred": "software bug"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00187",
+          "gold": "refund request",
+          "pred": "connection issue: iphone cannot detect home wi-fi network"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00739",
+          "gold": "battery life",
+          "pred": "account is locked"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07721",
+          "gold": "network problem",
+          "pred": "forgot password"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05056",
+          "gold": "product recommendation",
+          "pred": "issue with the dyson vacuum cleaner"
+        }
+      ]
+    }
+  },
+  "worst_fields": [
+    {
+      "field_name": "affected_systems[0].component",
+      "match_rate": 0.10188457008244994,
+      "mismatch_count": 1525,
+      "total": 1698
+    },
+    {
+      "field_name": "actions_requested[0].action",
+      "match_rate": 0.18669022379269729,
+      "mismatch_count": 1381,
+      "total": 1698
+    },
+    {
+      "field_name": "category",
+      "match_rate": 0.19316843345111898,
+      "mismatch_count": 1370,
+      "total": 1698
+    },
+    {
+      "field_name": "priority",
+      "match_rate": 0.251472320376914,
+      "mismatch_count": 1271,
+      "total": 1698
+    },
+    {
+      "field_name": "affected_systems[0].name",
+      "match_rate": 0.5270906949352179,
+      "mismatch_count": 803,
+      "total": 1698
+    },
+    {
+      "field_name": "summary",
+      "match_rate": 0.9782096584216725,
+      "mismatch_count": 37,
+      "total": 1698
+    },
+    {
+      "field_name": "constraints.blocking",
+      "match_rate": 0.9852767962308598,
+      "mismatch_count": 25,
+      "total": 1698
+    },
+    {
+      "field_name": "constraints.environment",
+      "match_rate": 0.9893992932862191,
+      "mismatch_count": 18,
+      "total": 1698
+    },
+    {
+      "field_name": "actions_requested[0].deadline",
+      "match_rate": 0.9994110718492344,
+      "mismatch_count": 1,
+      "total": 1698
+    },
+    {
+      "field_name": "actions_requested[0].owner",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 1698
+    },
+    {
+      "field_name": "requires_followup",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 1698
+    }
+  ]
+}

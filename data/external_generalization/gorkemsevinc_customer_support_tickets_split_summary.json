@@ -1,0 +1,42 @@
+{
+  "input_path": "/home/lyan11/small-llm-structured-posttraining/data/raw/exports/gorkemsevinc_customer_support_tickets/train.jsonl",
+  "train_output": "/home/lyan11/small-llm-structured-posttraining/data/external_generalization/gorkemsevinc_customer_support_tickets_train_reduced.jsonl",
+  "val_output": "/home/lyan11/small-llm-structured-posttraining/data/external_generalization/gorkemsevinc_customer_support_tickets_val_reduced.jsonl",
+  "test_output": "/home/lyan11/small-llm-structured-posttraining/data/external_generalization/gorkemsevinc_customer_support_tickets_test_reduced.jsonl",
+  "raw_count": 8469,
+  "mapped_count": 8469,
+  "train_count": 5926,
+  "val_count": 845,
+  "test_count": 1698,
+  "seed": 42,
+  "train_ratio": 0.7,
+  "val_ratio": 0.1,
+  "train_category_counts": {
+    "bug": 1169,
+    "incident": 53,
+    "question": 2292,
+    "task": 2412
+  },
+  "val_category_counts": {
+    "bug": 167,
+    "incident": 7,
+    "question": 327,
+    "task": 344
+  },
+  "test_category_counts": {
+    "bug": 335,
+    "incident": 16,
+    "question": 656,
+    "task": 691
+  },
+  "train_priority_counts": {
+    "high": 1420,
+    "low": 1465,
+    "medium": 1543,
+    "urgent": 1498
+  },
+  "test_complexity_counts": {
+    "medium": 23,
+    "simple": 1675
+  }
+}
