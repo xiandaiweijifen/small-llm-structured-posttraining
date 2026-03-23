@@ -161,11 +161,22 @@ GENERATION_KWARGS = {
 INFERENCE_BATCH_SIZE = 24
 
 USE_BF16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
-BNB_CONFIG = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_compute_dtype=torch.bfloat16 if USE_BF16 else torch.float16,
+try:
+    import bitsandbytes  # type: ignore  # noqa: F401
+
+    HAS_BNB_4BIT = True
+except Exception:
+    HAS_BNB_4BIT = False
+
+BNB_CONFIG = (
+    BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_compute_dtype=torch.bfloat16 if USE_BF16 else torch.float16,
+    )
+    if HAS_BNB_4BIT
+    else None
 )
 
 
@@ -310,11 +321,18 @@ def load_tokenizer():
 
 
 def load_base_model():
+    load_kwargs = {
+        "device_map": "auto",
+        "trust_remote_code": True,
+    }
+    if BNB_CONFIG is not None:
+        load_kwargs["quantization_config"] = BNB_CONFIG
+    else:
+        load_kwargs["torch_dtype"] = torch.bfloat16 if USE_BF16 else torch.float16
+
     model = AutoModelForCausalLM.from_pretrained(
         BASE_MODEL_NAME,
-        quantization_config=BNB_CONFIG,
-        device_map="auto",
-        trust_remote_code=True,
+        **load_kwargs,
     )
     model.config.use_cache = False
     return model
@@ -518,6 +536,7 @@ def run():
     print("scheduled_presets =", RUN_PRESETS)
     print("skip_completed =", SKIP_COMPLETED)
     print("inference_batch_size =", INFERENCE_BATCH_SIZE)
+    print("has_bnb_4bit =", HAS_BNB_4BIT)
 
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
     raw_train_records = load_jsonl(PROJECT_ROOT / "data" / "reduced" / "phase1_train_reduced.jsonl")
