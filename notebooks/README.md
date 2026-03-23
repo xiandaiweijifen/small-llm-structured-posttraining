@@ -19,6 +19,7 @@ Recommended usage order:
 - `18_big_model_reference_suite.ipynb`: batch-run larger prompt-only reference models on the canonicalized reduced-schema task and export raw / repaired / postprocessed comparisons.
 - `19_external_generalization_suite.ipynb`: run cross-dataset generalization references on a new reduced-schema project-format eval set, comparing the strongest trained/system 3B line against larger prompt-only references.
 - `23_external_adaptation_suite.ipynb`: build canonicalized external train/val/test splits from the customer-support dataset, then run Stage 7 checkpoint few-shot adaptation presets on the external train split and evaluate on the external test split.
+- `24_external_targeted_adaptation_suite.ipynb`: mine the strongest Stage 13 external-adaptation checkpoint on the external train split, then run targeted external continuation presets focused on taxonomy-heavy fields such as component, category, and priority.
 - `21_semantic_core_intermediate_suite.ipynb`: batch-run a semantic-core intermediate experiment where the model predicts a separate semantic JSON object and a deterministic renderer converts it back to the reduced schema before evaluation.
 - `22_semantic_slot_supervision_suite.ipynb`: batch-run auxiliary semantic-slot supervision experiments where the model predicts both a small semantic slot object and the final JSON, then a deterministic reconcile step fuses them before evaluation.
 
@@ -42,6 +43,7 @@ For normal use, focus on:
 - `18_big_model_reference_suite.ipynb`
 - `19_external_generalization_suite.ipynb`
 - `23_external_adaptation_suite.ipynb`
+- `24_external_targeted_adaptation_suite.ipynb`
 - `21_semantic_core_intermediate_suite.ipynb`
 - `22_semantic_slot_supervision_suite.ipynb`
 
