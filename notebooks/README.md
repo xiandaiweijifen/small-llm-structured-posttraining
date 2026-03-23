@@ -22,6 +22,7 @@ Recommended usage order:
 - `24_external_targeted_adaptation_suite.ipynb`: mine the strongest Stage 13 external-adaptation checkpoint on the external train split, then run targeted external continuation presets focused on taxonomy-heavy fields such as component, category, and priority.
 - `25_external_overnight_optimization_suite.ipynb`: batch-run a larger overnight external optimization suite that combines deeper targeted continuation on top of the Stage 14 best adapter and external-train-driven deterministic postprocess variants.
 - `26_external_frontier_suite.ipynb`: batch-run a broader external frontier suite that combines larger-scale external adaptation and retrieval-guided taxonomy postprocess on the external test split.
+- `27_external_mega_suite.ipynb`: batch-run the full overnight external stack, chaining the Stage 16 frontier suite and the Stage 17 deeper-directions suite in one launcher.
 - `21_semantic_core_intermediate_suite.ipynb`: batch-run a semantic-core intermediate experiment where the model predicts a separate semantic JSON object and a deterministic renderer converts it back to the reduced schema before evaluation.
 - `22_semantic_slot_supervision_suite.ipynb`: batch-run auxiliary semantic-slot supervision experiments where the model predicts both a small semantic slot object and the final JSON, then a deterministic reconcile step fuses them before evaluation.
 
@@ -66,6 +67,7 @@ Current policy:
 - keep true semantic-core intermediate experiments in `21_semantic_core_intermediate_suite.ipynb`
 - keep semantic-slot auxiliary supervision experiments in `22_semantic_slot_supervision_suite.ipynb`
 - keep external frontier adaptation and retrieval experiments in `26_external_frontier_suite.ipynb`
+- keep the full overnight external stack launcher in `27_external_mega_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
 
 
