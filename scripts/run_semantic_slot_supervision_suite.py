@@ -8,10 +8,10 @@ from copy import deepcopy
 from pathlib import Path
 
 import torch
-from datasets import load_dataset
 from peft import LoraConfig, TaskType
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainingArguments
 from trl import SFTTrainer
+from torch.utils.data import Dataset
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -269,18 +269,36 @@ def write_sft_split(records: list[dict], path: Path, include_schema_definition: 
     dump_jsonl(path, [to_sft_record(record, include_schema_definition=include_schema_definition) for record in records])
 
 
+class TextDataset(Dataset):
+    def __init__(self, rows: list[dict]):
+        self.rows = rows
+
+    def __len__(self) -> int:
+        return len(self.rows)
+
+    def __getitem__(self, idx: int) -> dict:
+        return self.rows[idx]
+
+
 def load_chat_dataset(train_path: Path, val_path: Path, tokenizer):
-    dataset = load_dataset("json", data_files={"train": str(train_path), "validation": str(val_path)})
+    def load_rows(path: Path) -> list[dict]:
+        rows = load_jsonl(path)
+        return [
+            {
+                **row,
+                "text": tokenizer.apply_chat_template(
+                    row["messages"],
+                    tokenize=False,
+                    add_generation_prompt=False,
+                ),
+            }
+            for row in rows
+        ]
 
-    def apply_template(batch):
-        return {
-            "text": [
-                tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False)
-                for messages in batch["messages"]
-            ]
-        }
-
-    return dataset.map(apply_template, batched=True)
+    return {
+        "train": TextDataset(load_rows(train_path)),
+        "validation": TextDataset(load_rows(val_path)),
+    }
 
 
 def load_tokenizer():
