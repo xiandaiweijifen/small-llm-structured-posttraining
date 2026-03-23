@@ -1,0 +1,12 @@
+{
+  "num_train_records": 5926,
+  "num_hard_records": 5585,
+  "hard_fraction": 0.9424569692878839,
+  "avg_mismatch_count": 2.7109348633142085,
+  "field_counts": {
+    "actions_requested[0].action": 3539,
+    "affected_systems[0].component": 4598,
+    "category": 3539,
+    "priority": 4389
+  }
+}
