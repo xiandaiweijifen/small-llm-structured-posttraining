@@ -118,6 +118,7 @@ The repository currently contains:
 - Stage 10 latent-action and Stage 11 semantic-core intermediate explorations
 - Stage 12 semantic-slot auxiliary supervision experiments
 - Stage 13 external few-shot adaptation experiments from the strongest Stage 7 checkpoint
+- Stage 14 external targeted adaptation experiments on top of the strongest Stage 13 checkpoint
 - multi-model same-family prompt-only reference comparisons at `3B / 7B / 14B / 32B`
 - external-dataset generalization references on a mapped customer-support ticket dataset
 - seen/unseen schema generalization results
@@ -157,6 +158,8 @@ Current high-level conclusions:
 - on a mapped out-of-domain customer-support eval set, the strongest trained 3B still beats `14B/32B` prompt-only references at field level, but schema completeness collapses and the Stage 8/9 postprocess layers do not transfer
 - a heavier external few-shot adaptation branch from the Stage 7 checkpoint is effective: with enough external supervision, schema completeness recovers and external end-to-end exact match becomes non-zero again
 - the best external adaptation run reaches `field_exact_match = 0.7512` and `end_to_end_exact_match = 0.0536`, showing that external adaptation mainly fixes completeness first, while taxonomy-level semantics remain the next bottleneck
+- a follow-up external targeted adaptation branch improves the best external result further to `field_exact_match = 0.7517` and `end_to_end_exact_match = 0.0636`
+- under the current external targeted recipe, a light low-learning-rate continuation over all core taxonomy fields works better than narrower field subsets or a higher learning-rate variant
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:

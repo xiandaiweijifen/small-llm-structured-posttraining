@@ -613,6 +613,37 @@ Interpretation:
 - it becomes “can the model align to the new dataset’s semantic taxonomy?”
 - this is a stronger and more useful project conclusion than the earlier zero-shot external result alone
 
+## Stage 14 External Targeted Adaptation
+
+### Best External Targeted Continuation
+
+- `qwen25_3b_stage14_target_allcore_x1_epoch1_lr5e5`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.7517`
+- end-to-end exact match: `0.0636`
+
+Interpretation:
+
+- this is the strongest mapped external result in the repository so far
+- it improves on the Stage 13 best external adapter without sacrificing the completeness recovery already achieved there
+- the gain is small at field level but meaningful at end-to-end level, which is what you would expect from a narrow post-adaptation continuation
+
+### Stage 14 Recipe Comparison
+
+- `component + category`, x1, `5e-5`: `0.7471 / 0.0483`
+- `component + category`, x2, `5e-5`: `0.7482 / 0.0589`
+- `category + priority`, x1, `5e-5`: `0.7477 / 0.0489`
+- `all core`, x1, `5e-5`: `0.7517 / 0.0636`
+- `all core`, x1, `1e-4`: `0.7483 / 0.0430`
+
+Interpretation:
+
+- the best continuation is not the narrowest subset; targeting all core external taxonomy fields works best
+- the improvement is not coming from fixing completeness again, because completeness is already perfect
+- the improvement is coming from slightly better semantic alignment after completeness has already been restored
+- `5e-5` is clearly better than `1e-4` for this narrow external continuation regime
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:
@@ -629,4 +660,5 @@ The combined experiments now support a more refined story:
 - a final lexical severity-focused postprocess pass pushes the best result further again, again without retraining
 - same-family prompt-only scaling up to `32B` remains well below the post-trained `3B` pipeline because schema completeness does not emerge reliably from prompt-only prompting alone
 - on a mapped external dataset, the trained `3B` still beats larger prompt-only references at field level, but the deterministic and lexical cleanup layers do not transfer cleanly
+- external few-shot adaptation solves completeness first, and then a light targeted continuation can still improve semantic alignment further
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

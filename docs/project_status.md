@@ -22,6 +22,7 @@ Current status:
 - external-dataset generalization references have been executed and reviewed
 - Stage 10 latent-action, Stage 11 semantic-core intermediate, and Stage 12 semantic-slot auxiliary-supervision explorations have been executed and reviewed
 - Stage 13 external few-shot adaptation experiments have been executed and reviewed
+- Stage 14 external targeted adaptation experiments have been executed and reviewed
 
 The project is currently in:
 
@@ -41,6 +42,7 @@ Active workflows:
 - semantic-core intermediate exploration
 - semantic-slot auxiliary-supervision exploration
 - external few-shot adaptation from the strongest Stage 7 checkpoint
+- external targeted adaptation on top of the strongest Stage 13 checkpoint
 
 Retired workflows:
 
@@ -217,6 +219,7 @@ Main conclusions:
 - Stage 11 semantic-core intermediate modeling is a more reasonable exploration, but still below the canonicalized main line
 - Stage 12 semantic-slot auxiliary supervision is the strongest algorithmic exploration branch after Stage 9, but still does not beat the Stage 7 canonicalized staged-training baseline
 - Stage 13 external few-shot adaptation is a real positive result: it restores schema completeness on the mapped external dataset and lifts external end-to-end exact match above zero
+- Stage 14 external targeted adaptation is also a real positive result: it pushes the best mapped external end-to-end exact match further without reintroducing completeness failures
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
@@ -400,6 +403,20 @@ Main conclusion:
 - the key gain is restoring schema completeness: the best adaptation run reaches `valid_json = 1.0`, `schema_compliance = 1.0`, and `missing_required_field = 0`
 - external-only adaptation works better than mixing in-domain data under the current recipe
 - once completeness is fixed, the remaining bottleneck becomes semantic taxonomy alignment, especially `component`, `priority`, `category`, and downstream `action`
+
+### Stage 14 External Targeted Adaptation
+
+- best run: `qwen25_3b_stage14_target_allcore_x1_epoch1_lr5e5`
+- field exact match: `0.7517`
+- end-to-end exact match: `0.0636`
+
+Main conclusion:
+
+- this is the strongest mapped external result in the repository so far
+- it improves on the Stage 13 best adapter while preserving perfect schema completeness
+- targeting all core external taxonomy fields works better than narrower targeted subsets
+- a conservative continuation (`1` epoch, `5e-5`) works better than the corresponding `1e-4` variant
+- after completeness has been restored by Stage 13, the next useful gains come from narrow semantic-taxonomy continuation rather than broader retraining
 
 ## What Is Still Missing
 

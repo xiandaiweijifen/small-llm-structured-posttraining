@@ -43,6 +43,7 @@ This project studies a focused question:
 | Stage 11 Semantic-Core Intermediate, Staged, Stage 2 Epoch 9 | 1.0000 | 1.0000 | 0.9256 | 0.6299 | A more principled intermediate-representation branch than Stage 10, but still below the canonicalized main line |
 | Stage 12 Semantic-Slot Supervision, Staged, Stage 2 Epoch 11 | 1.0000 | 1.0000 | 0.9298 | 0.6496 | Strongest algorithmic exploration branch after Stage 9, but still below the Stage 7 canonicalized staged-training best |
 | Stage 13 External Adaptation, 1024 Samples, Epoch 3, LR 1e-4 | 1.0000 | 1.0000 | 0.7512 | 0.0536 | First external adaptation branch to restore completeness and lift mapped external end-to-end exact match above zero |
+| Stage 14 External Targeted Adaptation, All-Core, x1, Epoch 1, LR 5e-5 | 1.0000 | 1.0000 | 0.7517 | 0.0636 | Best mapped external result so far; light low-LR continuation on all core taxonomy fields improves the Stage 13 adapter further |
 | Qwen2.5-3B Prompt-Only Reference, Canonicalized Target | 0.9724 | 0.0000 | 0.4470 | 0.0000 | Raw prompt-only on the same base model still fails mainly on required fields |
 | Qwen2.5-7B Prompt-Only Reference, Canonicalized Target | 1.0000 | 0.0000 | 0.5251 | 0.0000 | Larger prompt-only model improves field average, but still misses required fields systematically |
 | Qwen2.5-14B Prompt-Only Reference, Canonicalized Target | 0.9961 | 0.0000 | 0.5777 | 0.0000 | Strongest raw prompt-only reference, but still structurally unusable under exact schema evaluation |
@@ -78,6 +79,8 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - the Stage 8/9 deterministic and lexical postprocess layers do not add measurable gains on that external mapped dataset, indicating that those layers are task-aware rather than broadly transferable
 - Stage 13 external few-shot adaptation changes that picture: with enough mapped external supervision, completeness recovers (`schema_compliance = 1.0`) and external end-to-end exact match rises above zero (`0.0536`)
 - under the current external adaptation recipe, pure external supervision works slightly better than mixing in-domain data, which suggests that the main problem is adapting to the new taxonomy rather than preserving the old one
+- Stage 14 external targeted continuation improves that adapted external best further (`0.0536 -> 0.0636`) without changing completeness, which indicates that once structure is restored the next effective lever is narrow semantic-taxonomy continuation
+- under the current Stage 14 recipe, targeting all core external semantic fields works better than narrower subsets, and `5e-5` works better than `1e-4`
 
 ## Generalization Breakdown
 
@@ -203,5 +206,7 @@ The most defensible summary of the project is:
 - `results/metrics/gorkemsevinc_cst_eval_prompt_32b_raw_test_report.json`
 - `results/metrics/qwen25_3b_stage13_ext1024_epoch3_lr1e4_test_report.json`
 - `docs/results/external_adaptation_batch_summary.md`
+- `results/metrics/qwen25_3b_stage14_target_allcore_x1_epoch1_lr5e5_test_report.json`
+- `docs/results/external_targeted_adaptation_batch_summary.md`
 - `results/metrics/qwen25_3b_schema_generalization_v1_test_report.json`
 - `results/metrics/qwen25_3b_schema_generalization_v1_field_analysis.json`
