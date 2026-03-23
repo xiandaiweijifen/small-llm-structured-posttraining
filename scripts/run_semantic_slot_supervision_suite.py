@@ -283,6 +283,7 @@ def write_sft_split(records: list[dict], path: Path, include_schema_definition: 
 class TextDataset(Dataset):
     def __init__(self, rows: list[dict]):
         self.rows = rows
+        self.column_names = list(rows[0].keys()) if rows else []
 
     def __len__(self) -> int:
         return len(self.rows)
