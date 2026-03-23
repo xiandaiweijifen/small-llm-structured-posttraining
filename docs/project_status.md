@@ -26,6 +26,27 @@ The project is currently in:
 - **final result consolidation**
 - **research-story finalization**
 
+## Active Vs Retired Workflows
+
+Active workflows:
+
+- Stage 2 baseline and ablation execution / review
+- long-run training ablations
+- action and component canonicalization
+- deterministic and lexical postprocessing
+- same-family big-model prompt-only reference comparison
+- external-dataset generalization comparison
+- semantic-core intermediate exploration
+
+Retired workflows:
+
+- constrained decoding
+- broad hard-continuation batch branches
+- targeted continuation / refinement branches
+- latent-action template branch
+
+These retired branches are kept only for historical traceability and negative-result references; they are no longer part of the active top-level workflow.
+
 ## Development History
 
 ### 1. Repository and Research Scoping
