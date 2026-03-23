@@ -21,6 +21,7 @@ Current status:
 - same-family big-model prompt-only reference runs have been executed and reviewed
 - external-dataset generalization references have been executed and reviewed
 - Stage 10 latent-action, Stage 11 semantic-core intermediate, and Stage 12 semantic-slot auxiliary-supervision explorations have been executed and reviewed
+- Stage 13 external few-shot adaptation experiments have been executed and reviewed
 
 The project is currently in:
 
@@ -39,6 +40,7 @@ Active workflows:
 - external-dataset generalization comparison
 - semantic-core intermediate exploration
 - semantic-slot auxiliary-supervision exploration
+- external few-shot adaptation from the strongest Stage 7 checkpoint
 
 Retired workflows:
 
@@ -214,6 +216,7 @@ Main conclusions:
 - Stage 10 latent-action targets are a negative result
 - Stage 11 semantic-core intermediate modeling is a more reasonable exploration, but still below the canonicalized main line
 - Stage 12 semantic-slot auxiliary supervision is the strongest algorithmic exploration branch after Stage 9, but still does not beat the Stage 7 canonicalized staged-training baseline
+- Stage 13 external few-shot adaptation is a real positive result: it restores schema completeness on the mapped external dataset and lifts external end-to-end exact match above zero
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
@@ -385,6 +388,19 @@ Main conclusion:
 - however, on this task it still does not outperform the simpler and stronger `action + component` canonicalization line with staged training
 - this makes Stage 12 a useful depth-enhancing exploration result, not a new top-level best system
 
+### Stage 13 External Few-Shot Adaptation
+
+- best run: `qwen25_3b_stage13_ext1024_epoch3_lr1e4`
+- field exact match: `0.7512`
+- end-to-end exact match: `0.0536`
+
+Main conclusion:
+
+- this is the first branch that materially improves the mapped external-dataset result rather than only improving in-domain performance
+- the key gain is restoring schema completeness: the best adaptation run reaches `valid_json = 1.0`, `schema_compliance = 1.0`, and `missing_required_field = 0`
+- external-only adaptation works better than mixing in-domain data under the current recipe
+- once completeness is fixed, the remaining bottleneck becomes semantic taxonomy alignment, especially `component`, `priority`, `category`, and downstream `action`
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
@@ -409,6 +425,7 @@ Expected outcome:
 - one clear statement that broad continuation did not beat the strongest staged baseline, while joint target redesign plus staged training did
 - one explicit reference comparison showing that same-family prompt-only scaling to `7B / 14B / 32B` still does not match the post-trained 3B system on this task
 - one explicit cross-dataset generalization comparison showing that the trained 3B keeps a field-level advantage over larger prompt-only models, while task-specific postprocess layers fail to transfer
+- one explicit external-adaptation result showing that a small amount of mapped external supervision can recover completeness and restore non-zero external end-to-end exact match
 - one clear statement of what post-training solves, what repair solves, what deterministic consistency can still clean up cheaply, and what still fails semantically
 
 ## Practical Rule

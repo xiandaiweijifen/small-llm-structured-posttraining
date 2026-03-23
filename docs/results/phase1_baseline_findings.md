@@ -556,6 +556,63 @@ Interpretation:
 - the Stage 8 deterministic and Stage 9 lexical postprocess layers do not add measurable gains on this external mapped dataset, which indicates that those gains are task-aware rather than broadly transferable
 - this result suggests that the post-trained model itself has some transferable structure-and-semantics bias, but the strongest system-level cleanup rules are much more distribution-specific
 
+## Stage 13 External Few-Shot Adaptation
+
+### Best External Adaptation Run
+
+- `qwen25_3b_stage13_ext1024_epoch3_lr1e4`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.7512`
+- end-to-end exact match: `0.0536`
+
+Interpretation:
+
+- this is the first experiment branch that materially improves the mapped external-dataset result rather than only improving in-domain quality
+- the most important gain is completeness: compared with the zero-shot external reference, the adapted model no longer fails mainly on missing required fields
+- the best run reaches perfect schema compliance on the held-out external test split, which means the main external failure mode shifts from structural incompleteness to semantic value errors
+- this is a real positive result for the “heavier research” direction: the strongest trained 3B is not just slightly transferable; with a moderate amount of mapped external supervision, it can be adapted into a structurally reliable external extractor
+
+### Adaptation Trend
+
+- `64` external samples: `0.6557 / 0.0024`
+- `256` external samples: `0.7490 / 0.0312`
+- `512` external samples: `0.7536 / 0.0518`
+- `1024` external samples: `0.7512 / 0.0536`
+
+Interpretation:
+
+- very small adaptation sets are not enough
+- most of the useful external gain appears between `64` and `256` samples
+- gains continue through `512` and `1024`, but begin to saturate
+- the adaptation curve suggests that external supervision is buying back completeness first and semantic alignment second
+
+### Mixed In-Domain + External Adaptation
+
+- `ext256_mix`: `0.7425 / 0.0159`
+- `ext512_mix`: `0.7495 / 0.0518`
+- `ext1024_mix`: `0.7432 / 0.0442`
+
+Interpretation:
+
+- under the current recipe, mixing in-domain data does not help and is slightly worse than pure external adaptation
+- this suggests that the external bottleneck is not catastrophic forgetting; it is learning the new dataset’s taxonomy and field conventions cleanly
+
+### Remaining External Bottlenecks
+
+The best external adaptation run still struggles most on:
+
+- `affected_systems[0].component`
+- `priority`
+- `actions_requested[0].action`
+- `category`
+
+Interpretation:
+
+- after adaptation, the external problem is no longer “can the model output a complete schema?”
+- it becomes “can the model align to the new dataset’s semantic taxonomy?”
+- this is a stronger and more useful project conclusion than the earlier zero-shot external result alone
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:

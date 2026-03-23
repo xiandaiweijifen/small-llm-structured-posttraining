@@ -117,6 +117,7 @@ The repository currently contains:
 - Stage 9 lexical postprocessing follow-ups on top of the Stage 8 best predictions
 - Stage 10 latent-action and Stage 11 semantic-core intermediate explorations
 - Stage 12 semantic-slot auxiliary supervision experiments
+- Stage 13 external few-shot adaptation experiments from the strongest Stage 7 checkpoint
 - multi-model same-family prompt-only reference comparisons at `3B / 7B / 14B / 32B`
 - external-dataset generalization references on a mapped customer-support ticket dataset
 - seen/unseen schema generalization results
@@ -154,6 +155,8 @@ Current high-level conclusions:
 - among those, Stage 12 semantic-slot supervision is the strongest exploration branch, but it still does not beat the Stage 7 canonicalized staged-training line
 - same-family larger prompt-only models (`7B / 14B / 32B`) still fail to satisfy the target schema reliably, so raw scaling does not replace post-training and target redesign
 - on a mapped out-of-domain customer-support eval set, the strongest trained 3B still beats `14B/32B` prompt-only references at field level, but schema completeness collapses and the Stage 8/9 postprocess layers do not transfer
+- a heavier external few-shot adaptation branch from the Stage 7 checkpoint is effective: with enough external supervision, schema completeness recovers and external end-to-end exact match becomes non-zero again
+- the best external adaptation run reaches `field_exact_match = 0.7512` and `end_to_end_exact_match = 0.0536`, showing that external adaptation mainly fixes completeness first, while taxonomy-level semantics remain the next bottleneck
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:
