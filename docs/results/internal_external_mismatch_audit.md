@@ -79,8 +79,8 @@ Top external-only labels:
 - `garmin forerunner`: `152`
 - `microsoft xbox controller`: `150`
 - `lg washing machine`: `148`
-- `amazon echo`: `147`
 - `sony xperia`: `147`
+- `amazon echo`: `147`
 
 ## Top Label Distribution
 
