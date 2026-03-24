@@ -69,23 +69,19 @@ The project is designed to demonstrate:
 - structured-output evaluation and error analysis
 - light but reusable engineering instead of notebook-only experiments
 
-## Phase 1 Scope
+## Task Definition
 
-Phase 1 focuses on one primary task:
+This repository focuses on one primary structured-output task:
 
-- input: natural language text
-- output: JSON object under a moderately complex schema
-- emphasis: post-training first, decoding enhancement second
-
-Recommended first task:
-
-- email / ticket / task-description understanding to structured JSON
+- input: natural-language ticket or helpdesk-style text
+- output: a JSON object under a moderately nested reduced schema
+- evaluation target: exact schema compliance plus field-level and end-to-end semantic correctness
 
 Why this task:
 
-- realistic enterprise-style structured extraction
-- easy to define nested and partially optional schemas
-- supports both seen-schema and unseen-schema analysis later
+- it is realistic enough to expose both structural and semantic failure modes
+- it supports moderately nested, partially optional schema design
+- it creates a clean testbed for comparing post-training, target redesign, repair, postprocess, and external adaptation
 
 ## Main Experiment Line
 
@@ -158,7 +154,7 @@ Use `notebooks/` only for:
 
 The repository currently contains:
 
-- full phase-1 data pipeline
+- full data pipeline for the primary ticket-to-JSON task
 - prompt-only, repair, and QLoRA baselines
 - reduced-schema ablation and H200-fast rerun
 - Stage 2 data-regime, LoRA-rank, curriculum, epoch, and learning-rate ablations
