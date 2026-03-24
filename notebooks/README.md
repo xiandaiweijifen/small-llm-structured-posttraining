@@ -24,6 +24,7 @@ Recommended usage order:
 - `26_external_frontier_suite.ipynb`: batch-run a broader external frontier suite that combines larger-scale external adaptation and retrieval-guided taxonomy postprocess on the external test split.
 - `27_external_mega_suite.ipynb`: batch-run the full overnight external stack, chaining the Stage 16 frontier suite and the Stage 17 deeper-directions suite in one launcher.
 - `28_internal_external_mismatch_audit.ipynb`: run a focused audit of label-space mismatch, mapping purity, and taxonomy shift between the in-domain reduced training set and the mapped external customer-support dataset.
+- `29_vllm_structured_reference_suite.ipynb`: re-evaluate same-family prompt-only references with vLLM raw decoding and vLLM JSON-schema structured outputs.
 - `21_semantic_core_intermediate_suite.ipynb`: batch-run a semantic-core intermediate experiment where the model predicts a separate semantic JSON object and a deterministic renderer converts it back to the reduced schema before evaluation.
 - `22_semantic_slot_supervision_suite.ipynb`: batch-run auxiliary semantic-slot supervision experiments where the model predicts both a small semantic slot object and the final JSON, then a deterministic reconcile step fuses them before evaluation.
 
@@ -49,6 +50,7 @@ For normal use, focus on:
 - `23_external_adaptation_suite.ipynb`
 - `24_external_targeted_adaptation_suite.ipynb`
 - `25_external_overnight_optimization_suite.ipynb`
+- `29_vllm_structured_reference_suite.ipynb`
 - `21_semantic_core_intermediate_suite.ipynb`
 - `22_semantic_slot_supervision_suite.ipynb`
 
@@ -70,6 +72,7 @@ Current policy:
 - keep external frontier adaptation and retrieval experiments in `26_external_frontier_suite.ipynb`
 - keep the full overnight external stack launcher in `27_external_mega_suite.ipynb`
 - keep the internal/external mismatch audit in `28_internal_external_mismatch_audit.ipynb`
+- keep vLLM structured-output reevaluation in `29_vllm_structured_reference_suite.ipynb`
 - avoid putting reusable preprocessing or evaluation logic into notebooks; keep that in `src/` and `scripts/`
 
 
