@@ -726,6 +726,37 @@ Interpretation:
   - internal `name -> component` mappings are moderately reusable, while external `name -> component` mappings are extremely low-purity
 - this is why external continuation recovers completeness but still struggles to push exact match much further: the remaining problem is conditional semantic alignment, not formatting and not simple OOD vocab coverage
 
+## Stage 18 External Component Verifier
+
+### Guarded Name-Majority Verifier
+
+Best result:
+
+- `qwen25_3b_stage18_guarded_name_majority_p80`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.7517`
+- end-to-end exact match: `0.0636`
+
+Interpretation:
+
+- this best Stage 18 result only ties the Stage 14 external best
+- the guarded `name -> component` rule is too conservative to create additional useful edits on the external train distribution
+- this is still informative: it suggests the remaining `component` problem is not recoverable through a simple high-purity deterministic override
+
+### Learned Component-Only Verifier
+
+Best learned variants:
+
+- `qwen25_3b_stage18_component_nb_text_name_pred`: `0.7510 / 0.0489`
+- `qwen25_3b_stage18_hybrid_guarded_or_nb`: `0.7510 / 0.0489`
+
+Interpretation:
+
+- narrow NB-style component verifiers do not improve the Stage 14 external best
+- the learned variants degrade end-to-end exact match, even when they include predicted `category` and `priority` features
+- this is a useful negative result: the remaining external plateau cannot be broken by a simple component-only verifier layered on top of the best Stage 14 predictions
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:
@@ -743,4 +774,5 @@ The combined experiments now support a more refined story:
 - same-family prompt-only scaling up to `32B` remains well below the post-trained `3B` pipeline because schema completeness does not emerge reliably from prompt-only prompting alone
 - on a mapped external dataset, the trained `3B` still beats larger prompt-only references at field level, but the deterministic and lexical cleanup layers do not transfer cleanly
 - external few-shot adaptation solves completeness first, and then a light targeted continuation can still improve semantic alignment further
+- a simple component-only verifier does not improve that best external continuation further
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair

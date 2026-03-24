@@ -38,6 +38,7 @@ Research-oriented small LLM post-training project for complex schema-based struc
 - Same-family larger prompt-only models (`7B / 14B / 32B`) remain far below the post-trained 3B pipeline on exact schema-based evaluation.
 - External few-shot adaptation is a real positive result: it restores completeness and lifts mapped external end-to-end exact match above zero.
 - External optimization now shows a clear plateau: after completeness is solved, the remaining bottleneck is semantic taxonomy alignment rather than structure.
+- A narrow external `component` verifier does not break that plateau, which suggests the remaining external error is not solvable by simple component-only postprocess.
 
 ## Experiment Evolution
 
@@ -51,6 +52,7 @@ Research-oriented small LLM post-training project for complex schema-based struc
 8. Deterministic and lexical postprocess layers produced the strongest full system.
 9. External zero-shot evaluation showed that trained small models still beat larger prompt-only models at field level, but completeness collapsed.
 10. External few-shot adaptation restored completeness, and Stage 14 targeted continuation produced the best external result before the line plateaued.
+11. A Stage 18 component-verifier follow-up confirmed that simple field-specific postprocess is still too weak to beat the Stage 14 external best.
 
 ## Project Goal
 
@@ -171,6 +173,7 @@ The repository currently contains:
 - Stage 14 external targeted adaptation experiments on top of the strongest Stage 13 checkpoint
 - Stage 16 external frontier experiments: larger-scale adaptation and retrieval-guided taxonomy postprocess
 - Stage 17 external deeper-direction experiments: field-level target redesign and residual curriculum
+- Stage 18 external component-verifier follow-ups on top of the strongest Stage 14 predictions
 - multi-model same-family prompt-only reference comparisons at `3B / 7B / 14B / 32B`
 - external-dataset generalization references on a mapped customer-support ticket dataset
 - seen/unseen schema generalization results
@@ -213,6 +216,7 @@ Current high-level conclusions:
 - a follow-up external targeted adaptation branch improves the best external result further to `field_exact_match = 0.7517` and `end_to_end_exact_match = 0.0636`
 - under the current external targeted recipe, a light low-learning-rate continuation over all core taxonomy fields works better than narrower field subsets or a higher learning-rate variant
 - after Stage 14, the external line enters a semantic-taxonomy plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum do not beat the Stage 14 best
+- a narrow Stage 18 component-verifier branch also fails to beat the Stage 14 external best, which reinforces that the remaining external issue is not a simple `component` postprocess problem
 - the strongest Stage 16/17 variants preserve perfect external schema completeness, which confirms that the remaining external bottleneck is no longer structure but `component / priority / category / action` alignment
 - the internal/external mismatch audit shows that this external bottleneck is driven less by raw OOD label vocabulary and more by changed conditional mappings, especially weak external `summary -> category` and `name -> component` purity
 - under mild schema shift, structure generalizes better than semantics

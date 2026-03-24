@@ -48,6 +48,8 @@ This project studies a focused question:
 | Stage 16 Retrieval Postprocess, KNN-3 Priority Majority | 1.0000 | 1.0000 | 0.7501 | 0.0554 | Retrieval gives a weak useful signal for `priority`, but nearest-neighbor transfer remains too noisy for a new best |
 | Stage 17 External Target Redesign, Full Data, c80/c60, Epoch 2, LR 5e-5 | 1.0000 | 1.0000 | 0.7514 | 0.0530 | Field-level target redesign is directionally useful, but still below the simpler Stage 14 all-core continuation |
 | Stage 17 Residual Curriculum, Component-Focused, x2, Epoch 1, LR 5e-5 | 1.0000 | 1.0000 | 0.7479 | 0.0512 | Field-targeted residual continuation does not outperform the Stage 14 recipe under the current external setup |
+| Stage 18 Component Verifier, Guarded Name Majority p80 | 1.0000 | 1.0000 | 0.7517 | 0.0636 | Best verifier only ties the Stage 14 external best; high-purity `name -> component` rules rarely fire usefully on the external train distribution |
+| Stage 18 Component Verifier, NB Text+Name+Pred Features | 1.0000 | 1.0000 | 0.7510 | 0.0489 | Simple learned component-only verifier underperforms the Stage 14 external best |
 | Qwen2.5-3B Prompt-Only Reference, Canonicalized Target | 0.9724 | 0.0000 | 0.4470 | 0.0000 | Raw prompt-only on the same base model still fails mainly on required fields |
 | Qwen2.5-7B Prompt-Only Reference, Canonicalized Target | 1.0000 | 0.0000 | 0.5251 | 0.0000 | Larger prompt-only model improves field average, but still misses required fields systematically |
 | Qwen2.5-14B Prompt-Only Reference, Canonicalized Target | 0.9961 | 0.0000 | 0.5777 | 0.0000 | Strongest raw prompt-only reference, but still structurally unusable under exact schema evaluation |
@@ -86,6 +88,7 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - Stage 14 external targeted continuation improves that adapted external best further (`0.0536 -> 0.0636`) without changing completeness, which indicates that once structure is restored the next effective lever is narrow semantic-taxonomy continuation
 - under the current Stage 14 recipe, targeting all core external semantic fields works better than narrower subsets, and `5e-5` works better than `1e-4`
 - Stage 16 and Stage 17 establish an external plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve perfect completeness but still fail to beat the Stage 14 end-to-end best
+- Stage 18 reinforces that plateau: a narrow `component`-only verifier can at best tie Stage 14 and simple learned verifier variants degrade external end-to-end exact match
 - this means the mapped external bottleneck is now firmly a semantic-taxonomy problem, especially `component`, then `priority`, then the coupled `category / action` fields
 - the internal/external mismatch audit sharpens that conclusion: `category` and `priority` mostly share the same coarse label vocabulary across domains, but external `summary -> category` mappings are dramatically less pure and external `name -> component` mappings are far less reusable
 - this means the external plateau is not mainly a vocab-OOD problem; it is a conditional label-semantics problem
@@ -150,6 +153,7 @@ The experiments support a clear division of labor:
 - cross-dataset mapped evaluation shows that post-training still transfers better than prompt-only scaling, but the strongest system-level gains are less transferable than the core trained model
 - cross-dataset few-shot adaptation is effective: it restores completeness and recovers non-zero external end-to-end exact match, but semantic taxonomy alignment remains the dominant post-adaptation bottleneck
 - post-Stage-14 external follow-ups confirm that this bottleneck is real: neither more external data, nor retrieval-style postprocess, nor narrower continuation variants materially surpass the best all-core external continuation
+- a narrow component-only verifier also fails to beat the best all-core external continuation, which shows that the remaining external issue is not a simple local `component` correction problem
 - the internal/external mismatch audit explains why: the mapped external dataset preserves much of the same coarse label space, but changes the conditional semantics of those labels enough that simple reuse of in-domain mappings breaks down
 - repair is effective for structural normalization and schema cleanup
 - post-training is the main lever for stable structured generation

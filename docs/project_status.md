@@ -24,6 +24,7 @@ Current status:
 - Stage 13 external few-shot adaptation experiments have been executed and reviewed
 - Stage 14 external targeted adaptation experiments have been executed and reviewed
 - Stage 16 external frontier experiments and Stage 17 deeper-direction external experiments have been executed and reviewed
+- Stage 18 external component-verifier experiments have been executed and reviewed
 - internal/external mismatch audit has been executed and reviewed
 
 The project is currently in:
@@ -46,6 +47,7 @@ Active workflows:
 - external few-shot adaptation from the strongest Stage 7 checkpoint
 - external targeted adaptation on top of the strongest Stage 13 checkpoint
 - external frontier scaling, retrieval postprocess, field-level target redesign, and residual-curriculum follow-ups
+- external component-verifier follow-ups
 - internal/external mismatch auditing for taxonomy-shift diagnosis
 
 Retired workflows:
@@ -225,6 +227,7 @@ Main conclusions:
 - Stage 13 external few-shot adaptation is a real positive result: it restores schema completeness on the mapped external dataset and lifts external end-to-end exact match above zero
 - Stage 14 external targeted adaptation is also a real positive result: it pushes the best mapped external end-to-end exact match further without reintroducing completeness failures
 - Stage 16/17 show a clear external plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve completeness but still fail to beat the Stage 14 best
+- Stage 18 reinforces that plateau: a narrow `component`-only verifier branch also fails to beat the Stage 14 best external run
 - the internal/external mismatch audit explains that plateau more concretely: the main remaining issue is not label absence, but conditional semantic mismatch, especially weakly reusable `name -> component` mappings and highly ambiguous external `summary -> category` mappings
 - repair still adds no measurable value once post-training has already stabilized structure
 
@@ -451,6 +454,23 @@ Main conclusion:
 - field-level target redesign and residual curriculum both fail to outperform the simpler Stage 14 all-core continuation recipe
 - the external line has therefore entered a plateau: completeness is already solved, and the remaining problem is semantic taxonomy alignment rather than structure
 
+### Stage 18 External Component Verifier
+
+- best verifier result:
+  - `qwen25_3b_stage18_guarded_name_majority_p80`
+  - `field_exact_match = 0.7517`
+  - `end_to_end_exact_match = 0.0636`
+- strongest learned verifier variants:
+  - `qwen25_3b_stage18_component_nb_text_name_pred`: `0.7510 / 0.0489`
+  - `qwen25_3b_stage18_hybrid_guarded_or_nb`: `0.7510 / 0.0489`
+
+Main conclusion:
+
+- the best Stage 18 result only ties the Stage 14 external best and does not exceed it
+- guarded high-purity `name -> component` majority mapping makes almost no useful edits under the current external train distribution
+- simple NB-style component verifiers degrade external end-to-end exact match rather than improving it
+- this is a useful negative result: the remaining external bottleneck cannot be solved by a simple `component`-only verifier layered on top of the Stage 14 predictions
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
@@ -477,6 +497,7 @@ Expected outcome:
 - one explicit cross-dataset generalization comparison showing that the trained 3B keeps a field-level advantage over larger prompt-only models, while task-specific postprocess layers fail to transfer
 - one explicit external-adaptation result showing that a small amount of mapped external supervision can recover completeness and restore non-zero external end-to-end exact match
 - one explicit external plateau result showing that, after completeness is solved, broader scaling and continuation variants do not beat the best narrow all-core external continuation
+- one explicit Stage 18 negative result showing that a narrow component-only verifier also fails to beat the best Stage 14 external continuation
 - one clear statement of what post-training solves, what repair solves, what deterministic consistency can still clean up cheaply, and what still fails semantically
 
 ## Practical Rule
