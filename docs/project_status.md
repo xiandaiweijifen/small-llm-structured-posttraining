@@ -483,3 +483,4 @@ Current development priority:
 - prioritize final narrative quality over adding broad new experiment branches
 - do not spend major effort on broad hyperparameter tuning unless it directly supports a stronger final conclusion
 - keep reusable logic in `src/` and `scripts/`, not notebooks
+- use `docs/results/error_analysis_taxonomy.md` as the primary failure-taxonomy reference when preparing resume or interview material

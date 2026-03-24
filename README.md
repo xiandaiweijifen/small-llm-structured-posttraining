@@ -2,6 +2,56 @@
 
 Research-oriented small LLM post-training project for complex schema-based structured outputs.
 
+## At A Glance
+
+- Task: complex text-to-JSON extraction under a moderately nested schema
+- Core question: what small-model post-training can solve on its own, and where repair / decoding / postprocess still matter
+- Strongest trained run:
+  - `qwen25_3b_stage7_canonical_action_component_structure_then_semantics_stage2_epoch9`
+  - `field_exact_match = 0.9402`
+  - `end_to_end_exact_match = 0.6772`
+- Strongest overall system run:
+  - `qwen25_3b_stage9_lexical_combined`
+  - `field_exact_match = 0.9470`
+  - `end_to_end_exact_match = 0.7205`
+- Strongest mapped external run:
+  - `qwen25_3b_stage14_target_allcore_x1_epoch1_lr5e5`
+  - `field_exact_match = 0.7517`
+  - `end_to_end_exact_match = 0.0636`
+
+## Best Results
+
+| Result Type | Run | Field Exact Match | End-to-End Exact Match | Meaning |
+| --- | --- | ---: | ---: | --- |
+| Best trained in-domain | `stage7_canonical_action_component_staged` | 0.9402 | 0.6772 | strongest model ability before no-train cleanup |
+| Best system in-domain | `stage9_lexical_combined` | 0.9470 | 0.7205 | strongest end-to-end pipeline including deterministic and lexical cleanup |
+| Best mapped external | `stage14_target_allcore_x1_epoch1_lr5e5` | 0.7517 | 0.0636 | strongest external adaptation result after completeness recovery |
+
+## Key Findings
+
+- Prompt-only mainly fails on required-field completeness and schema compliance.
+- Repair is strong for prompt-only structure, but adds almost nothing once post-training already stabilizes output format.
+- Reduced schema and target redesign matter more than raw model scaling for this task.
+- `action` canonicalization is the first intervention that clearly breaks the Stage 2 end-to-end ceiling.
+- `component` canonicalization only becomes useful when paired with staged training and the already-validated `action` redesign.
+- Deterministic and lexical postprocess still add meaningful in-domain gains, but those gains do not transfer cleanly to the external mapped dataset.
+- Same-family larger prompt-only models (`7B / 14B / 32B`) remain far below the post-trained 3B pipeline on exact schema-based evaluation.
+- External few-shot adaptation is a real positive result: it restores completeness and lifts mapped external end-to-end exact match above zero.
+- External optimization now shows a clear plateau: after completeness is solved, the remaining bottleneck is semantic taxonomy alignment rather than structure.
+
+## Experiment Evolution
+
+1. Prompt-only and repair established that the initial failure mode was structural incompleteness.
+2. Reduced-schema post-training established that target design unlocks semantic learning.
+3. Stage 2 ablations showed that rank, epoch, and learning rate matter, but do not match the gains from better target design and training structure.
+4. Structure-then-semantics staged training became the strongest pre-canonicalization baseline.
+5. Broad hard-sample continuation failed to beat that staged baseline, establishing a useful negative result.
+6. `action` canonicalization created the first major breakthrough.
+7. Joint `action + component` canonicalization plus staged training produced the strongest trained run.
+8. Deterministic and lexical postprocess layers produced the strongest full system.
+9. External zero-shot evaluation showed that trained small models still beat larger prompt-only models at field level, but completeness collapsed.
+10. External few-shot adaptation restored completeness, and Stage 14 targeted continuation produced the best external result before the line plateaued.
+
 ## Project Goal
 
 This repository studies a focused question:
@@ -171,5 +221,6 @@ Recommended entry points for the current project state:
 - [project_status.md](d:/project/small-llm-structured-posttraining/docs/project_status.md)
 - [phase1_baseline_findings.md](d:/project/small-llm-structured-posttraining/docs/results/phase1_baseline_findings.md)
 - [final_results_summary.md](d:/project/small-llm-structured-posttraining/docs/results/final_results_summary.md)
+- [error_analysis_taxonomy.md](d:/project/small-llm-structured-posttraining/docs/results/error_analysis_taxonomy.md)
 - [stage2_results_review.md](d:/project/small-llm-structured-posttraining/docs/results/stage2_results_review.md)
 - [long_run_ablation_batch_summary.md](d:/project/small-llm-structured-posttraining/docs/results/long_run_ablation_batch_summary.md)
