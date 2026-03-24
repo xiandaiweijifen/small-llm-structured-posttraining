@@ -21,7 +21,12 @@ from src.schemas.registry import get_schema
 
 try:
     from vllm import LLM, SamplingParams
-    from vllm.sampling_params import GuidedDecodingParams
+    try:
+        from vllm.sampling_params import StructuredOutputsParams as _StructuredParamsClass
+        _STRUCTURED_MODE = "structured_outputs"
+    except Exception:
+        from vllm.sampling_params import GuidedDecodingParams as _StructuredParamsClass
+        _STRUCTURED_MODE = "guided_decoding"
 except Exception as exc:  # pragma: no cover - runtime-only dependency
     raise ImportError(
         "This suite requires vLLM. Install it in the target environment with `pip install vllm`."
@@ -142,18 +147,22 @@ def build_prompt(llm: LLM, record: dict) -> str:
 
 
 def make_sampling_params(schema: dict | None) -> SamplingParams:
-    guided_decoding = None
+    structured_param = None
     if schema is not None:
-        guided_decoding = GuidedDecodingParams.from_optional(
-            json=schema,
-            backend=GUIDED_BACKEND,
-        )
-    return SamplingParams(
-        max_tokens=GENERATION_KWARGS["max_tokens"],
-        temperature=GENERATION_KWARGS["temperature"],
-        top_p=GENERATION_KWARGS["top_p"],
-        guided_decoding=guided_decoding,
-    )
+        kwargs = {"json": schema}
+        if GUIDED_BACKEND is not None:
+            kwargs["backend"] = GUIDED_BACKEND
+        structured_param = _StructuredParamsClass(**kwargs)
+    sampling_kwargs = {
+        "max_tokens": GENERATION_KWARGS["max_tokens"],
+        "temperature": GENERATION_KWARGS["temperature"],
+        "top_p": GENERATION_KWARGS["top_p"],
+    }
+    if _STRUCTURED_MODE == "structured_outputs":
+        sampling_kwargs["structured_outputs"] = structured_param
+    else:
+        sampling_kwargs["guided_decoding"] = structured_param
+    return SamplingParams(**sampling_kwargs)
 
 
 def build_output_paths(experiment_name: str, variant: str) -> dict[str, Path]:
@@ -303,6 +312,7 @@ def write_summary(batch_summary: list[dict]) -> None:
 def run() -> None:
     print("project_root =", PROJECT_ROOT)
     print("guided_backend =", GUIDED_BACKEND)
+    print("structured_mode =", _STRUCTURED_MODE)
     print("scheduled_models =", [item["model_name"] for item in MODEL_PRESETS])
     print("skip_completed =", SKIP_COMPLETED)
 
