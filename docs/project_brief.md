@@ -26,6 +26,10 @@ Best-result split to preserve in interviews:
   - `qwen25_3b_stage14_target_allcore_x1_epoch1_lr5e5`
   - `0.7517 / 0.0636`
 
+Current strongest external-analysis statement:
+
+The mapped external plateau is not mainly caused by label-vocabulary mismatch. The internal/external mismatch audit shows that the coarse label space is still largely shared, but external conditional mappings are much noisier, especially `summary -> category` and `name -> component`. This explains why external few-shot adaptation fixes completeness first, but later continuation variants struggle to improve semantic exact match much further.
+
 ## Core Research Question
 
 For complex schema structured output tasks, what are the dominant failure modes of small models, and which of them can be mitigated by SFT / LoRA / data strategy optimization versus decoding-time constraint or repair?

@@ -719,6 +719,12 @@ Interpretation:
 - Stage 16 and Stage 17 show that the external line has now entered a plateau
 - larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve perfect schema completeness but still fail to beat `0.7517 / 0.0636`
 - the remaining external problem is therefore best understood as semantic taxonomy alignment, especially `component`, then `priority`, then coupled `category / action`
+- the internal/external mismatch audit explains this more concretely:
+  - `category` and `priority` are not failing because of raw label-vocabulary mismatch
+  - instead, external conditional mappings are much less pure
+  - internal `summary -> category` purity is near-deterministic, while external `summary -> category` purity is highly ambiguous
+  - internal `name -> component` mappings are moderately reusable, while external `name -> component` mappings are extremely low-purity
+- this is why external continuation recovers completeness but still struggles to push exact match much further: the remaining problem is conditional semantic alignment, not formatting and not simple OOD vocab coverage
 
 ## Updated Project-Level Conclusion
 

@@ -87,6 +87,8 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - under the current Stage 14 recipe, targeting all core external semantic fields works better than narrower subsets, and `5e-5` works better than `1e-4`
 - Stage 16 and Stage 17 establish an external plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve perfect completeness but still fail to beat the Stage 14 end-to-end best
 - this means the mapped external bottleneck is now firmly a semantic-taxonomy problem, especially `component`, then `priority`, then the coupled `category / action` fields
+- the internal/external mismatch audit sharpens that conclusion: `category` and `priority` mostly share the same coarse label vocabulary across domains, but external `summary -> category` mappings are dramatically less pure and external `name -> component` mappings are far less reusable
+- this means the external plateau is not mainly a vocab-OOD problem; it is a conditional label-semantics problem
 
 ## Generalization Breakdown
 
@@ -148,6 +150,7 @@ The experiments support a clear division of labor:
 - cross-dataset mapped evaluation shows that post-training still transfers better than prompt-only scaling, but the strongest system-level gains are less transferable than the core trained model
 - cross-dataset few-shot adaptation is effective: it restores completeness and recovers non-zero external end-to-end exact match, but semantic taxonomy alignment remains the dominant post-adaptation bottleneck
 - post-Stage-14 external follow-ups confirm that this bottleneck is real: neither more external data, nor retrieval-style postprocess, nor narrower continuation variants materially surpass the best all-core external continuation
+- the internal/external mismatch audit explains why: the mapped external dataset preserves much of the same coarse label space, but changes the conditional semantics of those labels enough that simple reuse of in-domain mappings breaks down
 - repair is effective for structural normalization and schema cleanup
 - post-training is the main lever for stable structured generation
 - target design matters: noisy identity fields can dominate failure modes and hide the model's real extraction ability

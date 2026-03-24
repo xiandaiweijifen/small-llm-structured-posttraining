@@ -214,6 +214,7 @@ Current high-level conclusions:
 - under the current external targeted recipe, a light low-learning-rate continuation over all core taxonomy fields works better than narrower field subsets or a higher learning-rate variant
 - after Stage 14, the external line enters a semantic-taxonomy plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum do not beat the Stage 14 best
 - the strongest Stage 16/17 variants preserve perfect external schema completeness, which confirms that the remaining external bottleneck is no longer structure but `component / priority / category / action` alignment
+- the internal/external mismatch audit shows that this external bottleneck is driven less by raw OOD label vocabulary and more by changed conditional mappings, especially weak external `summary -> category` and `name -> component` purity
 - under mild schema shift, structure generalizes better than semantics
 
 Recommended entry points for the current project state:
