@@ -644,6 +644,82 @@ Interpretation:
 - the improvement is coming from slightly better semantic alignment after completeness has already been restored
 - `5e-5` is clearly better than `1e-4` for this narrow external continuation regime
 
+## Stage 16 External Frontier Follow-Ups
+
+### Larger-Scale External Adaptation
+
+Best result:
+
+- `qwen25_3b_stage16_extfull_epoch2_lr5e5`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.7537`
+- end-to-end exact match: `0.0542`
+
+Interpretation:
+
+- scaling external adaptation beyond the Stage 13 sample counts still gives slight field-level movement
+- however, it does not beat the simpler Stage 14 all-core continuation on end-to-end exact match
+- this suggests the main external bottleneck is no longer raw adaptation scale
+
+### Retrieval-Guided Taxonomy Postprocess
+
+Best result:
+
+- `knn3_priority_majority`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.7501`
+- end-to-end exact match: `0.0554`
+
+Interpretation:
+
+- nearest-neighbor transfer gives a weak positive signal on `priority`
+- but retrieval-based label transfer for `category / action / component` is too noisy to beat the Stage 14 best
+- this is useful evidence that external-train similarity alone is not enough to solve the remaining taxonomy errors
+
+## Stage 17 External Deeper Directions
+
+### Field-Level Target Redesign
+
+Best result:
+
+- `qwen25_3b_stage17_redesignfull_c80_cat60_epoch2_lr5e5`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.7514`
+- end-to-end exact match: `0.0530`
+
+Interpretation:
+
+- field-level target redesign is directionally sensible and does not harm structure
+- but under the current formulation it still does not beat the simpler Stage 14 all-core continuation recipe
+- the redesign variants mainly nudge category/action behavior, while `component` remains the hardest external taxonomy field
+
+### Residual Curriculum
+
+Best result:
+
+- `qwen25_3b_stage17_residual_component_focused_x2_epoch1_lr5e5`
+- valid JSON rate: `1.0000`
+- schema compliance rate: `1.0000`
+- field exact match: `0.7479`
+- end-to-end exact match: `0.0512`
+
+Interpretation:
+
+- field-targeted residual continuation is more principled than the earlier broad hard-mining branches
+- however, it still does not beat the Stage 14 external best
+- under the current external setup, residual continuation appears to be a weaker lever than the initial all-core targeted continuation
+
+## Updated External Conclusion
+
+- Stage 13 solves external completeness
+- Stage 14 improves external semantic alignment enough to produce the current best mapped external result
+- Stage 16 and Stage 17 show that the external line has now entered a plateau
+- larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve perfect schema completeness but still fail to beat `0.7517 / 0.0636`
+- the remaining external problem is therefore best understood as semantic taxonomy alignment, especially `component`, then `priority`, then coupled `category / action`
+
 ## Updated Project-Level Conclusion
 
 The combined experiments now support a more refined story:

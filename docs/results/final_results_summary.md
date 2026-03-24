@@ -44,6 +44,10 @@ This project studies a focused question:
 | Stage 12 Semantic-Slot Supervision, Staged, Stage 2 Epoch 11 | 1.0000 | 1.0000 | 0.9298 | 0.6496 | Strongest algorithmic exploration branch after Stage 9, but still below the Stage 7 canonicalized staged-training best |
 | Stage 13 External Adaptation, 1024 Samples, Epoch 3, LR 1e-4 | 1.0000 | 1.0000 | 0.7512 | 0.0536 | First external adaptation branch to restore completeness and lift mapped external end-to-end exact match above zero |
 | Stage 14 External Targeted Adaptation, All-Core, x1, Epoch 1, LR 5e-5 | 1.0000 | 1.0000 | 0.7517 | 0.0636 | Best mapped external result so far; light low-LR continuation on all core taxonomy fields improves the Stage 13 adapter further |
+| Stage 16 External Adaptation, Full Data, Epoch 2, LR 5e-5 | 1.0000 | 1.0000 | 0.7537 | 0.0542 | Larger-scale external adaptation slightly improves field-level accuracy, but does not beat the Stage 14 end-to-end best |
+| Stage 16 Retrieval Postprocess, KNN-3 Priority Majority | 1.0000 | 1.0000 | 0.7501 | 0.0554 | Retrieval gives a weak useful signal for `priority`, but nearest-neighbor transfer remains too noisy for a new best |
+| Stage 17 External Target Redesign, Full Data, c80/c60, Epoch 2, LR 5e-5 | 1.0000 | 1.0000 | 0.7514 | 0.0530 | Field-level target redesign is directionally useful, but still below the simpler Stage 14 all-core continuation |
+| Stage 17 Residual Curriculum, Component-Focused, x2, Epoch 1, LR 5e-5 | 1.0000 | 1.0000 | 0.7479 | 0.0512 | Field-targeted residual continuation does not outperform the Stage 14 recipe under the current external setup |
 | Qwen2.5-3B Prompt-Only Reference, Canonicalized Target | 0.9724 | 0.0000 | 0.4470 | 0.0000 | Raw prompt-only on the same base model still fails mainly on required fields |
 | Qwen2.5-7B Prompt-Only Reference, Canonicalized Target | 1.0000 | 0.0000 | 0.5251 | 0.0000 | Larger prompt-only model improves field average, but still misses required fields systematically |
 | Qwen2.5-14B Prompt-Only Reference, Canonicalized Target | 0.9961 | 0.0000 | 0.5777 | 0.0000 | Strongest raw prompt-only reference, but still structurally unusable under exact schema evaluation |
@@ -81,6 +85,8 @@ The Stage 2 through Stage 7 ablations clarify where the strongest gains come fro
 - under the current external adaptation recipe, pure external supervision works slightly better than mixing in-domain data, which suggests that the main problem is adapting to the new taxonomy rather than preserving the old one
 - Stage 14 external targeted continuation improves that adapted external best further (`0.0536 -> 0.0636`) without changing completeness, which indicates that once structure is restored the next effective lever is narrow semantic-taxonomy continuation
 - under the current Stage 14 recipe, targeting all core external semantic fields works better than narrower subsets, and `5e-5` works better than `1e-4`
+- Stage 16 and Stage 17 establish an external plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve perfect completeness but still fail to beat the Stage 14 end-to-end best
+- this means the mapped external bottleneck is now firmly a semantic-taxonomy problem, especially `component`, then `priority`, then the coupled `category / action` fields
 
 ## Generalization Breakdown
 
@@ -141,6 +147,7 @@ The experiments support a clear division of labor:
 - same-family larger prompt-only models remain structurally weak on this task; larger scale alone does not replace post-training
 - cross-dataset mapped evaluation shows that post-training still transfers better than prompt-only scaling, but the strongest system-level gains are less transferable than the core trained model
 - cross-dataset few-shot adaptation is effective: it restores completeness and recovers non-zero external end-to-end exact match, but semantic taxonomy alignment remains the dominant post-adaptation bottleneck
+- post-Stage-14 external follow-ups confirm that this bottleneck is real: neither more external data, nor retrieval-style postprocess, nor narrower continuation variants materially surpass the best all-core external continuation
 - repair is effective for structural normalization and schema cleanup
 - post-training is the main lever for stable structured generation
 - target design matters: noisy identity fields can dominate failure modes and hide the model's real extraction ability

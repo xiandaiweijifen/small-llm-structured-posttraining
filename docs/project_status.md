@@ -23,6 +23,7 @@ Current status:
 - Stage 10 latent-action, Stage 11 semantic-core intermediate, and Stage 12 semantic-slot auxiliary-supervision explorations have been executed and reviewed
 - Stage 13 external few-shot adaptation experiments have been executed and reviewed
 - Stage 14 external targeted adaptation experiments have been executed and reviewed
+- Stage 16 external frontier experiments and Stage 17 deeper-direction external experiments have been executed and reviewed
 
 The project is currently in:
 
@@ -43,6 +44,7 @@ Active workflows:
 - semantic-slot auxiliary-supervision exploration
 - external few-shot adaptation from the strongest Stage 7 checkpoint
 - external targeted adaptation on top of the strongest Stage 13 checkpoint
+- external frontier scaling, retrieval postprocess, field-level target redesign, and residual-curriculum follow-ups
 
 Retired workflows:
 
@@ -220,6 +222,7 @@ Main conclusions:
 - Stage 12 semantic-slot auxiliary supervision is the strongest algorithmic exploration branch after Stage 9, but still does not beat the Stage 7 canonicalized staged-training baseline
 - Stage 13 external few-shot adaptation is a real positive result: it restores schema completeness on the mapped external dataset and lifts external end-to-end exact match above zero
 - Stage 14 external targeted adaptation is also a real positive result: it pushes the best mapped external end-to-end exact match further without reintroducing completeness failures
+- Stage 16/17 show a clear external plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve completeness but still fail to beat the Stage 14 best
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
@@ -418,6 +421,33 @@ Main conclusion:
 - a conservative continuation (`1` epoch, `5e-5`) works better than the corresponding `1e-4` variant
 - after completeness has been restored by Stage 13, the next useful gains come from narrow semantic-taxonomy continuation rather than broader retraining
 
+### Stage 16 and Stage 17 External Plateau Follow-Ups
+
+- Stage 16 best larger-scale adaptation run:
+  - `qwen25_3b_stage16_extfull_epoch2_lr5e5`
+  - `field_exact_match = 0.7537`
+  - `end_to_end_exact_match = 0.0542`
+- Stage 16 best retrieval-guided postprocess:
+  - `knn3_priority_majority`
+  - `field_exact_match = 0.7501`
+  - `end_to_end_exact_match = 0.0554`
+- Stage 17 best field-level target redesign:
+  - `qwen25_3b_stage17_redesignfull_c80_cat60_epoch2_lr5e5`
+  - `field_exact_match = 0.7514`
+  - `end_to_end_exact_match = 0.0530`
+- Stage 17 best residual curriculum:
+  - `qwen25_3b_stage17_residual_component_focused_x2_epoch1_lr5e5`
+  - `field_exact_match = 0.7479`
+  - `end_to_end_exact_match = 0.0512`
+
+Main conclusion:
+
+- none of these Stage 16/17 follow-ups beat the Stage 14 best external run
+- larger-scale adaptation can nudge field-level accuracy slightly, but it does not improve external end-to-end exact match enough to set a new best
+- retrieval-guided postprocess only shows a weak signal on `priority`; transferring `category / action / component` labels from nearest neighbors is too noisy
+- field-level target redesign and residual curriculum both fail to outperform the simpler Stage 14 all-core continuation recipe
+- the external line has therefore entered a plateau: completeness is already solved, and the remaining problem is semantic taxonomy alignment rather than structure
+
 ## What Is Still Missing
 
 To reach the originally desired "more complete research project" level, the project still mainly needs:
@@ -443,6 +473,7 @@ Expected outcome:
 - one explicit reference comparison showing that same-family prompt-only scaling to `7B / 14B / 32B` still does not match the post-trained 3B system on this task
 - one explicit cross-dataset generalization comparison showing that the trained 3B keeps a field-level advantage over larger prompt-only models, while task-specific postprocess layers fail to transfer
 - one explicit external-adaptation result showing that a small amount of mapped external supervision can recover completeness and restore non-zero external end-to-end exact match
+- one explicit external plateau result showing that, after completeness is solved, broader scaling and continuation variants do not beat the best narrow all-core external continuation
 - one clear statement of what post-training solves, what repair solves, what deterministic consistency can still clean up cheaply, and what still fails semantically
 
 ## Practical Rule
