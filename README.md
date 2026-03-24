@@ -102,34 +102,6 @@ Why this task:
    - schema compliance errors
    - field-level semantic errors
 
-## Repository Layout
-
-```text
-structured-output-small-llm/
-|-- README.md
-|-- .gitignore
-|-- requirements.txt
-|-- src/
-|   |-- common/
-|   |-- data/
-|   |-- training/
-|   |-- inference/
-|   |-- evaluation/
-|   |-- schemas/
-|   `-- utils/
-|-- configs/
-|   |-- dataset/
-|   |-- train/
-|   `-- eval/
-|-- scripts/
-|-- notebooks/
-|-- results/
-|   |-- metrics/
-|   `-- predictions/
-`-- docs/
-    `-- design/
-```
-
 ## Key Documents
 
 - [project_brief.md](d:/project/small-llm-structured-posttraining/docs/project_brief.md)
