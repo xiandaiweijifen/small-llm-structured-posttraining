@@ -1,0 +1,1281 @@
+{
+  "datasets": {
+    "internal_train": {
+      "num_rows": 1993,
+      "source_mix": [
+        {
+          "source": "kameronb_it_callcenter_tickets",
+          "count": 1599,
+          "share": 0.8023080782739589
+        },
+        {
+          "source": "console_ai_it_helpdesk_tickets",
+          "count": 394,
+          "share": 0.19769192172604114
+        }
+      ],
+      "category_entropy": 0.9167888708989588,
+      "priority_entropy": 0.5489014534219288,
+      "component_entropy": 0.7063107446836643
+    },
+    "external_train": {
+      "num_rows": 5926,
+      "source_mix": [
+        {
+          "source": "gorkemsevinc_customer_support_tickets",
+          "count": 5926,
+          "share": 1.0
+        }
+      ],
+      "category_entropy": 0.7903503145547901,
+      "priority_entropy": 0.9996667765399446,
+      "component_entropy": 0.9519498651861827
+    },
+    "external_test": {
+      "num_rows": 1698,
+      "category_entropy": 0.7916577337351853,
+      "priority_entropy": 0.9994865969857957,
+      "component_entropy": 0.9493525158470157
+    }
+  },
+  "overlap": {
+    "category": {
+      "internal_vocab": 5,
+      "external_vocab": 4,
+      "overlap_vocab": 4,
+      "external_only_vocab": 0,
+      "external_overlap_mass": 1.0,
+      "external_only_mass": 0.0,
+      "external_only_top": []
+    },
+    "priority": {
+      "internal_vocab": 4,
+      "external_vocab": 4,
+      "overlap_vocab": 4,
+      "external_only_vocab": 0,
+      "external_overlap_mass": 1.0,
+      "external_only_mass": 0.0,
+      "external_only_top": []
+    },
+    "component": {
+      "internal_vocab": 25,
+      "external_vocab": 6,
+      "overlap_vocab": 6,
+      "external_only_vocab": 0,
+      "external_overlap_mass": 1.0,
+      "external_only_mass": 0.0,
+      "external_only_top": []
+    },
+    "action_template": {
+      "internal_vocab": 5,
+      "external_vocab": 4,
+      "overlap_vocab": 4,
+      "external_only_vocab": 0,
+      "external_overlap_mass": 1.0,
+      "external_only_mass": 0.0,
+      "external_only_top": []
+    },
+    "name": {
+      "internal_vocab": 279,
+      "external_vocab": 42,
+      "overlap_vocab": 0,
+      "external_only_vocab": 42,
+      "external_overlap_mass": 0.0,
+      "external_only_mass": 1.0,
+      "external_only_top": [
+        {
+          "label": "roomba robot vacuum",
+          "count": 170
+        },
+        {
+          "label": "nest thermostat",
+          "count": 165
+        },
+        {
+          "label": "canon eos",
+          "count": 165
+        },
+        {
+          "label": "lg oled",
+          "count": 160
+        },
+        {
+          "label": "gopro hero",
+          "count": 159
+        },
+        {
+          "label": "apple airpods",
+          "count": 155
+        },
+        {
+          "label": "canon dslr camera",
+          "count": 153
+        },
+        {
+          "label": "garmin forerunner",
+          "count": 152
+        },
+        {
+          "label": "microsoft xbox controller",
+          "count": 150
+        },
+        {
+          "label": "lg washing machine",
+          "count": 148
+        },
+        {
+          "label": "amazon echo",
+          "count": 147
+        },
+        {
+          "label": "sony xperia",
+          "count": 147
+        }
+      ]
+    }
+  },
+  "top_labels": {
+    "internal": {
+      "category": [
+        {
+          "label": "task",
+          "count": 597
+        },
+        {
+          "label": "bug",
+          "count": 497
+        },
+        {
+          "label": "feature",
+          "count": 419
+        },
+        {
+          "label": "incident",
+          "count": 413
+        },
+        {
+          "label": "question",
+          "count": 67
+        }
+      ],
+      "priority": [
+        {
+          "label": "medium",
+          "count": 1376
+        },
+        {
+          "label": "high",
+          "count": 521
+        },
+        {
+          "label": "urgent",
+          "count": 92
+        },
+        {
+          "label": "low",
+          "count": 4
+        }
+      ],
+      "component": [
+        {
+          "label": "configuration",
+          "count": 490
+        },
+        {
+          "label": "installation",
+          "count": 385
+        },
+        {
+          "label": "error",
+          "count": 326
+        },
+        {
+          "label": "access",
+          "count": 199
+        },
+        {
+          "label": "software",
+          "count": 183
+        },
+        {
+          "label": "malfunction",
+          "count": 72
+        },
+        {
+          "label": "account",
+          "count": 54
+        },
+        {
+          "label": "network",
+          "count": 54
+        },
+        {
+          "label": "request",
+          "count": 37
+        },
+        {
+          "label": "security",
+          "count": 34
+        },
+        {
+          "label": "hardware",
+          "count": 19
+        },
+        {
+          "label": "communication",
+          "count": 18
+        }
+      ]
+    },
+    "external_train": {
+      "category": [
+        {
+          "label": "task",
+          "count": 2412
+        },
+        {
+          "label": "question",
+          "count": 2292
+        },
+        {
+          "label": "bug",
+          "count": 1169
+        },
+        {
+          "label": "incident",
+          "count": 53
+        }
+      ],
+      "priority": [
+        {
+          "label": "medium",
+          "count": 1543
+        },
+        {
+          "label": "urgent",
+          "count": 1498
+        },
+        {
+          "label": "low",
+          "count": 1465
+        },
+        {
+          "label": "high",
+          "count": 1420
+        }
+      ],
+      "component": [
+        {
+          "label": "software",
+          "count": 1242
+        },
+        {
+          "label": "deactivation",
+          "count": 1218
+        },
+        {
+          "label": "request",
+          "count": 1194
+        },
+        {
+          "label": "account",
+          "count": 1134
+        },
+        {
+          "label": "error",
+          "count": 907
+        },
+        {
+          "label": "hardware",
+          "count": 231
+        }
+      ]
+    }
+  },
+  "mapping_purity": {
+    "internal_name_to_component": {
+      "eligible_keys": 205,
+      "weighted_purity": 0.6586921850079744,
+      "median_key_purity": 0.5555555555555556,
+      "top_ambiguous": [
+        {
+          "key": "Piv Card",
+          "purity": 0.16216216216216217,
+          "support": 74,
+          "labels": [
+            {
+              "label": "activation",
+              "count": 12
+            },
+            {
+              "label": "renewal",
+              "count": 11
+            },
+            {
+              "label": "issue",
+              "count": 11
+            },
+            {
+              "label": "request",
+              "count": 11
+            }
+          ]
+        },
+        {
+          "key": "SecureAccess",
+          "purity": 0.2,
+          "support": 5,
+          "labels": [
+            {
+              "label": "installation",
+              "count": 1
+            },
+            {
+              "label": "configuration",
+              "count": 1
+            },
+            {
+              "label": "performance",
+              "count": 1
+            },
+            {
+              "label": "access",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "InvoiceInsight",
+          "purity": 0.25,
+          "support": 4,
+          "labels": [
+            {
+              "label": "malfunction",
+              "count": 1
+            },
+            {
+              "label": "compatibility",
+              "count": 1
+            },
+            {
+              "label": "installation",
+              "count": 1
+            },
+            {
+              "label": "configuration",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "ProjectPulse",
+          "purity": 0.25,
+          "support": 4,
+          "labels": [
+            {
+              "label": "access",
+              "count": 1
+            },
+            {
+              "label": "configuration",
+              "count": 1
+            },
+            {
+              "label": "installation",
+              "count": 1
+            },
+            {
+              "label": "training",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "Trello",
+          "purity": 0.2727272727272727,
+          "support": 11,
+          "labels": [
+            {
+              "label": "configuration",
+              "count": 3
+            },
+            {
+              "label": "access",
+              "count": 3
+            },
+            {
+              "label": "error",
+              "count": 3
+            },
+            {
+              "label": "training",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "Coursera for Business",
+          "purity": 0.2857142857142857,
+          "support": 7,
+          "labels": [
+            {
+              "label": "error",
+              "count": 2
+            },
+            {
+              "label": "installation",
+              "count": 2
+            },
+            {
+              "label": "access",
+              "count": 1
+            },
+            {
+              "label": "malfunction",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "LoadLight",
+          "purity": 0.2857142857142857,
+          "support": 7,
+          "labels": [
+            {
+              "label": "error",
+              "count": 2
+            },
+            {
+              "label": "access",
+              "count": 2
+            },
+            {
+              "label": "installation",
+              "count": 1
+            },
+            {
+              "label": "configuration",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "Microsoft Office 365",
+          "purity": 0.2857142857142857,
+          "support": 7,
+          "labels": [
+            {
+              "label": "access",
+              "count": 2
+            },
+            {
+              "label": "configuration",
+              "count": 2
+            },
+            {
+              "label": "installation",
+              "count": 2
+            },
+            {
+              "label": "error",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "ScaleNet",
+          "purity": 0.2857142857142857,
+          "support": 7,
+          "labels": [
+            {
+              "label": "installation",
+              "count": 2
+            },
+            {
+              "label": "access",
+              "count": 2
+            },
+            {
+              "label": "malfunction",
+              "count": 1
+            },
+            {
+              "label": "performance",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "VMSPro",
+          "purity": 0.2857142857142857,
+          "support": 7,
+          "labels": [
+            {
+              "label": "configuration",
+              "count": 2
+            },
+            {
+              "label": "access",
+              "count": 2
+            },
+            {
+              "label": "installation",
+              "count": 2
+            },
+            {
+              "label": "malfunction",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "Zoom",
+          "purity": 0.3333333333333333,
+          "support": 12,
+          "labels": [
+            {
+              "label": "error",
+              "count": 4
+            },
+            {
+              "label": "access",
+              "count": 4
+            },
+            {
+              "label": "installation",
+              "count": 2
+            },
+            {
+              "label": "malfunction",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "FACMgr",
+          "purity": 0.3333333333333333,
+          "support": 9,
+          "labels": [
+            {
+              "label": "installation",
+              "count": 3
+            },
+            {
+              "label": "configuration",
+              "count": 3
+            },
+            {
+              "label": "access",
+              "count": 2
+            },
+            {
+              "label": "compatibility",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "external_name_to_component": {
+      "eligible_keys": 42,
+      "weighted_purity": 0.2546405669929126,
+      "median_key_purity": 0.23720172956814178,
+      "top_ambiguous": [
+        {
+          "key": "nintendo switch",
+          "purity": 0.20967741935483872,
+          "support": 124,
+          "labels": [
+            {
+              "label": "error",
+              "count": 26
+            },
+            {
+              "label": "request",
+              "count": 26
+            },
+            {
+              "label": "deactivation",
+              "count": 25
+            },
+            {
+              "label": "software",
+              "count": 25
+            }
+          ]
+        },
+        {
+          "key": "gopro hero",
+          "purity": 0.2138364779874214,
+          "support": 159,
+          "labels": [
+            {
+              "label": "error",
+              "count": 34
+            },
+            {
+              "label": "software",
+              "count": 33
+            },
+            {
+              "label": "account",
+              "count": 31
+            },
+            {
+              "label": "deactivation",
+              "count": 31
+            }
+          ]
+        },
+        {
+          "key": "nintendo switch pro controller",
+          "purity": 0.21705426356589147,
+          "support": 129,
+          "labels": [
+            {
+              "label": "deactivation",
+              "count": 28
+            },
+            {
+              "label": "request",
+              "count": 27
+            },
+            {
+              "label": "software",
+              "count": 26
+            },
+            {
+              "label": "account",
+              "count": 25
+            }
+          ]
+        },
+        {
+          "key": "roomba robot vacuum",
+          "purity": 0.21764705882352942,
+          "support": 170,
+          "labels": [
+            {
+              "label": "account",
+              "count": 37
+            },
+            {
+              "label": "request",
+              "count": 36
+            },
+            {
+              "label": "error",
+              "count": 35
+            },
+            {
+              "label": "software",
+              "count": 34
+            }
+          ]
+        },
+        {
+          "key": "canon eos",
+          "purity": 0.21818181818181817,
+          "support": 165,
+          "labels": [
+            {
+              "label": "software",
+              "count": 36
+            },
+            {
+              "label": "error",
+              "count": 36
+            },
+            {
+              "label": "request",
+              "count": 32
+            },
+            {
+              "label": "deactivation",
+              "count": 31
+            }
+          ]
+        },
+        {
+          "key": "fitbit charge",
+          "purity": 0.2191780821917808,
+          "support": 146,
+          "labels": [
+            {
+              "label": "request",
+              "count": 32
+            },
+            {
+              "label": "error",
+              "count": 30
+            },
+            {
+              "label": "deactivation",
+              "count": 29
+            },
+            {
+              "label": "software",
+              "count": 28
+            }
+          ]
+        },
+        {
+          "key": "macbook pro",
+          "purity": 0.2196969696969697,
+          "support": 132,
+          "labels": [
+            {
+              "label": "software",
+              "count": 29
+            },
+            {
+              "label": "request",
+              "count": 29
+            },
+            {
+              "label": "account",
+              "count": 29
+            },
+            {
+              "label": "hardware",
+              "count": 28
+            }
+          ]
+        },
+        {
+          "key": "sony 4k hdr tv",
+          "purity": 0.2222222222222222,
+          "support": 144,
+          "labels": [
+            {
+              "label": "account",
+              "count": 32
+            },
+            {
+              "label": "hardware",
+              "count": 30
+            },
+            {
+              "label": "request",
+              "count": 30
+            },
+            {
+              "label": "software",
+              "count": 28
+            }
+          ]
+        },
+        {
+          "key": "samsung soundbar",
+          "purity": 0.2222222222222222,
+          "support": 117,
+          "labels": [
+            {
+              "label": "error",
+              "count": 26
+            },
+            {
+              "label": "software",
+              "count": 24
+            },
+            {
+              "label": "account",
+              "count": 24
+            },
+            {
+              "label": "deactivation",
+              "count": 22
+            }
+          ]
+        },
+        {
+          "key": "lg washing machine",
+          "purity": 0.22297297297297297,
+          "support": 148,
+          "labels": [
+            {
+              "label": "request",
+              "count": 33
+            },
+            {
+              "label": "software",
+              "count": 32
+            },
+            {
+              "label": "deactivation",
+              "count": 32
+            },
+            {
+              "label": "error",
+              "count": 27
+            }
+          ]
+        },
+        {
+          "key": "bose soundlink speaker",
+          "purity": 0.22857142857142856,
+          "support": 140,
+          "labels": [
+            {
+              "label": "deactivation",
+              "count": 32
+            },
+            {
+              "label": "request",
+              "count": 30
+            },
+            {
+              "label": "software",
+              "count": 27
+            },
+            {
+              "label": "hardware",
+              "count": 26
+            }
+          ]
+        },
+        {
+          "key": "dyson vacuum cleaner",
+          "purity": 0.22857142857142856,
+          "support": 140,
+          "labels": [
+            {
+              "label": "error",
+              "count": 32
+            },
+            {
+              "label": "software",
+              "count": 31
+            },
+            {
+              "label": "account",
+              "count": 27
+            },
+            {
+              "label": "request",
+              "count": 25
+            }
+          ]
+        }
+      ]
+    },
+    "internal_summary_to_category": {
+      "eligible_keys": 15,
+      "weighted_purity": 0.9833333333333333,
+      "median_key_purity": 1.0,
+      "top_ambiguous": [
+        {
+          "key": "Assistance Required for Configuring Multi-Factor Authentication",
+          "purity": 0.8,
+          "support": 5,
+          "labels": [
+            {
+              "label": "task",
+              "count": 4
+            },
+            {
+              "label": "question",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "Activation request for new PIV card",
+          "purity": 1.0,
+          "support": 6,
+          "labels": [
+            {
+              "label": "task",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "Distribution List Creation Request",
+          "purity": 1.0,
+          "support": 6,
+          "labels": [
+            {
+              "label": "task",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "Distribution List Modification Request",
+          "purity": 1.0,
+          "support": 5,
+          "labels": [
+            {
+              "label": "task",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "key": "Request for new PIV card issuance",
+          "purity": 1.0,
+          "support": 4,
+          "labels": [
+            {
+              "label": "task",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "Request to deactivate PIV card immediately",
+          "purity": 1.0,
+          "support": 4,
+          "labels": [
+            {
+              "label": "task",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "Shared Mailbox Creation Request",
+          "purity": 1.0,
+          "support": 4,
+          "labels": [
+            {
+              "label": "task",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "Shared Mailbox Modification Request",
+          "purity": 1.0,
+          "support": 4,
+          "labels": [
+            {
+              "label": "task",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "Teams Group Creation Request",
+          "purity": 1.0,
+          "support": 4,
+          "labels": [
+            {
+              "label": "task",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "Request for PIV card replacement due to damage",
+          "purity": 1.0,
+          "support": 3,
+          "labels": [
+            {
+              "label": "task",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "Request for additional DataSync license",
+          "purity": 1.0,
+          "support": 3,
+          "labels": [
+            {
+              "label": "task",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "Request to install FeedbackFirst software",
+          "purity": 1.0,
+          "support": 3,
+          "labels": [
+            {
+              "label": "feature",
+              "count": 3
+            }
+          ]
+        }
+      ]
+    },
+    "external_summary_to_category": {
+      "eligible_keys": 16,
+      "weighted_purity": 0.41630104623692205,
+      "median_key_purity": 0.41390178791753596,
+      "top_ambiguous": [
+        {
+          "key": "battery life",
+          "purity": 0.39361702127659576,
+          "support": 376,
+          "labels": [
+            {
+              "label": "task",
+              "count": 148
+            },
+            {
+              "label": "question",
+              "count": 146
+            },
+            {
+              "label": "bug",
+              "count": 82
+            }
+          ]
+        },
+        {
+          "key": "product setup",
+          "purity": 0.3941798941798942,
+          "support": 378,
+          "labels": [
+            {
+              "label": "task",
+              "count": 149
+            },
+            {
+              "label": "question",
+              "count": 145
+            },
+            {
+              "label": "bug",
+              "count": 80
+            },
+            {
+              "label": "incident",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "account access",
+          "purity": 0.3983957219251337,
+          "support": 374,
+          "labels": [
+            {
+              "label": "question",
+              "count": 149
+            },
+            {
+              "label": "task",
+              "count": 143
+            },
+            {
+              "label": "bug",
+              "count": 75
+            },
+            {
+              "label": "incident",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "key": "product recommendation",
+          "purity": 0.4037940379403794,
+          "support": 369,
+          "labels": [
+            {
+              "label": "question",
+              "count": 149
+            },
+            {
+              "label": "task",
+              "count": 148
+            },
+            {
+              "label": "bug",
+              "count": 69
+            },
+            {
+              "label": "incident",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "software bug",
+          "purity": 0.4043583535108959,
+          "support": 413,
+          "labels": [
+            {
+              "label": "question",
+              "count": 167
+            },
+            {
+              "label": "task",
+              "count": 164
+            },
+            {
+              "label": "bug",
+              "count": 82
+            }
+          ]
+        },
+        {
+          "key": "delivery problem",
+          "purity": 0.4045226130653266,
+          "support": 398,
+          "labels": [
+            {
+              "label": "task",
+              "count": 161
+            },
+            {
+              "label": "question",
+              "count": 158
+            },
+            {
+              "label": "bug",
+              "count": 72
+            },
+            {
+              "label": "incident",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "key": "peripheral compatibility",
+          "purity": 0.40476190476190477,
+          "support": 336,
+          "labels": [
+            {
+              "label": "task",
+              "count": 136
+            },
+            {
+              "label": "question",
+              "count": 133
+            },
+            {
+              "label": "bug",
+              "count": 63
+            },
+            {
+              "label": "incident",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "network problem",
+          "purity": 0.4131054131054131,
+          "support": 351,
+          "labels": [
+            {
+              "label": "question",
+              "count": 145
+            },
+            {
+              "label": "task",
+              "count": 130
+            },
+            {
+              "label": "bug",
+              "count": 75
+            },
+            {
+              "label": "incident",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "installation support",
+          "purity": 0.4146981627296588,
+          "support": 381,
+          "labels": [
+            {
+              "label": "task",
+              "count": 158
+            },
+            {
+              "label": "question",
+              "count": 148
+            },
+            {
+              "label": "bug",
+              "count": 72
+            },
+            {
+              "label": "incident",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "hardware issue",
+          "purity": 0.4162303664921466,
+          "support": 382,
+          "labels": [
+            {
+              "label": "task",
+              "count": 159
+            },
+            {
+              "label": "question",
+              "count": 149
+            },
+            {
+              "label": "bug",
+              "count": 72
+            },
+            {
+              "label": "incident",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "payment issue",
+          "purity": 0.41689373297002724,
+          "support": 367,
+          "labels": [
+            {
+              "label": "task",
+              "count": 153
+            },
+            {
+              "label": "question",
+              "count": 131
+            },
+            {
+              "label": "bug",
+              "count": 80
+            },
+            {
+              "label": "incident",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "cancellation request",
+          "purity": 0.4260355029585799,
+          "support": 338,
+          "labels": [
+            {
+              "label": "task",
+              "count": 144
+            },
+            {
+              "label": "question",
+              "count": 119
+            },
+            {
+              "label": "bug",
+              "count": 71
+            },
+            {
+              "label": "incident",
+              "count": 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

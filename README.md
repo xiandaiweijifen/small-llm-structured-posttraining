@@ -222,5 +222,6 @@ Recommended entry points for the current project state:
 - [phase1_baseline_findings.md](d:/project/small-llm-structured-posttraining/docs/results/phase1_baseline_findings.md)
 - [final_results_summary.md](d:/project/small-llm-structured-posttraining/docs/results/final_results_summary.md)
 - [error_analysis_taxonomy.md](d:/project/small-llm-structured-posttraining/docs/results/error_analysis_taxonomy.md)
+- [internal_external_mismatch_audit.md](d:/project/small-llm-structured-posttraining/docs/results/internal_external_mismatch_audit.md)
 - [stage2_results_review.md](d:/project/small-llm-structured-posttraining/docs/results/stage2_results_review.md)
 - [long_run_ablation_batch_summary.md](d:/project/small-llm-structured-posttraining/docs/results/long_run_ablation_batch_summary.md)

@@ -24,6 +24,7 @@ Current status:
 - Stage 13 external few-shot adaptation experiments have been executed and reviewed
 - Stage 14 external targeted adaptation experiments have been executed and reviewed
 - Stage 16 external frontier experiments and Stage 17 deeper-direction external experiments have been executed and reviewed
+- internal/external mismatch audit has been executed and reviewed
 
 The project is currently in:
 
@@ -45,6 +46,7 @@ Active workflows:
 - external few-shot adaptation from the strongest Stage 7 checkpoint
 - external targeted adaptation on top of the strongest Stage 13 checkpoint
 - external frontier scaling, retrieval postprocess, field-level target redesign, and residual-curriculum follow-ups
+- internal/external mismatch auditing for taxonomy-shift diagnosis
 
 Retired workflows:
 
@@ -223,6 +225,7 @@ Main conclusions:
 - Stage 13 external few-shot adaptation is a real positive result: it restores schema completeness on the mapped external dataset and lifts external end-to-end exact match above zero
 - Stage 14 external targeted adaptation is also a real positive result: it pushes the best mapped external end-to-end exact match further without reintroducing completeness failures
 - Stage 16/17 show a clear external plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum all preserve completeness but still fail to beat the Stage 14 best
+- the internal/external mismatch audit explains that plateau more concretely: the main remaining issue is not label absence, but conditional semantic mismatch, especially weakly reusable `name -> component` mappings and highly ambiguous external `summary -> category` mappings
 - repair still adds no measurable value once post-training has already stabilized structure
 
 ## Current Experimental Findings
