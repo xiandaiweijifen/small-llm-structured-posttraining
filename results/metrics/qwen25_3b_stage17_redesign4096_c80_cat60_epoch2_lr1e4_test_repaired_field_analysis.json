@@ -1,0 +1,287 @@
+{
+  "num_samples": 1698,
+  "num_fields": 11,
+  "per_field": {
+    "actions_requested[0].action": {
+      "total": 1698,
+      "match_count": 662,
+      "mismatch_count": 1036,
+      "match_rate": 0.38987043580683156,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "Answer and clarify: payment issue",
+          "pred": "Handle request: payment issue"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "Answer and clarify: refund request",
+          "pred": "Handle request: refund request"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03921",
+          "gold": "Handle request: display issue",
+          "pred": "Answer and clarify: display issue"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07398",
+          "gold": "Handle request: data loss",
+          "pred": "Answer and clarify: data loss"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07191",
+          "gold": "Investigate issue: product compatibility",
+          "pred": "Answer and clarify: product compatibility"
+        }
+      ]
+    },
+    "actions_requested[0].deadline": {
+      "total": 1698,
+      "match_count": 1698,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "actions_requested[0].owner": {
+      "total": 1698,
+      "match_count": 1698,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "affected_systems[0].component": {
+      "total": 1698,
+      "match_count": 338,
+      "mismatch_count": 1360,
+      "match_rate": 0.19905771495877503,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "software",
+          "pred": "deactivation"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "software",
+          "pred": "deactivation"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-08253",
+          "gold": "software",
+          "pred": "account"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03921",
+          "gold": "deactivation",
+          "pred": "account"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07398",
+          "gold": "deactivation",
+          "pred": "account"
+        }
+      ]
+    },
+    "affected_systems[0].name": {
+      "total": 1698,
+      "match_count": 1698,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "category": {
+      "total": 1698,
+      "match_count": 663,
+      "mismatch_count": 1035,
+      "match_rate": 0.39045936395759717,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07007",
+          "gold": "question",
+          "pred": "task"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "question",
+          "pred": "task"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03921",
+          "gold": "task",
+          "pred": "question"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07398",
+          "gold": "task",
+          "pred": "question"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07191",
+          "gold": "bug",
+          "pred": "question"
+        }
+      ]
+    },
+    "constraints.blocking": {
+      "total": 1698,
+      "match_count": 1675,
+      "mismatch_count": 23,
+      "match_rate": 0.9864546525323911,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04511",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04789",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-02184",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-00077",
+          "gold": true,
+          "pred": null
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07934",
+          "gold": true,
+          "pred": null
+        }
+      ]
+    },
+    "constraints.environment": {
+      "total": 1698,
+      "match_count": 1698,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "priority": {
+      "total": 1698,
+      "match_count": 464,
+      "mismatch_count": 1234,
+      "match_rate": 0.27326266195524146,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05878",
+          "gold": "medium",
+          "pred": "high"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-05367",
+          "gold": "urgent",
+          "pred": "low"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-01564",
+          "gold": "high",
+          "pred": "urgent"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-03921",
+          "gold": "medium",
+          "pred": "high"
+        },
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-04082",
+          "gold": "high",
+          "pred": "low"
+        }
+      ]
+    },
+    "requires_followup": {
+      "total": 1698,
+      "match_count": 1698,
+      "mismatch_count": 0,
+      "match_rate": 1.0,
+      "examples": []
+    },
+    "summary": {
+      "total": 1698,
+      "match_count": 1697,
+      "mismatch_count": 1,
+      "match_rate": 0.9994110718492344,
+      "examples": [
+        {
+          "sample_id": "gorkemsevinc_customer_support_tickets-07613",
+          "gold": "product compatibility",
+          "pred": "product support"
+        }
+      ]
+    }
+  },
+  "worst_fields": [
+    {
+      "field_name": "affected_systems[0].component",
+      "match_rate": 0.19905771495877503,
+      "mismatch_count": 1360,
+      "total": 1698
+    },
+    {
+      "field_name": "priority",
+      "match_rate": 0.27326266195524146,
+      "mismatch_count": 1234,
+      "total": 1698
+    },
+    {
+      "field_name": "actions_requested[0].action",
+      "match_rate": 0.38987043580683156,
+      "mismatch_count": 1036,
+      "total": 1698
+    },
+    {
+      "field_name": "category",
+      "match_rate": 0.39045936395759717,
+      "mismatch_count": 1035,
+      "total": 1698
+    },
+    {
+      "field_name": "constraints.blocking",
+      "match_rate": 0.9864546525323911,
+      "mismatch_count": 23,
+      "total": 1698
+    },
+    {
+      "field_name": "summary",
+      "match_rate": 0.9994110718492344,
+      "mismatch_count": 1,
+      "total": 1698
+    },
+    {
+      "field_name": "actions_requested[0].deadline",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 1698
+    },
+    {
+      "field_name": "actions_requested[0].owner",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 1698
+    },
+    {
+      "field_name": "affected_systems[0].name",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 1698
+    },
+    {
+      "field_name": "constraints.environment",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 1698
+    },
+    {
+      "field_name": "requires_followup",
+      "match_rate": 1.0,
+      "mismatch_count": 0,
+      "total": 1698
+    }
+  ]
+}
