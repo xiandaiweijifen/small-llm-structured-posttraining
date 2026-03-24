@@ -776,3 +776,26 @@ The combined experiments now support a more refined story:
 - external few-shot adaptation solves completeness first, and then a light targeted continuation can still improve semantic alignment further
 - a simple component-only verifier does not improve that best external continuation further
 - after structure is solved, the strongest remaining levers are target design and semantic-label consistency rather than repair
+
+## Stage 19 vLLM Structured-Output Reevaluation
+
+The vLLM reevaluation revisits decode-side control with a more modern and more stable stack than the earlier failed constrained-decoding branch.
+
+Best raw vLLM references:
+
+- `Qwen2.5-14B-Instruct`: `field_exact_match = 0.5716`, `end_to_end_exact_match = 0.0000`
+- `Qwen2.5-32B-Instruct`: `0.5737`, `0.0000`
+
+Best structured-output vLLM references:
+
+- `Qwen2.5-14B-Instruct structured_json`: `0.3049 / 0.0000`
+- `Qwen2.5-32B-Instruct structured_json`: `0.3672 / 0.0000`
+- both achieve `valid_json = 1.0` and `schema_compliance = 1.0`
+
+Interpretation:
+
+- this branch is a useful engineering and research update: it shows that modern decode-side control can make prompt-only outputs perfectly schema-compliant
+- however, the semantic task remains unsolved; the dominant remaining error becomes pure `value_hallucination`
+- this strengthens the project's main conclusion rather than changing it:
+  - post-training and target redesign are still the main levers for this task
+  - structured decoding can guarantee format, but it cannot replace semantic learning

@@ -36,6 +36,7 @@ Research-oriented small LLM post-training project for complex schema-based struc
 - `component` canonicalization only becomes useful when paired with staged training and the already-validated `action` redesign.
 - Deterministic and lexical postprocess still add meaningful in-domain gains, but those gains do not transfer cleanly to the external mapped dataset.
 - Same-family larger prompt-only models (`7B / 14B / 32B`) remain far below the post-trained 3B pipeline on exact schema-based evaluation.
+- Modern decode-side control with vLLM structured outputs can force perfect schema compliance for prompt-only references, but still does not recover usable semantic exact match.
 - External few-shot adaptation is a real positive result: it restores completeness and lifts mapped external end-to-end exact match above zero.
 - External optimization now shows a clear plateau: after completeness is solved, the remaining bottleneck is semantic taxonomy alignment rather than structure.
 - A narrow external `component` verifier does not break that plateau, which suggests the remaining external error is not solvable by simple component-only postprocess.
@@ -174,6 +175,7 @@ The repository currently contains:
 - Stage 16 external frontier experiments: larger-scale adaptation and retrieval-guided taxonomy postprocess
 - Stage 17 external deeper-direction experiments: field-level target redesign and residual curriculum
 - Stage 18 external component-verifier follow-ups on top of the strongest Stage 14 predictions
+- Stage 19 vLLM structured-output reevaluation of same-family prompt-only references
 - multi-model same-family prompt-only reference comparisons at `3B / 7B / 14B / 32B`
 - external-dataset generalization references on a mapped customer-support ticket dataset
 - seen/unseen schema generalization results
@@ -217,6 +219,7 @@ Current high-level conclusions:
 - under the current external targeted recipe, a light low-learning-rate continuation over all core taxonomy fields works better than narrower field subsets or a higher learning-rate variant
 - after Stage 14, the external line enters a semantic-taxonomy plateau: larger-scale adaptation, retrieval-guided postprocess, field-level target redesign, and residual curriculum do not beat the Stage 14 best
 - a narrow Stage 18 component-verifier branch also fails to beat the Stage 14 external best, which reinforces that the remaining external issue is not a simple `component` postprocess problem
+- a Stage 19 vLLM structured-output reevaluation shows that modern constrained decoding solves prompt-only structure cleanly, but still does not solve semantic correctness
 - the strongest Stage 16/17 variants preserve perfect external schema completeness, which confirms that the remaining external bottleneck is no longer structure but `component / priority / category / action` alignment
 - the internal/external mismatch audit shows that this external bottleneck is driven less by raw OOD label vocabulary and more by changed conditional mappings, especially weak external `summary -> category` and `name -> component` purity
 - under mild schema shift, structure generalizes better than semantics
